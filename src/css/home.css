@@ -1,0 +1,15 @@
+.gradiente{    
+    background: linear-gradient(180deg, rgba(0,0,0,0.90) 2%, rgba(217,217,217,0) 30%, rgba(0,0,0,0.5) 58%, rgba(20,20,20,1) 100%);
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+.arrow{
+    display: none;
+}
+
+.movies-container:hover > .arrow{
+    display: flex;
+}

@@ -8,10 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/output.css">
+    <link rel="stylesheet" href="../css/home.css">
     <script src="../js/home.js" type="module" defer></script>
     <title>Home</title>
 </head>
-<body class="h-screen font-poppins bg-dark_gray grid grid-rows-[12vh_1fr] px-12 py-5">
+<body class="min-h-screen font-poppins bg-dark_gray grid grid-rows-[10vh_1fr] px-12 py-8 relative">
+    <div class="absolute inset-0 gradiente h-screen -z-10"></div>
+    <div class="absolute inset-0 h-screen bg-kill-bill bg-cover bg-top bg-no-repeat bg-fixed -z-20"></div>
     <header class="flex items-center justify-between">
         <ul class="w-[30vw] h-full flex items-center text-white text-xl font-light">
             <li class="w-[6vw] hover:font-semibold hover:text-main">
@@ -37,8 +40,70 @@
             </button>
         </div>
     </header>
-    <main class="">
-        
+    <main class="flex flex-col gap-6">
+        <div class="flex flex-col h-[50vh] justify-center gap-6">
+            <h2 class="font-bold text-[4.5rem] text-white leading-[115%] w-[25%] "> Kill Bill Volume 1</h2>
+            <div class="text-white flex items-center gap-3">
+                <span>Um filme por Quentin Tarantino</span>
+                <span class="text-secundary font-bold">99% Match</span>
+                <span class="font-bold" >2003</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="bg-main rounded-3xl px-14 h-12 text-2xl text-white">
+                    PLAY
+                </button>
+                <button class="h-12 rounded-full">
+                    <img src="../images/svg/add.svg" alt="" class="h-full w-full">
+                </button>
+            </div>
+        </div>
+        <section class="flex flex-col gap-4">
+            <h3 class="font-semibold text-white text-3xl"> FILMES </h3>
+            <div id="movies-container" class="movies-container flex gap-6 w-[calc(100vw-6rem)] relative overflow-x-scroll overflow-y-hidden">
+                <button id="prev" class="arrow h-full absolute w-10 items-center justify-center bg-medium_gray/60 hover:bg-medium_gray/80">
+                    <img src="../images/svg/arrow-prev.svg" alt="">
+                </button>
+                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-speak-now rounded-md bg-cover bg-center">
+                    <a href="#" class="inline-block h-full w-full"></a>
+                </button>
+                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-red rounded-md bg-cover bg-center">
+                    <a href="#" class="inline-block h-full w-full"></a>
+                </button>
+                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-1989 rounded-md bg-cover bg-center">
+                    <a href="#" class="inline-block h-full w-full"></a>
+                </button>
+                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-reputation rounded-md bg-cover bg-center">
+                    <a href="#" class="inline-block h-full w-full"></a>
+                </button>
+                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-lover rounded-md bg-cover bg-center">
+                    <a href="#" class="inline-block h-full w-full"></a>
+                </button>
+                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-folklore rounded-md bg-cover bg-center">
+                    <a href="#" class="inline-block h-full w-full"></a>
+                </button>
+                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-evermore rounded-md bg-cover bg-center">
+                    <a href="#" class="inline-block h-full w-full"></a>
+                </button>
+                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-midnights rounded-md bg-cover bg-center">
+                    <a href="#" class="inline-block h-full w-full"></a>
+                </button>
+                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-speak-now rounded-md bg-cover bg-center">
+                    <a href="#" class="inline-block h-full w-full"></a>
+                </button>
+                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-red rounded-md bg-cover bg-center">
+                    <a href="#" class="inline-block h-full w-full"></a>
+                </button>
+                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-1989 rounded-md bg-cover bg-center">
+                    <a href="#" class="inline-block h-full w-full"></a>
+                </button>
+                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-reputation rounded-md bg-cover bg-center">
+                    <a href="#" class="inline-block h-full w-full"></a>
+                </button>
+                <button id="next" class="arrow h-full absolute w-10 right-0 items-center justify-center bg-medium_gray/60 hover:bg-medium_gray/80">
+                    <img src="../images/svg/arrow-next.svg" alt="">
+                </button>
+            </div>
+        </section>
     </main>
 </body>
 </html>
