@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/output.css">
+    <script src="../js/home.js" type="module" defer></script>
+    <title>Home</title>
+</head>
+<body class="h-screen font-poppins bg-dark_gray grid grid-rows-[12vh_1fr] px-12 py-5">
+    <header class="flex items-center justify-between">
+        <ul class="w-[30vw] h-full flex items-center text-white text-xl font-light">
+            <li class="w-[6vw] hover:font-semibold hover:text-main">
+                <a href="#"> FILMES </a>
+            </li>
+            <li class="w-[6vw] hover:font-semibold hover:text-main">
+                <a href="#"> SÉRIES </a>
+            </li>
+            <li class="w-[6vw] hover:font-semibold hover:text-main">
+                <a href="#"> SOBRE </a>
+            </li>
+        </ul>
+        <img src="../images/logo.png" alt="Acme Filmes" class="h-full">
+        <div class="w-[30vw] h-full flex justify-end items-center gap-6">
+            <form id="search-container" class="flex overflow-hidden py-1 px-2 gap-2 rounded-md">
+                <input type="text" name="search" id="search" class="hidden w-[20vw] bg-transparent hover:outline-none text-white focus:outline-none  cursor-pointer" autocomplete="off">
+                <label id="search-button" for="search" class="h-[4vh] w-[4vh] cursor-pointer">
+                    <img src="../images/svg/search.svg" alt="" class="h-full">
+                </label>
+            </form>
+            <button class="flex items-center justify-center w-[4vh] h-[4vh] rounded-full bg-red bg-cover bg-center">
+                <a href="#" class="inline-block h-full w-full"></a>
+            </button>
+        </div>
+    </header>
+    <main class="">
+        
+    </main>
+</body>
+</html>
