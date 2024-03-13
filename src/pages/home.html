@@ -12,9 +12,9 @@
     <script src="../js/home.js" type="module" defer></script>
     <title>Home</title>
 </head>
-<body class="min-h-screen font-poppins bg-dark_gray grid grid-rows-[10vh_1fr] px-12 py-8 relative">
+<body class="min-h-screen font-poppins bg-dark_gray grid grid-rows-[10vh_1fr] px-12 pt-8 relative">
     <div class="absolute inset-0 gradiente h-screen -z-10"></div>
-    <div class="absolute inset-0 h-screen bg-kill-bill bg-cover bg-top bg-no-repeat bg-fixed -z-20"></div>
+    <div id="background-movie" class="absolute inset-0 h-screen bg-kill-bill bg-cover bg-top bg-no-repeat bg-fixed -z-20"></div>
     <header class="flex items-center justify-between">
         <ul class="w-[30vw] h-full flex items-center text-white text-xl font-light">
             <li class="w-[6vw] hover:font-semibold hover:text-main">
@@ -40,8 +40,8 @@
             </button>
         </div>
     </header>
-    <main class="flex flex-col gap-6">
-        <div class="flex flex-col h-[50vh] justify-center gap-6">
+    <main class="flex flex-col">
+        <div class="flex flex-col h-[calc(50vh-2rem)] justify-center gap-6">
             <h2 class="font-bold text-[4.5rem] text-white leading-[115%] w-[25%] "> Kill Bill Volume 1</h2>
             <div class="text-white flex items-center gap-3">
                 <span>Um filme por Quentin Tarantino</span>
@@ -57,52 +57,40 @@
                 </button>
             </div>
         </div>
-        <section class="flex flex-col gap-4">
+        <section id="movies-section" class="flex flex-col gap-4 pb-8 h-[40vh] movies-container relative">
             <h3 class="font-semibold text-white text-3xl"> FILMES </h3>
-            <div id="movies-container" class="movies-container flex gap-6 w-[calc(100vw-6rem)] relative overflow-x-scroll overflow-y-hidden">
-                <button id="prev" class="arrow h-full absolute w-10 items-center justify-center bg-medium_gray/60 hover:bg-medium_gray/80">
-                    <img src="../images/svg/arrow-prev.svg" alt="">
-                </button>
-                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-speak-now rounded-md bg-cover bg-center">
+            <button id="prev" class="arrow h-[15vh] -top-[calc(5vh-50%)] absolute w-10 items-center justify-center bg-medium_gray/60 hover:bg-medium_gray/90">
+                <img src="../images/svg/arrow-prev.svg" alt="">
+            </button>
+            <div id="movies-container" class="h-full flex gap-6 w-[calc(100vw-6rem)] overflow-x-scroll overflow-y-hidden">
+                <button class="h-full w-[22vh] flex-shrink-0 bg-barbie rounded-md bg-cover bg-center">
                     <a href="#" class="inline-block h-full w-full"></a>
                 </button>
-                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-red rounded-md bg-cover bg-center">
+                <button class="h-full w-[22vh] flex-shrink-0 bg-poor-things rounded-md bg-cover bg-center">
                     <a href="#" class="inline-block h-full w-full"></a>
                 </button>
-                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-1989 rounded-md bg-cover bg-center">
+                <button class="h-full w-[22vh] flex-shrink-0 bg-little-women rounded-md bg-cover bg-center">
                     <a href="#" class="inline-block h-full w-full"></a>
                 </button>
-                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-reputation rounded-md bg-cover bg-center">
+                <button class="h-full w-[22vh] flex-shrink-0 bg-oppenheimer rounded-md bg-cover bg-center">
                     <a href="#" class="inline-block h-full w-full"></a>
                 </button>
-                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-lover rounded-md bg-cover bg-center">
+                <button class="h-full w-[22vh] flex-shrink-0 bg-inglorious-bastards rounded-md bg-cover bg-center">
                     <a href="#" class="inline-block h-full w-full"></a>
                 </button>
-                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-folklore rounded-md bg-cover bg-center">
+                <button class="h-full w-[22vh] flex-shrink-0 bg-pearl rounded-md bg-cover bg-center">
                     <a href="#" class="inline-block h-full w-full"></a>
                 </button>
-                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-evermore rounded-md bg-cover bg-center">
+                <button class="h-full w-[22vh] flex-shrink-0 bg-harry-potter rounded-md bg-cover bg-center">
                     <a href="#" class="inline-block h-full w-full"></a>
                 </button>
-                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-midnights rounded-md bg-cover bg-center">
+                <button class="h-full w-[22vh] flex-shrink-0 bg-hunger-games rounded-md bg-cover bg-center">
                     <a href="#" class="inline-block h-full w-full"></a>
-                </button>
-                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-speak-now rounded-md bg-cover bg-center">
-                    <a href="#" class="inline-block h-full w-full"></a>
-                </button>
-                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-red rounded-md bg-cover bg-center">
-                    <a href="#" class="inline-block h-full w-full"></a>
-                </button>
-                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-1989 rounded-md bg-cover bg-center">
-                    <a href="#" class="inline-block h-full w-full"></a>
-                </button>
-                <button class="h-[24vh] w-[18vh] flex-shrink-0 bg-reputation rounded-md bg-cover bg-center">
-                    <a href="#" class="inline-block h-full w-full"></a>
-                </button>
-                <button id="next" class="arrow h-full absolute w-10 right-0 items-center justify-center bg-medium_gray/60 hover:bg-medium_gray/80">
-                    <img src="../images/svg/arrow-next.svg" alt="">
                 </button>
             </div>
+            <button id="next" class="arrow h-[15vh] absolute w-10 right-0 -top-[calc(5vh-50%)] items-center justify-center bg-medium_gray/60 hover:bg-medium_gray/90">
+                <img src="../images/svg/arrow-next.svg" alt="">
+            </button>
         </section>
     </main>
 </body>
