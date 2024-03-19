@@ -544,10 +544,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.pointer-events-none {
-  pointer-events: none;
-}
-
 .absolute {
   position: absolute;
 }
@@ -590,10 +586,6 @@ video {
 
 .-z-20 {
   z-index: -20;
-}
-
-.-z-0 {
-  z-index: 0;
 }
 
 .z-10 {
@@ -780,28 +772,17 @@ video {
   width: 100%;
 }
 
-.w-\[50vw\] {
-  width: 50vw;
-}
-
-.w-\[45vw\] {
-  width: 45vw;
-}
-
-.w-\[48vw\] {
-  width: 48vw;
-}
-
-.w-\[46vw\] {
-  width: 46vw;
-}
-
 .min-w-\[40vw\] {
   min-width: 40vw;
 }
 
 .flex-shrink-0 {
   flex-shrink: 0;
+}
+
+.-translate-x-full {
+  --tw-translate-x: -100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .-translate-y-8 {
@@ -826,11 +807,6 @@ video {
 
 .translate-x-full {
   --tw-translate-x: 100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-translate-x-full {
-  --tw-translate-x: -100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1108,8 +1084,8 @@ video {
   background-image: url('../images/icons/standard.jpg');
 }
 
-.from-black\/85 {
-  --tw-gradient-from: rgb(0 0 0 / 0.85) var(--tw-gradient-from-position);
+.from-black\/80 {
+  --tw-gradient-from: rgb(0 0 0 / 0.8) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
@@ -1120,13 +1096,31 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-black\/85 {
+  --tw-gradient-from: rgb(0 0 0 / 0.85) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-black\/90 {
+  --tw-gradient-from: rgb(0 0 0 / 0.9) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-black\/95 {
+  --tw-gradient-from: rgb(0 0 0 / 0.95) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .from-10\% {
   --tw-gradient-from-position: 10%;
 }
 
-.via-black\/30 {
+.via-black\/75 {
   --tw-gradient-to: rgb(0 0 0 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), rgb(0 0 0 / 0.3) var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(0 0 0 / 0.75) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
 .via-dark_gray\/95 {
@@ -1134,12 +1128,29 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), rgb(20 20 20 / 0.95) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
-.to-black\/85 {
-  --tw-gradient-to: rgb(0 0 0 / 0.85) var(--tw-gradient-to-position);
+.via-black\/70 {
+  --tw-gradient-to: rgb(0 0 0 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(0 0 0 / 0.7) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.to-black\/80 {
+  --tw-gradient-to: rgb(0 0 0 / 0.8) var(--tw-gradient-to-position);
 }
 
 .to-dark_gray {
   --tw-gradient-to: #141414 var(--tw-gradient-to-position);
+}
+
+.to-black\/85 {
+  --tw-gradient-to: rgb(0 0 0 / 0.85) var(--tw-gradient-to-position);
+}
+
+.to-black\/90 {
+  --tw-gradient-to: rgb(0 0 0 / 0.9) var(--tw-gradient-to-position);
+}
+
+.to-black\/95 {
+  --tw-gradient-to: rgb(0 0 0 / 0.95) var(--tw-gradient-to-position);
 }
 
 .to-90\% {
@@ -1356,28 +1367,16 @@ video {
   outline-offset: 2px;
 }
 
+.duration-1000 {
+  transition-duration: 1000ms;
+}
+
 .duration-500 {
   transition-duration: 500ms;
 }
 
 .duration-700 {
   transition-duration: 700ms;
-}
-
-.duration-1000 {
-  transition-duration: 1000ms;
-}
-
-.duration-200 {
-  transition-duration: 200ms;
-}
-
-.duration-\[1100ms\] {
-  transition-duration: 1100ms;
-}
-
-.duration-\[1500ms\] {
-  transition-duration: 1500ms;
 }
 
 .ease-in-out {
