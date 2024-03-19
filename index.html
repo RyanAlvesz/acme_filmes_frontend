@@ -11,14 +11,79 @@
     <script type="module" src="./src/js/main.js" defer></script>
     <title> Login </title>
 </head>
-<body class="h-screen bg-movies bg-right-bottom bg-cover p-12 grid grid-rows-[20vh_1fr]">
-    <div class="absolute inset-0 bg-gradient-to-b from-black/80 from-40% to-black/50 -z-10"></div>
-    <header>
-        <img src="./src/images/logo.png" alt="Logo">
+<body class="h-screen bg-movies bg-right-bottom bg-cover p-12 grid grid-rows-[12vh_1fr] font-poppins">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/85 from-10% via-black/30 to-90% to-black/85 -z-10"></div>
+    <header class="flex items-center">
+        <img src="./src/images/logo.png" alt="Logo" class="h-full">
     </header>
-    <main class="-translate-y-[10vh]">
-        <div class="">
-
+    <main class="-translate-y-[calc(12vh/2)] flex items-center justify-center">
+        <div class="h-[58vh] w-[50rem] rounded-3xl shadow-[0_5px_20px_0_#A3A3A3] overflow-hidden relative">
+            <div id="form-container" class="h-full w-full flex bg-white">
+                <form class="h-full w-1/2 flex flex-col justify-center gap-5 items-center py-[3.5rem] ease-in-out duration-1000 z-10">
+                    <h2 class="text-[3rem] font-normal"> Entrar com </h2>
+                    <div class="flex items-center gap-6">
+                        <a href="#" class="flex items-center justify-center w-10 h-10 shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] rounded-full bg-light-gray ease-in-out duration-700 hover:bg-secundary hover:-translate-y-[0.15rem]">
+                            <img src="./src/images/svg/apple.svg" alt="Apple" class="w-3/5 h-3/5 hover-white-icon -translate-y-[0.1rem]">
+                        </a>
+                        <a href="#" class="flex items-center justify-center w-10 h-10 shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] rounded-full bg-light-gray ease-in-out duration-700 hover:bg-secundary hover:-translate-y-[0.15rem]">
+                            <img src="./src/images/svg/google.svg" alt="Apple" class="w-3/5 h-3/5 hover-white-icon">
+                        </a>
+                        <a href="#" class="flex items-center justify-center w-10 h-10 shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] rounded-full bg-light-gray ease-in-out duration-700 hover:bg-secundary hover:-translate-y-[0.15rem]">
+                            <img src="./src/images/svg/facebook.svg" alt="Apple" class="w-3/5 h-3/5 hover-white-icon">
+                        </a>
+                    </div>
+                    <p class="text-sm"> ou utilize sua conta </p>
+                    <div class="flex flex-col gap-3 w-full items-center">
+                        <input type="email" id="email-login" placeholder="Email" class="outline-none bg-light-gray w-[65%] px-3 py-2">
+                        <div class="grid grid-cols-[1fr_auto] items-center bg-light-gray w-[65%] px-3 py-2">
+                            <input type="password" id="password-login" placeholder="Senha" class="outline-none bg-transparent">
+                            <button class="w-5 h-5 flex items-center justify-center" type="button">
+                                <img src="./src/images/svg/clapperboard.svg" alt="Claquete" class="w-full h-full">
+                            </button>
+                        </div>
+                    </div>
+                    <a href="#">Esqueceu a senha?</a>
+                    <button class="px-10 py-2 border-secundary border-[2.5px] rounded-3xl text-secundary font-semibold flex items-center justify-center ease-in-out duration-500 hover:bg-secundary hover:text-white">Logar</button>
+                </form>
+                <form class="h-full w-1/2 flex flex-col justify-center gap-5 items-center py-[3.5rem] -translate-x-full -z-10 opacity-0 ease-in-out duration-1000">
+                    <h2 class="text-[3rem] font-normal"> Criar Conta </h2>
+                    <div class="flex items-center gap-6">
+                        <a href="#" class="flex items-center justify-center w-10 h-10 shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] rounded-full bg-light-gray ease-in-out duration-700 hover:bg-secundary hover:-translate-y-[0.15rem]">
+                            <img src="./src/images/svg/apple.svg" alt="Apple" class="w-3/5 h-3/5 hover-white-icon -translate-y-[0.1rem]">
+                        </a>
+                        <a href="#" class="flex items-center justify-center w-10 h-10 shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] rounded-full bg-light-gray ease-in-out duration-700 hover:bg-secundary hover:-translate-y-[0.15rem]">
+                            <img src="./src/images/svg/google.svg" alt="Apple" class="w-3/5 h-3/5 hover-white-icon">
+                        </a>
+                        <a href="#" class="flex items-center justify-center w-10 h-10 shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] rounded-full bg-light-gray ease-in-out duration-700 hover:bg-secundary hover:-translate-y-[0.15rem]">
+                            <img src="./src/images/svg/facebook.svg" alt="Apple" class="w-3/5 h-3/5 hover-white-icon">
+                        </a>
+                    </div>
+                    <p class="text-sm"> ou cadastrar seu email </p>
+                    <div class="flex flex-col gap-3 w-full items-center">
+                        <input type="text" id="name-register" placeholder="Nome" class="outline-none bg-light-gray w-[65%] px-3 py-2">
+                        <input type="email" id="email-register" placeholder="Email" class="outline-none bg-light-gray w-[65%] px-3 py-2">
+                        <div class="grid grid-cols-[1fr_auto] items-center bg-light-gray w-[65%] px-3 py-2">
+                            <input type="password" id="password-register" placeholder="Senha" class="outline-none bg-transparent">
+                            <button class="w-5 h-5 flex items-center justify-center" type="button">
+                                <img src="./src/images/svg/clapperboard.svg" alt="Claquete" class="w-full h-full">
+                            </button>
+                        </div>
+                    </div>
+                    <button class="px-10 py-2 border-secundary border-[2.5px] rounded-3xl text-secundary font-semibold flex items-center justify-center ease-in-out duration-500 hover:bg-secundary hover:text-white">Cadastrar</button>
+                </form>
+            </div>
+            <div id="container-overlay" class="h-full w-1/2 absolute left-0 top-0 translate-x-full ease-in-out duration-1000 z-20">
+                <div class="w-full h-full absolute flex flex-col justify-evenly items-center px-4 bg-main-soft duration-1000 ease-in-out">
+                    <h2 class="text-[3rem] font-normal text-white">Já tem conta?</h2>
+                    <p class="text-white text-xl text-center">Para acessar a ACME, faça login com as suas informações</p>
+                    <button id="button-change-overlay-login" class="px-10 py-2 border-white border-[2.5px] rounded-3xl text-white font-semibold flex items-center justify-center ease-in-out duration-500 hover:bg-white hover:text-main">Entrar</button>
+                </div>
+                <div class="w-full h-full absolute flex flex-col justify-evenly items-center px-4 bg-main-soft duration-1000 ease-in-out">
+                    <h2 class="text-[3rem] font-normal text-white">Olá Cinéfilo!</h2>
+                    <p class="text-white text-xl text-center">Cadastre-se e comece a maratonar suas séries e filmes favoritos!</p>
+                    <button id="button-change-overlay-register" class="px-10 py-2 border-white border-[2.5px] rounded-3xl text-white font-semibold flex items-center justify-center ease-in-out duration-500 hover:bg-white hover:text-main">Cadastrar</button>
+                </div>
+            </div>
         </div>
     </main>
 </body>

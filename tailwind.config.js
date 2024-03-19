@@ -8,10 +8,12 @@ module.exports = {
       },
       colors: {
         'main': '#FF0000',
+        'main-soft': '#FD3131',
         'secundary': '#3064B4',
         'dark_gray': '#141414',
         'medium_gray': '#333333',
-        'gray': '#9d9d9d'
+        'gray': '#9D9D9D',
+        'light-gray': '#E6E6E6'
       },
       backgroundImage: {
         'standard': "url('../images/icons/standard.jpg')",
@@ -32,7 +34,7 @@ module.exports = {
         'pearl': "url('../images/icons/movies/pearl.png')",
         'poor-things': "url('../images/icons/movies/poor-things.png')",
         'kill-bill': "url('../images/background.png')",
-        'movies': "url('../images/movies-bg.png')",
+        'movies': "url('../images/movies-bg.jpg')",
       },
     },
   },
