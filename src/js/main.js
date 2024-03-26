@@ -1,6 +1,6 @@
 'use strict'
 
-import { getFilmes, getFilmeById, postFilme } from "./filmes.js"
+// import { getFilmes, getFilmeById, postFilme } from "./filmes.js"
 
 const inputPasswordLogin = document.getElementById('password-login')
 const inputPasswordRegister = document.getElementById('password-register')

@@ -17,26 +17,24 @@
     <div id="background-movie" class="absolute inset-0 h-screen bg-kill-bill bg-cover bg-center bg-no-repeat bg-fixed -z-20"></div>
     <header class="flex items-center justify-between">
         <ul class="w-[30vw] h-full flex items-center text-white text-xl font-light">
-            <li class="w-[6vw] hover:font-semibold hover:text-main">
+            <li class="w-[6vw] flex items-center hover:font-semibold hover:text-main">
                 <a href="#"> FILMES </a>
             </li>
-            <li class="w-[6vw] hover:font-semibold hover:text-main">
-                <a href="#"> SÉRIES </a>
+            <li class="w-[6vw] flex items-center hover:font-semibold hover:text-main">
+                <a href="#"> ATORES </a>
             </li>
-            <li class="w-[6vw] hover:font-semibold hover:text-main">
+            <li class="w-[6vw] flex items-center hover:font-semibold hover:text-main">
                 <a href="#"> SOBRE </a>
             </li>
         </ul>
         <img src="../images/logo.png" alt="Acme Filmes" class="h-full">
         <div class="w-[30vw] h-full flex justify-end items-center gap-6">
-            <form id="search-container" class="flex overflow-hidden py-1 px-2 gap-2 rounded-md">
-                <input type="text" name="search" id="search" class="hidden w-[20vw] bg-transparent hover:outline-none text-white focus:outline-none  cursor-pointer" autocomplete="off">
-                <label id="search-button" for="search" class="h-[4vh] w-[4vh] cursor-pointer">
-                    <img src="../images/svg/search.svg" alt="" class="h-full">
-                </label>
-            </form>
-            <button class="flex items-center justify-center w-[4vh] h-[4vh] rounded-full bg-red bg-cover bg-center">
-                <a href="#" class="inline-block h-full w-full"></a>
+            <div class="flex gap-1 text-base text-white">
+                <span> Luz, Câmera e  </span>
+                <span> Gabriela </span>
+            </div>
+            <button class="flex items-center justify-center w-[5.5vh] h-[5.5vh] rounded-full bg-red bg-cover bg-center">
+                <a href="./profile.html" class="inline-block h-full w-full"></a>
             </button>
         </div>
     </header>
@@ -49,7 +47,7 @@
                 <span class="font-bold" >2003</span>
             </div>
             <div class="flex items-center gap-4">
-                <button class="bg-main rounded-3xl px-14 h-12 text-2xl text-white">
+                <button class="bg-main rounded-3xl px-14 h-12 text-2xl text-white font-semibold">
                     PLAY
                 </button>
                 <button class="h-12 rounded-full">

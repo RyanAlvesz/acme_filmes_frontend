@@ -1,32 +1,5 @@
 'use strict'
 
-const searchInput = document.getElementById('search')
-const searchButton = document.getElementById('search-button')
-const searchContainer = document.getElementById('search-container')
-// Pesquisa
-
-const closeSearchContainer = () => {
-    searchContainer.classList.remove('bg-medium_gray/70')
-    searchInput.classList.add('hidden')
-}
-
-searchButton.addEventListener('mouseover', () => {
-
-    searchContainer.classList.add('bg-medium_gray/70')
-    searchInput.classList.remove('hidden')
-
-})
-
-searchContainer.addEventListener('mouseleave', () => {
-    if(searchInput == document.activeElement == false){
-        closeSearchContainer()
-    }
-})
-
-searchInput.addEventListener('focusout', () => {
-    closeSearchContainer()
-})
-
 // Montagem de itens
 
 let moviesJSON = {
@@ -334,17 +307,18 @@ const createMoviesSection = (genre) => {
 
     let scrollNext = 350
 
+    
     arrowNext.addEventListener('click', () => {
         moviesContainer.scroll({
             top: 0,
-            left: scrollNext,
+            right: scrollNext,
             behavior: 'smooth'
         })
         scrollNext += 350
     })
-
+    
     arrowNext.appendChild(arrowImgNext)
-
+    
     const moviesContainer = document.createElement('div')
     moviesContainer.classList.add('h-full', 'flex', 'gap-6', 'w-[calc(100vw-7rem)]', 'overflow-x-scroll', 'overflow-y-hidden', 'place-self-center')
     

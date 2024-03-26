@@ -13,7 +13,8 @@ module.exports = {
         'dark_gray': '#141414',
         'medium_gray': '#333333',
         'gray': '#9D9D9D',
-        'light-gray': '#E6E6E6'
+        'light-gray': '#E6E6E6',
+        'gray-shadow': '#373737'
       },
       backgroundImage: {
         'standard': "url('../images/icons/standard.jpg')",
@@ -35,6 +36,7 @@ module.exports = {
         'poor-things': "url('../images/icons/movies/poor-things.png')",
         'kill-bill': "url('../images/background.png')",
         'movies': "url('../images/movies-bg.jpg')",
+        'barbie-banner': "url('../images/barbie-banner.png')",
       },
     },
   },
