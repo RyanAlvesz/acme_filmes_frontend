@@ -9,7 +9,12 @@ const buttonChangeOverlayRegister = document.getElementById('button-change-overl
 const buttonChangeOverlayLogin = document.getElementById('button-change-overlay-login')
 const containerOverlay = document.getElementById('container-overlay')
 const formContainer = document.getElementById('form-container')
+const buttonLogin = document.getElementById('login')
+const buttonRegister = document.getElementById('register')
 
+const signIn = () => {
+    window.location.href = './src/pages/whos-whatching.html'
+}
 
 const changeInputPasswordVisibilty = (e) => {
     
@@ -80,3 +85,5 @@ inputPasswordLogin.nextElementSibling.addEventListener('click', changeInputPassw
 inputPasswordRegister.nextElementSibling.addEventListener('click', changeInputPasswordVisibilty)
 buttonChangeOverlayRegister.addEventListener('click', moveOverlay)
 buttonChangeOverlayLogin.addEventListener('click', moveOverlay)
+buttonLogin.addEventListener('click', signIn)
+buttonRegister.addEventListener('click', signIn)

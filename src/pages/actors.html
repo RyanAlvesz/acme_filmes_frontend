@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/output.css">
+    <link rel="stylesheet" href="../css/remove-scrollbar.css">
+    <script src="../js/search-bar-animation.js" defer></script>
+    <script src="../js/header-color.js" defer></script>
+    <script src="../js/actors.js" type="module" defer></script>
+    <title>Atores</title>
+</head>
+<body class="min-h-screen font-poppins bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray grid grid-rows-[14vh_1fr] pb-12 relative gap-8">
+    <header id="70" class="grid grid-cols-[35vw_1fr_35vw] items-center sticky top-0 px-14 ease-linear duration-200 z-50">
+        <a href="./home.html" class="h-[10vh]">
+            <img src="../images/logo.png" alt="Acme Filmes" class="h-full">
+        </a>
+        <h2 class="text-white text-3xl font-semibold place-self-center">
+            ATORES
+        </h2>
+        <form id="search-container" class="flex overflow-hidden py-1 px-2 gap-2 rounded-md justify-self-end place-self-center">
+            <input type="text" name="search" id="search" class="hidden w-[25vw] bg-transparent hover:outline-none text-white focus:outline-none cursor-pointer" placeholder="Procurando por um ator?" autocomplete="off">
+            <label id="search-button" for="search" class="h-[4vh] w-[4vh] cursor-pointer">
+                <img src="../images/svg/search.svg" alt="" class="h-full">
+            </label>
+        </form>
+    </header>
+    <main id="main" class="flex flex-wrap gap-10 px-14">
+        <button class="grid grid-cols-[calc(((86vh-2rem*2)/3)*35/45)_1fr] w-[calc((100vw-7rem-2.5rem*2)/3)] h-[calc((86vh-2rem*2)/3)] drop-shadow-[0px_0px_2px_#373737] bg-dark_gray shadow-secundary shadow-[-5px_5px_0_0] rounded-xl overflow-hidden ease-linear duration-200 hover:shadow-main hover:scale-[1.01]">
+            <img src="../images/icons/taylor/midnights.jpg" alt="Taylor Swift" class="h-full w-full object-cover">
+            <a href="./actor-info.html" class="text-white flex flex-col items-center justify-center h-full gap-2">
+                <h2 class="text-2xl font-semibold drop-shadow-[-1px_1px_0px_#ff0000]">Taylor Swift</h2>
+                <p class="text-xl">34 anos</p>
+            </a>
+        </button>
+    </main>
+</body>
+</html>

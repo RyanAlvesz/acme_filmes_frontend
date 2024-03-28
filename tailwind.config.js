@@ -14,7 +14,8 @@ module.exports = {
         'medium_gray': '#333333',
         'gray': '#9D9D9D',
         'light-gray': '#E6E6E6',
-        'gray-shadow': '#373737'
+        'gray-shadow': '#373737',
+        'gray-header': '#121212'
       },
       backgroundImage: {
         'standard': "url('../images/icons/standard.jpg')",

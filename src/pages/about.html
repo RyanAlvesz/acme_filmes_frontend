@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/output.css">
+    <script src="../js/back.js" defer></script>
+    <title>Sobre</title>
+</head>
+<body class="min-h-screen font-poppins bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray grid grid-rows-[14vh_1fr] relative gap-8">
+    <header class="flex items-center px-14 pt-8">
+        <button id="back" class="flex gap-2 items-center justify-center">
+            <img src="../images/svg/arrow-left.svg" alt="Voltar" class="w-10 h-10">
+            <span class="text-white text-2xl font-medium"> VOLTAR </span>
+        </button>
+    </header>
+    <main id="main" class="flex flex-col px-14 w-1/2 text-white items-center gap-12">
+
+        <a href="https://github.com/RyanAlvesz" class="flex flex-col items-center relative gap-4">
+            <div class="w-[calc(13rem+6px)] h-[calc(13rem+6px)] rounded-full bg-gradient-to-r from-secundary to-main absolute -translate-y-[3px]"></div>
+            <img src="https://avatars.githubusercontent.com/u/123594568?v=4" alt="Ryan" class="w-52 h-52 rounded-full z-50">
+            <p class="text-2xl font-semibold">Ryan Alves</p>
+        </a>
+
+        <p class="text-2xl text-justify">
+            Acme Filmes é um projeto desenvolvido por
+                <a href="https://www.linkedin.com/in/ryan-alvesz/" class="font-bold hover:underline text-secundary"> Ryan Alves </a>
+            durante o curso de Desenvolvimento de sistemas do
+                <a href="https://www.linkedin.com/school/senai-jandira/mycompany/" class="font-bold hover:underline text-main"> Senai de Jandira </a>.
+            É um projeto full-stack, com o Back-End em Node.js, o banco de dados em MySQL e o Front-End em HTML, CSS, JAVASCRIPT e TailwindCSS. Todo o processo foi orietado pelos professores 
+                <a href="https://www.linkedin.com/in/marcelnt/" class="font-bold hover:underline text-secundary"> Marcel Teixeira</a> e
+                <a href="https://www.linkedin.com/in/fernandoleonid/" class="font-bold hover:underline text-main"> Fernando Leonid </a>
+        </p>
+
+    </main>
+    <div id="actor-photo" class="absolute right-0 top-0 bottom-0 w-1/2 bg-cover bg-[url('https://i.pinimg.com/564x/0b/5b/e8/0b5be8dc0867decfb8997a8a75919e3a.jpg')] bg-bottom flex justify-center pt-8">
+        <img src="../images/logo.png" alt="Acme Filmes" class="h-32">
+    </div>
+</body>
+</html>

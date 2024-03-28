@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/output.css">
+    <link rel="stylesheet" href="../css/remove-scrollbar.css">
+    <script src="../js/actor-info.js" type="module" defer></script>
+    <script src="../js/back.js" defer></script>
+    <title>Taylor Swift</title>
+</head>
+<body class="min-h-screen font-poppins bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray grid grid-rows-[14vh_1fr] relative gap-8">
+    <header class="flex items-center px-14 pt-8">
+        <button id="back" class="flex gap-2 items-center justify-center">
+            <img src="../images/svg/arrow-left.svg" alt="Voltar" class="w-10 h-10">
+            <span class="text-white text-2xl font-medium"> VOLTAR </span>
+        </button>
+    </header>
+    <main id="main" class="flex flex-col gap-12 px-14 w-1/2 text-white">
+        <div class="flex flex-col gap-4 relative">
+            <h2 class="text-[4.5rem] font-bold text-main absolute translate-x-[5px] -translate-y-[5px]">Taylor Swift</h2>
+            <h2 class="text-[4.5rem] font-bold drop-shadow-[-5px_5px_0px_#3064B4]">Taylor Swift</h2>
+            <span class="text-2xl font-semibold"> 13/12/1989</span>
+        </div>
+        <p class="text-justify text-2xl"> Taylor Alison Swift é uma cantora, compositora, atriz, diretora e roteirista norte-americana. Suas composições narrativas, muitas vezes inspiradas pelas suas experiências pessoais, têm recebido ampla cobertura mediática e elogios de críticos. </p>
+        <div class="flex flex-col gap-6">
+            <p class="text-2xl font-semibold">FILMES</p>
+            <div id="actor-movies-container" class="flex overflow-x-auto overflow-y-hidden h-[20vh] w-[calc(50vw-7rem)] gap-6"></div>
+        </div>
+    </main>
+    <div id="actor-photo" class="absolute right-0 top-0 bottom-0 w-1/2 bg-midnights bg-cover bg-center"></div>
+</body>
+</html>

@@ -9,38 +9,41 @@
     <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/output.css">
     <link rel="stylesheet" href="../css/home.css">
+    <script src="../js/header-color.js" defer></script>
     <script src="../js/home.js" type="module" defer></script>
     <title>Home</title>
 </head>
-<body class="min-h-screen font-poppins bg-dark_gray grid grid-rows-[10vh_1fr] px-14 pt-8 relative">
+<body class="min-h-screen font-poppins bg-dark_gray grid grid-rows-[calc(10vh+2rem)_1fr] relative">
     <div class="absolute inset-0 gradiente h-screen -z-10"></div>
     <div id="background-movie" class="absolute inset-0 h-screen bg-kill-bill bg-cover bg-center bg-no-repeat bg-fixed -z-20"></div>
-    <header class="flex items-center justify-between">
+    <header id="90" class="flex items-center justify-between sticky top-0 px-14 z-[1000] ease-linear duration-200 z-50">
         <ul class="w-[30vw] h-full flex items-center text-white text-xl font-light">
-            <li class="w-[6vw] flex items-center hover:font-semibold hover:text-main">
-                <a href="#"> FILMES </a>
+            <li class="w-[7vw] flex items-center hover:font-semibold hover:text-main">
+                <a href="./movies.html"> FILMES </a>
             </li>
-            <li class="w-[6vw] flex items-center hover:font-semibold hover:text-main">
-                <a href="#"> ATORES </a>
+            <li class="w-[7vw] flex items-center hover:font-semibold hover:text-main">
+                <a href="./actors.html"> ATORES </a>
             </li>
-            <li class="w-[6vw] flex items-center hover:font-semibold hover:text-main">
-                <a href="#"> SOBRE </a>
+            <li class="w-[7vw] flex items-center hover:font-semibold hover:text-main">
+                <a href="./about.html"> SOBRE </a>
             </li>
         </ul>
-        <img src="../images/logo.png" alt="Acme Filmes" class="h-full">
-        <div class="w-[30vw] h-full flex justify-end items-center gap-6">
+        <button id="scroll-home" class="h-3/5">
+            <img src="../images/logo.png" alt="Acme Filmes" class="h-full">
+        </button>
+        <div class="w-[30vw] h-full flex justify-end items-center gap-3">
             <div class="flex gap-1 text-base text-white">
-                <span> Luz, Câmera e  </span>
-                <span> Gabriela </span>
+                <span> Bem-vinde </span>
+                <span id="user-nickname"> Gabriela </span>
             </div>
             <button class="flex items-center justify-center w-[5.5vh] h-[5.5vh] rounded-full bg-red bg-cover bg-center">
                 <a href="./profile.html" class="inline-block h-full w-full"></a>
             </button>
         </div>
     </header>
-    <main id="main" class="flex flex-col">
+    <main id="main" class="flex flex-col px-14">
         <div class="flex flex-col h-[calc(50vh-2rem)] justify-center gap-6">
-            <h2 class="font-bold text-[4.5rem] text-white leading-[115%] w-[25%] "> Kill Bill Volume 1</h2>
+            <h2 class="font-bold text-[5rem] text-white leading-[115%] w-[35%] "> Kill Bill Volume 1</h2>
             <div class="text-white flex items-center gap-3">
                 <span>Um filme por Quentin Tarantino</span>
                 <span class="text-secundary font-bold">99% Match</span>

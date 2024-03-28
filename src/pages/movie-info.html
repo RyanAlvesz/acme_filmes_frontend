@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/output.css">
-    <script src="../js/movies.js" type="module" defer></script>
+    <script src="../js/movie-info.js" type="module" defer></script>
+    <script src="../js/back.js" defer></script>
     <title> Barbie </title>
 </head>
 <body class="h-screen font-poppins bg-dark_gray grid grid-rows-[10vh_1fr] bg-barbie-banner bg-cover bg-center px-14 pt-8 relative">
@@ -21,17 +22,18 @@
     </header>
     <main class="grid grid-rows-2 justify-center py-8">
         <div class="flex gap-6 items-center">
-            <button class="h-[30vh] w-[calc(22vh)] bg-barbie bg-cover bg-center flex items-center justify-center rounded-xl flex-shrink-0">
+            <button class="h-[32vh] w-[calc(32vh*30/45)] bg-barbie bg-cover bg-center flex items-center justify-center rounded-xl flex-shrink-0">
                 <img src="../images/svg/play.svg" alt="Assistir" class="w-6 h-6">
             </button>
-            <div class="flex flex-col gap-4 text-white h-[30vh]">
+            <div class="flex flex-col gap-4 justify-center text-white h-[30vh]">
                 <div class="flex gap-6 items-center">
-                    <h1 class="font-semibold text-[4.5rem] uppercase" id="movie-title"> Barbie </h1>
+                    <h1 class="font-semibold text-[4.5rem] uppercase leading-none" id="movie-title"> Barbie </h1>
                     <button class="h-12 w-12">
                         <img src="../images/svg/add.svg" alt="Adicionar" class="h-full">
                     </button>
                 </div>
                 <p class="text-xl text-justify w-1/2" id="movie-description">Depois de ser expulsa da Barbieland por ser uma boneca de aparência menos do que perfeita, Barbie parte para o mundo humano em busca da verdadeira felicidade.</p>
+                <p class="text-2xl text-justify w-1/2 font-semibold" id="movie-classification">12 anos</p>
             </div>
         </div>
         <div class="grid grid-cols-2 text-white">
@@ -50,8 +52,8 @@
             <div class="flex flex-col gap-4 text-xl font-light">
                 <h3 class="uppercase font-semibold"> Atores </h3>
                 <div class="flex flex-col gap-4">
-                    <a href="#" id="movie-duration" class="hover:underline w-fit"> Margot Robbie </a>
-                    <a href="#" id="movie-duration" class="hover:underline w-fit"> Ryan Goslin </a>
+                    <a href="./actor-info.html" id="movie-duration" class="hover:underline w-fit"> Margot Robbie </a>
+                    <a href="./actor-info.html" id="movie-duration" class="hover:underline w-fit"> Ryan Goslin </a>
                 </div>
             </div>
         </div>
