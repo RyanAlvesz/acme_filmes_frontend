@@ -11,22 +11,22 @@
     <script src="../js/back.js" defer></script>
     <title>Sobre</title>
 </head>
-<body class="min-h-screen font-poppins bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray grid grid-rows-[14vh_1fr] relative gap-8">
-    <header class="flex items-center px-14 pt-8">
+<body class="min-h-screen font-poppins bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray grid grid-rows-[14vh_1fr] relative gap-8 max-md:grid-rows-[7vh_1fr]">
+    <header class="flex items-center px-14 pt-8 max-md:px-8">
         <button id="back" class="flex gap-2 items-center justify-center">
-            <img src="../images/svg/arrow-left.svg" alt="Voltar" class="w-10 h-10">
-            <span class="text-white text-2xl font-medium"> VOLTAR </span>
+            <img src="../images/svg/arrow-left.svg" alt="Voltar" class="w-10 h-10 max-md:h-8 max-md:w-8">
+            <span class="text-white text-2xl font-medium max-md:text-xl"> VOLTAR </span>
         </button>
     </header>
-    <main id="main" class="flex flex-col px-14 w-1/2 text-white items-center gap-12">
+    <main id="main" class="flex flex-col px-14 w-1/2 text-white items-center gap-12 max-md:w-full max-lg:gap-6 max-md:px-8">
 
         <a href="https://github.com/RyanAlvesz" class="flex flex-col items-center relative gap-4">
-            <div class="w-[calc(13rem+6px)] h-[calc(13rem+6px)] rounded-full bg-gradient-to-r from-secundary to-main absolute -translate-y-[3px]"></div>
-            <img src="https://avatars.githubusercontent.com/u/123594568?v=4" alt="Ryan" class="w-52 h-52 rounded-full z-50">
-            <p class="text-2xl font-semibold">Ryan Alves</p>
+            <div class="w-[calc(13rem+6px)] h-[calc(13rem+6px)] rounded-full bg-gradient-to-r from-secundary to-main absolute -translate-y-[3px] max-lg:w-[calc(9rem+6px)] max-lg:h-[calc(9rem+6px)] max-sm:w-[calc(7rem+6px)] max-sm:h-[calc(7rem+6px)]"></div>
+            <img src="https://avatars.githubusercontent.com/u/123594568?v=4" alt="Ryan" class="w-52 h-52 max-lg:w-36 max-lg:h-36 max-sm:w-28 max-sm:h-28 rounded-full z-50">
+            <p class="text-2xl font-semibold max-md:text-xl">Ryan Alves</p>
         </a>
 
-        <p class="text-2xl text-justify">
+        <p class="text-2xl text-justify max-lg:text-xl max-sm:text-[1.1rem]">
             Acme Filmes é um projeto desenvolvido por
                 <a href="https://www.linkedin.com/in/ryan-alvesz/" class="font-bold hover:underline text-secundary"> Ryan Alves </a>
             durante o curso de Desenvolvimento de sistemas do
@@ -37,8 +37,9 @@
         </p>
 
     </main>
-    <div id="actor-photo" class="absolute right-0 top-0 bottom-0 w-1/2 bg-cover bg-[url('../images/lalaland.jpg')] bg-center flex justify-center pt-8">
-        <img src="../images/logo.png" alt="Acme Filmes" class="h-32">
+    <div id="actor-photo" class="absolute right-0 top-0 bottom-0 w-1/2 bg-cover bg-[url('../images/lalaland.jpg')] bg-center max-md:hidden"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-b from-dark_gray via-dark_gray/10 to-dark_gray flex justify-center pt-8 max-md:hidden">
+        <img src="../images/logo.png" alt="Acme Filmes" class="h-32 opacity-95">
     </div>
 </body>
 </html>

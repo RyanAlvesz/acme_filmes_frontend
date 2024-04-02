@@ -7,6 +7,31 @@ import { createMoviesCard } from "./movie-card.js"
 
 const scrollHome = document.getElementById('scroll-home')
 
+
+const featuredMovie = {
+    cover: '../images/background.png',
+    title: 'Kill Bill Volume 1',
+    year: '2003',
+    director: 'Quentin Tarantino'
+}
+
+const setFeaturedMovie = (featuredMovie) => {
+    
+    // featured movie infos
+    const FMcover = document.getElementById('featured-movie-bagckround')
+    const FMtitle = document.getElementById('featured-movie-title')
+    const FMyear = document.getElementById('featured-movie-year')
+    const FMdirector = document.getElementById('featured-movie-director')
+
+    FMcover.style.backgroundImage = `url('${featuredMovie.cover}')`
+    FMtitle.textContent = featuredMovie.title
+    FMyear.textContent = featuredMovie.year
+    FMdirector.textContent = featuredMovie.director
+
+}
+
+setFeaturedMovie(featuredMovie)
+
 scrollHome.addEventListener('click', () => {
 
     window.scroll({
@@ -17,10 +42,8 @@ scrollHome.addEventListener('click', () => {
 })
 
 let cardSize = {
-
     h: 'h-[calc(36vh-1rem-2rem)]',
     w: 'w-[calc((36vh-1rem-2rem)*300/450)]'
-
 }
 
 const createMoviesSection = (genre) => {
@@ -31,26 +54,6 @@ const createMoviesSection = (genre) => {
     const h2 = document.createElement('h2')
     h2.classList.add('font-semibold', 'text-white', 'text-3xl', 'h-[4vh]')
     h2.textContent = genre.nome.toUpperCase()
-
-    const arrowPrev = document.createElement('button')
-    arrowPrev.classList.add('flex', 'h-[15vh]', 'w-10', '-top-[calc(5vh-50%)]', '-translate-x-full', 'absolute', 'left-0', 'items-center', 'justify-center', 'opacity-0', 'ease-linear', 'duration-200')
-    
-    const arrowImgPrev = document.createElement('img')
-    arrowImgPrev.classList.add('h-full', 'w-full')
-    arrowImgPrev.src = '../images/svg/arrow-prev.svg'
-    arrowImgPrev.alt = 'Seta para esquerda'
-
-    arrowPrev.appendChild(arrowImgPrev)
-    
-    const arrowNext = document.createElement('button')
-    arrowNext.classList.add('flex', 'h-[15vh]', 'w-10', 'right-0', '-top-[calc(5vh-50%)]', 'translate-x-full', 'absolute', 'items-center', 'justify-center', 'opacity-0', 'ease-linear', 'duration-200')
-    
-    const arrowImgNext = document.createElement('img')
-    arrowImgNext.classList.add('h-full', 'w-full')
-    arrowImgNext.src = '../images/svg/arrow-next.svg'
-    arrowImgNext.alt = 'Seta para direita'
-
-    arrowNext.appendChild(arrowImgNext)
     
     const moviesContainer = document.createElement('div')
     moviesContainer.classList.add('h-[calc(36vh-1rem-2rem+1rem)]', 'flex', 'items-end', 'gap-6', 'w-[calc(100vw-7rem)]', 'overflow-x-auto', 'place-self-center', '-translate-y-[0.75rem]')
@@ -73,31 +76,7 @@ const createMoviesSection = (genre) => {
 
     })
 
-    arrowNext.addEventListener('click', () => {
-        moviesContainer.style.scrollBehavior = 'smooth'
-        moviesContainer.scrollLeft += 900
-    })
-    
-    arrowPrev.addEventListener('click', () => {
-        moviesContainer.style.scrollBehavior = 'smooth'
-        moviesContainer.scrollLeft -= 900
-    })
-
-    section.addEventListener('mouseover', () => {
-
-        arrowNext.classList.remove('opacity-0')
-        arrowPrev.classList.remove('opacity-0')
-
-    })
-
-    section.addEventListener('mouseout', () => {
-
-        arrowNext.classList.add('opacity-0')
-        arrowPrev.classList.add ('opacity-0')
-
-    })
-
-    section.replaceChildren(h2, arrowPrev, moviesContainer, arrowNext)
+    section.replaceChildren(h2, moviesContainer)
 
     return section
 

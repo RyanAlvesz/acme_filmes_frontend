@@ -1,7 +1,8 @@
 export const createMoviesCard = (movie, size, hover) => {
 
     const button = document.createElement('button')
-    button.classList.add(size.h, size.w, 'flex-shrink-0', `bg-${movie.poster}`, 'rounded-md', 'bg-cover', 'bg-center', 'ease-linear', 'duration-300')
+    button.classList.add(size.h, size.w, 'flex-shrink-0', 'rounded-md', 'bg-cover', 'bg-center', 'ease-linear', 'duration-300')
+    button.style.backgroundImage = `url('${movie.poster}')`
 
     button.addEventListener('click', () => {localStorage.setItem('movieId', movie.id)})
 

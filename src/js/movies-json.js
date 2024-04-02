@@ -10,82 +10,82 @@ export let moviesJSON = {
                 {
                     id: 1,
                     nome: 'Barbie',
-                    poster: 'barbie'
+                    poster: '../images/icons/movies/barbie.png'
                 },
                 {
                     id: 2,
                     nome: 'Pobres Criaturas',
-                    poster: 'poor-things'
+                    poster: '../images/icons/movies/poor-things.png'
                 },
                 {
                     id: 3,
                     nome: 'Adoráveis Mulheres',
-                    poster: 'little-women'
+                    poster: '../images/icons/movies/little-women.png'
                 },
                 {
                     id: 4,
                     nome: 'Oppenheimer',
-                    poster: 'oppenheimer'
+                    poster: '../images/icons/movies/oppenheimer.png'
                 },
                 {
                     id: 5,
                     nome: 'Bastardos Inglórios',
-                    poster: 'inglorious-bastards'
+                    poster: '../images/icons/movies/inglorious-bastards.png'
                 },
                 {
                     id: 6,
                     nome: 'Pearl',
-                    poster: 'pearl'
+                    poster: '../images/icons/movies/pearl.png'
                 },
                 {
                     id: 7,
                     nome: 'Harry Potter e as Relíquias da Morte parte 2 ',
-                    poster: 'harry-potter'
+                    poster: '../images/icons/movies/harry-potter.png'
                 },
                 {
                     id: 8,
                     nome: 'Jogos Vorazes em Chamas',
-                    poster: 'hunger-games'
+                    poster: '../images/icons/movies/hunger-games.png'
                 },
                 {
                     id: 1,
                     nome: 'Barbie',
-                    poster: 'barbie'
+                    poster: '../images/icons/movies/barbie.png'
                 },
                 {
                     id: 2,
                     nome: 'Pobres Criaturas',
-                    poster: 'poor-things'
+                    poster: '../images/icons/movies/poor-things.png'
                 },
                 {
                     id: 3,
                     nome: 'Adoráveis Mulheres',
-                    poster: 'little-women'
+                    poster: '../images/icons/movies/little-women.png'
                 },
                 {
                     id: 4,
                     nome: 'Oppenheimer',
-                    poster: 'oppenheimer'
+                    poster: '../images/icons/movies/oppenheimer.png'
                 },
                 {
                     id: 5,
                     nome: 'Bastardos Inglórios',
-                    poster: 'inglorious-bastards'
+                    poster: '../images/icons/movies/inglorious-bastards.png'
                 },
                 {
                     id: 6,
                     nome: 'Pearl',
-                    poster: 'pearl'
+                    poster: '../images/icons/movies/pearl.png'
                 },
                 {
                     id: 7,
                     nome: 'Harry Potter e as Relíquias da Morte parte 2 ',
-                    poster: 'harry-potter'
+                    poster: '../images/icons/movies/harry-potter.png'
                 },
                 {
                     id: 8,
                     nome: 'Jogos Vorazes em Chamas',
-                    poster: 'hunger-games'
+                    poster: '../images/icons/movies/hunger-games.png'
                 }
             ]
         },
@@ -96,82 +96,82 @@ export let moviesJSON = {
                 {
                     id: 1,
                     nome: 'Barbie',
-                    poster: 'barbie'
+                    poster: '../images/icons/movies/barbie.png'
                 },
                 {
                     id: 2,
                     nome: 'Pobres Criaturas',
-                    poster: 'poor-things'
+                    poster: '../images/icons/movies/poor-things.png'
                 },
                 {
                     id: 3,
                     nome: 'Adoráveis Mulheres',
-                    poster: 'little-women'
+                    poster: '../images/icons/movies/little-women.png'
                 },
                 {
                     id: 4,
                     nome: 'Oppenheimer',
-                    poster: 'oppenheimer'
+                    poster: '../images/icons/movies/oppenheimer.png'
                 },
                 {
                     id: 5,
                     nome: 'Bastardos Inglórios',
-                    poster: 'inglorious-bastards'
+                    poster: '../images/icons/movies/inglorious-bastards.png'
                 },
                 {
                     id: 6,
                     nome: 'Pearl',
-                    poster: 'pearl'
+                    poster: '../images/icons/movies/pearl.png'
                 },
                 {
                     id: 7,
                     nome: 'Harry Potter e as Relíquias da Morte parte 2 ',
-                    poster: 'harry-potter'
+                    poster: '../images/icons/movies/harry-potter.png'
                 },
                 {
                     id: 8,
                     nome: 'Jogos Vorazes em Chamas',
-                    poster: 'hunger-games'
+                    poster: '../images/icons/movies/hunger-games.png'
                 },
                 {
                     id: 1,
                     nome: 'Barbie',
-                    poster: 'barbie'
+                    poster: '../images/icons/movies/barbie.png'
                 },
                 {
                     id: 2,
                     nome: 'Pobres Criaturas',
-                    poster: 'poor-things'
+                    poster: '../images/icons/movies/poor-things.png'
                 },
                 {
                     id: 3,
                     nome: 'Adoráveis Mulheres',
-                    poster: 'little-women'
+                    poster: '../images/icons/movies/little-women.png'
                 },
                 {
                     id: 4,
                     nome: 'Oppenheimer',
-                    poster: 'oppenheimer'
+                    poster: '../images/icons/movies/oppenheimer.png'
                 },
                 {
                     id: 5,
                     nome: 'Bastardos Inglórios',
-                    poster: 'inglorious-bastards'
+                    poster: '../images/icons/movies/inglorious-bastards.png'
                 },
                 {
                     id: 6,
                     nome: 'Pearl',
-                    poster: 'pearl'
+                    poster: '../images/icons/movies/pearl.png'
                 },
                 {
                     id: 7,
                     nome: 'Harry Potter e as Relíquias da Morte parte 2 ',
-                    poster: 'harry-potter'
+                    poster: '../images/icons/movies/harry-potter.png'
                 },
                 {
                     id: 8,
                     nome: 'Jogos Vorazes em Chamas',
-                    poster: 'hunger-games'
+                    poster: '../images/icons/movies/hunger-games.png'
                 }
             ]
         },
@@ -182,82 +182,82 @@ export let moviesJSON = {
                 {
                     id: 1,
                     nome: 'Barbie',
-                    poster: 'barbie'
+                    poster: '../images/icons/movies/barbie.png'
                 },
                 {
                     id: 2,
                     nome: 'Pobres Criaturas',
-                    poster: 'poor-things'
+                    poster: '../images/icons/movies/poor-things.png'
                 },
                 {
                     id: 3,
                     nome: 'Adoráveis Mulheres',
-                    poster: 'little-women'
+                    poster: '../images/icons/movies/little-women.png'
                 },
                 {
                     id: 4,
                     nome: 'Oppenheimer',
-                    poster: 'oppenheimer'
+                    poster: '../images/icons/movies/oppenheimer.png'
                 },
                 {
                     id: 5,
                     nome: 'Bastardos Inglórios',
-                    poster: 'inglorious-bastards'
+                    poster: '../images/icons/movies/inglorious-bastards.png'
                 },
                 {
                     id: 6,
                     nome: 'Pearl',
-                    poster: 'pearl'
+                    poster: '../images/icons/movies/pearl.png'
                 },
                 {
                     id: 7,
                     nome: 'Harry Potter e as Relíquias da Morte parte 2 ',
-                    poster: 'harry-potter'
+                    poster: '../images/icons/movies/harry-potter.png'
                 },
                 {
                     id: 8,
                     nome: 'Jogos Vorazes em Chamas',
-                    poster: 'hunger-games'
+                    poster: '../images/icons/movies/hunger-games.png'
                 },
                 {
                     id: 1,
                     nome: 'Barbie',
-                    poster: 'barbie'
+                    poster: '../images/icons/movies/barbie.png'
                 },
                 {
                     id: 2,
                     nome: 'Pobres Criaturas',
-                    poster: 'poor-things'
+                    poster: '../images/icons/movies/poor-things.png'
                 },
                 {
                     id: 3,
                     nome: 'Adoráveis Mulheres',
-                    poster: 'little-women'
+                    poster: '../images/icons/movies/little-women.png'
                 },
                 {
                     id: 4,
                     nome: 'Oppenheimer',
-                    poster: 'oppenheimer'
+                    poster: '../images/icons/movies/oppenheimer.png'
                 },
                 {
                     id: 5,
                     nome: 'Bastardos Inglórios',
-                    poster: 'inglorious-bastards'
+                    poster: '../images/icons/movies/inglorious-bastards.png'
                 },
                 {
                     id: 6,
                     nome: 'Pearl',
-                    poster: 'pearl'
+                    poster: '../images/icons/movies/pearl.png'
                 },
                 {
                     id: 7,
                     nome: 'Harry Potter e as Relíquias da Morte parte 2 ',
-                    poster: 'harry-potter'
+                    poster: '../images/icons/movies/harry-potter.png'
                 },
                 {
                     id: 8,
                     nome: 'Jogos Vorazes em Chamas',
-                    poster: 'hunger-games'
+                    poster: '../images/icons/movies/hunger-games.png'
                 }
             ]
         },
@@ -268,82 +268,82 @@ export let moviesJSON = {
                 {
                     id: 1,
                     nome: 'Barbie',
-                    poster: 'barbie'
+                    poster: '../images/icons/movies/barbie.png'
                 },
                 {
                     id: 2,
                     nome: 'Pobres Criaturas',
-                    poster: 'poor-things'
+                    poster: '../images/icons/movies/poor-things.png'
                 },
                 {
                     id: 3,
                     nome: 'Adoráveis Mulheres',
-                    poster: 'little-women'
+                    poster: '../images/icons/movies/little-women.png'
                 },
                 {
                     id: 4,
                     nome: 'Oppenheimer',
-                    poster: 'oppenheimer'
+                    poster: '../images/icons/movies/oppenheimer.png'
                 },
                 {
                     id: 5,
                     nome: 'Bastardos Inglórios',
-                    poster: 'inglorious-bastards'
+                    poster: '../images/icons/movies/inglorious-bastards.png'
                 },
                 {
                     id: 6,
                     nome: 'Pearl',
-                    poster: 'pearl'
+                    poster: '../images/icons/movies/pearl.png'
                 },
                 {
                     id: 7,
                     nome: 'Harry Potter e as Relíquias da Morte parte 2 ',
-                    poster: 'harry-potter'
+                    poster: '../images/icons/movies/harry-potter.png'
                 },
                 {
                     id: 8,
                     nome: 'Jogos Vorazes em Chamas',
-                    poster: 'hunger-games'
+                    poster: '../images/icons/movies/hunger-games.png'
                 },
                 {
                     id: 1,
                     nome: 'Barbie',
-                    poster: 'barbie'
+                    poster: '../images/icons/movies/barbie.png'
                 },
                 {
                     id: 2,
                     nome: 'Pobres Criaturas',
-                    poster: 'poor-things'
+                    poster: '../images/icons/movies/poor-things.png'
                 },
                 {
                     id: 3,
                     nome: 'Adoráveis Mulheres',
-                    poster: 'little-women'
+                    poster: '../images/icons/movies/little-women.png'
                 },
                 {
                     id: 4,
                     nome: 'Oppenheimer',
-                    poster: 'oppenheimer'
+                    poster: '../images/icons/movies/oppenheimer.png'
                 },
                 {
                     id: 5,
                     nome: 'Bastardos Inglórios',
-                    poster: 'inglorious-bastards'
+                    poster: '../images/icons/movies/inglorious-bastards.png'
                 },
                 {
                     id: 6,
                     nome: 'Pearl',
-                    poster: 'pearl'
+                    poster: '../images/icons/movies/pearl.png'
                 },
                 {
                     id: 7,
                     nome: 'Harry Potter e as Relíquias da Morte parte 2 ',
-                    poster: 'harry-potter'
+                    poster: '../images/icons/movies/harry-potter.png'
                 },
                 {
                     id: 8,
                     nome: 'Jogos Vorazes em Chamas',
-                    poster: 'hunger-games'
+                    poster: '../images/icons/movies/hunger-games.png'
                 }
             ]
         },
@@ -354,82 +354,82 @@ export let moviesJSON = {
                 {
                     id: 1,
                     nome: 'Barbie',
-                    poster: 'barbie'
+                    poster: '../images/icons/movies/barbie.png'
                 },
                 {
                     id: 2,
                     nome: 'Pobres Criaturas',
-                    poster: 'poor-things'
+                    poster: '../images/icons/movies/poor-things.png'
                 },
                 {
                     id: 3,
                     nome: 'Adoráveis Mulheres',
-                    poster: 'little-women'
+                    poster: '../images/icons/movies/little-women.png'
                 },
                 {
                     id: 4,
                     nome: 'Oppenheimer',
-                    poster: 'oppenheimer'
+                    poster: '../images/icons/movies/oppenheimer.png'
                 },
                 {
                     id: 5,
                     nome: 'Bastardos Inglórios',
-                    poster: 'inglorious-bastards'
+                    poster: '../images/icons/movies/inglorious-bastards.png'
                 },
                 {
                     id: 6,
                     nome: 'Pearl',
-                    poster: 'pearl'
+                    poster: '../images/icons/movies/pearl.png'
                 },
                 {
                     id: 7,
                     nome: 'Harry Potter e as Relíquias da Morte parte 2 ',
-                    poster: 'harry-potter'
+                    poster: '../images/icons/movies/harry-potter.png'
                 },
                 {
                     id: 8,
                     nome: 'Jogos Vorazes em Chamas',
-                    poster: 'hunger-games'
+                    poster: '../images/icons/movies/hunger-games.png'
                 },
                 {
                     id: 1,
                     nome: 'Barbie',
-                    poster: 'barbie'
+                    poster: '../images/icons/movies/barbie.png'
                 },
                 {
                     id: 2,
                     nome: 'Pobres Criaturas',
-                    poster: 'poor-things'
+                    poster: '../images/icons/movies/poor-things.png'
                 },
                 {
                     id: 3,
                     nome: 'Adoráveis Mulheres',
-                    poster: 'little-women'
+                    poster: '../images/icons/movies/little-women.png'
                 },
                 {
                     id: 4,
                     nome: 'Oppenheimer',
-                    poster: 'oppenheimer'
+                    poster: '../images/icons/movies/oppenheimer.png'
                 },
                 {
                     id: 5,
                     nome: 'Bastardos Inglórios',
-                    poster: 'inglorious-bastards'
+                    poster: '../images/icons/movies/inglorious-bastards.png'
                 },
                 {
                     id: 6,
                     nome: 'Pearl',
-                    poster: 'pearl'
+                    poster: '../images/icons/movies/pearl.png'
                 },
                 {
                     id: 7,
                     nome: 'Harry Potter e as Relíquias da Morte parte 2 ',
-                    poster: 'harry-potter'
+                    poster: '../images/icons/movies/harry-potter.png'
                 },
                 {
                     id: 8,
                     nome: 'Jogos Vorazes em Chamas',
-                    poster: 'hunger-games'
+                    poster: '../images/icons/movies/hunger-games.png'
                 }
             ]
         },
@@ -440,82 +440,82 @@ export let moviesJSON = {
                 {
                     id: 1,
                     nome: 'Barbie',
-                    poster: 'barbie'
+                    poster: '../images/icons/movies/barbie.png'
                 },
                 {
                     id: 2,
                     nome: 'Pobres Criaturas',
-                    poster: 'poor-things'
+                    poster: '../images/icons/movies/poor-things.png'
                 },
                 {
                     id: 3,
                     nome: 'Adoráveis Mulheres',
-                    poster: 'little-women'
+                    poster: '../images/icons/movies/little-women.png'
                 },
                 {
                     id: 4,
                     nome: 'Oppenheimer',
-                    poster: 'oppenheimer'
+                    poster: '../images/icons/movies/oppenheimer.png'
                 },
                 {
                     id: 5,
                     nome: 'Bastardos Inglórios',
-                    poster: 'inglorious-bastards'
+                    poster: '../images/icons/movies/inglorious-bastards.png'
                 },
                 {
                     id: 6,
                     nome: 'Pearl',
-                    poster: 'pearl'
+                    poster: '../images/icons/movies/pearl.png'
                 },
                 {
                     id: 7,
                     nome: 'Harry Potter e as Relíquias da Morte parte 2 ',
-                    poster: 'harry-potter'
+                    poster: '../images/icons/movies/harry-potter.png'
                 },
                 {
                     id: 8,
                     nome: 'Jogos Vorazes em Chamas',
-                    poster: 'hunger-games'
+                    poster: '../images/icons/movies/hunger-games.png'
                 },
                 {
                     id: 1,
                     nome: 'Barbie',
-                    poster: 'barbie'
+                    poster: '../images/icons/movies/barbie.png'
                 },
                 {
                     id: 2,
                     nome: 'Pobres Criaturas',
-                    poster: 'poor-things'
+                    poster: '../images/icons/movies/poor-things.png'
                 },
                 {
                     id: 3,
                     nome: 'Adoráveis Mulheres',
-                    poster: 'little-women'
+                    poster: '../images/icons/movies/little-women.png'
                 },
                 {
                     id: 4,
                     nome: 'Oppenheimer',
-                    poster: 'oppenheimer'
+                    poster: '../images/icons/movies/oppenheimer.png'
                 },
                 {
                     id: 5,
                     nome: 'Bastardos Inglórios',
-                    poster: 'inglorious-bastards'
+                    poster: '../images/icons/movies/inglorious-bastards.png'
                 },
                 {
                     id: 6,
                     nome: 'Pearl',
-                    poster: 'pearl'
+                    poster: '../images/icons/movies/pearl.png'
                 },
                 {
                     id: 7,
                     nome: 'Harry Potter e as Relíquias da Morte parte 2 ',
-                    poster: 'harry-potter'
+                    poster: '../images/icons/movies/harry-potter.png'
                 },
                 {
                     id: 8,
                     nome: 'Jogos Vorazes em Chamas',
-                    poster: 'hunger-games'
+                    poster: '../images/icons/movies/hunger-games.png'
                 }
             ]
         }
@@ -529,162 +529,162 @@ export let allMoviesJSON = {
         {
             id: 1,
             nome: 'Barbie',
-            poster: 'barbie'
+            poster: '../images/icons/movies/barbie.png'
         },
         {
             id: 2,
             nome: 'Pobres Criaturas',
-            poster: 'poor-things'
+            poster: '../images/icons/movies/poor-things.png'
         },
         {
             id: 3,
             nome: 'Adoráveis Mulheres',
-            poster: 'little-women'
+            poster: '../images/icons/movies/little-women.png'
         },
         {
             id: 4,
             nome: 'Oppenheimer',
-            poster: 'oppenheimer'
+            poster: '../images/icons/movies/oppenheimer.png'
         },
         {
             id: 5,
             nome: 'Bastardos Inglórios',
-            poster: 'inglorious-bastards'
+            poster: '../images/icons/movies/inglorious-bastards.png'
         },
         {
             id: 6,
             nome: 'Pearl',
-            poster: 'pearl'
+            poster: '../images/icons/movies/pearl.png'
         },
         {
             id: 7,
             nome: 'Harry Potter e as Relíquias da Morte parte 2 ',
-            poster: 'harry-potter'
+            poster: '../images/icons/movies/harry-potter.png'
         },
         {
             id: 8,
             nome: 'Jogos Vorazes em Chamas',
-            poster: 'hunger-games'
+            poster: '../images/icons/movies/hunger-games.png'
         },
         {
             id: 1,
             nome: 'Barbie',
-            poster: 'barbie'
+            poster: '../images/icons/movies/barbie.png'
         },
         {
             id: 2,
             nome: 'Pobres Criaturas',
-            poster: 'poor-things'
+            poster: '../images/icons/movies/poor-things.png'
         },
         {
             id: 3,
             nome: 'Adoráveis Mulheres',
-            poster: 'little-women'
+            poster: '../images/icons/movies/little-women.png'
         },
         {
             id: 4,
             nome: 'Oppenheimer',
-            poster: 'oppenheimer'
+            poster: '../images/icons/movies/oppenheimer.png'
         },
         {
             id: 5,
             nome: 'Bastardos Inglórios',
-            poster: 'inglorious-bastards'
+            poster: '../images/icons/movies/inglorious-bastards.png'
         },
         {
             id: 6,
             nome: 'Pearl',
-            poster: 'pearl'
+            poster: '../images/icons/movies/pearl.png'
         },
         {
             id: 7,
             nome: 'Harry Potter e as Relíquias da Morte parte 2 ',
-            poster: 'harry-potter'
+            poster: '../images/icons/movies/harry-potter.png'
         },
         {
             id: 8,
             nome: 'Jogos Vorazes em Chamas',
-            poster: 'hunger-games'
+            poster: '../images/icons/movies/hunger-games.png'
         },
         {
             id: 1,
             nome: 'Barbie',
-            poster: 'barbie'
+            poster: '../images/icons/movies/barbie.png'
         },
         {
             id: 2,
             nome: 'Pobres Criaturas',
-            poster: 'poor-things'
+            poster: '../images/icons/movies/poor-things.png'
         },
         {
             id: 3,
             nome: 'Adoráveis Mulheres',
-            poster: 'little-women'
+            poster: '../images/icons/movies/little-women.png'
         },
         {
             id: 4,
             nome: 'Oppenheimer',
-            poster: 'oppenheimer'
+            poster: '../images/icons/movies/oppenheimer.png'
         },
         {
             id: 5,
             nome: 'Bastardos Inglórios',
-            poster: 'inglorious-bastards'
+            poster: '../images/icons/movies/inglorious-bastards.png'
         },
         {
             id: 6,
             nome: 'Pearl',
-            poster: 'pearl'
+            poster: '../images/icons/movies/pearl.png'
         },
         {
             id: 7,
             nome: 'Harry Potter e as Relíquias da Morte parte 2 ',
-            poster: 'harry-potter'
+            poster: '../images/icons/movies/harry-potter.png'
         },
         {
             id: 8,
             nome: 'Jogos Vorazes em Chamas',
-            poster: 'hunger-games'
+            poster: '../images/icons/movies/hunger-games.png'
         },
         {
             id: 1,
             nome: 'Barbie',
-            poster: 'barbie'
+            poster: '../images/icons/movies/barbie.png'
         },
         {
             id: 2,
             nome: 'Pobres Criaturas',
-            poster: 'poor-things'
+            poster: '../images/icons/movies/poor-things.png'
         },
         {
             id: 3,
             nome: 'Adoráveis Mulheres',
-            poster: 'little-women'
+            poster: '../images/icons/movies/little-women.png'
         },
         {
             id: 4,
             nome: 'Oppenheimer',
-            poster: 'oppenheimer'
+            poster: '../images/icons/movies/oppenheimer.png'
         },
         {
             id: 5,
             nome: 'Bastardos Inglórios',
-            poster: 'inglorious-bastards'
+            poster: '../images/icons/movies/inglorious-bastards.png'
         },
         {
             id: 6,
             nome: 'Pearl',
-            poster: 'pearl'
+            poster: '../images/icons/movies/pearl.png'
         },
         {
             id: 7,
             nome: 'Harry Potter e as Relíquias da Morte parte 2 ',
-            poster: 'harry-potter'
+            poster: '../images/icons/movies/harry-potter.png'
         },
         {
             id: 8,
             nome: 'Jogos Vorazes em Chamas',
-            poster: 'hunger-games'
+            poster: '../images/icons/movies/hunger-games.png'
         }
     ]
 }
