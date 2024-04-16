@@ -1,14 +1,6 @@
 'use strict'
 
-import { getEmployees, getUsers, postUser } from './functions.js'
-
-// Recebendo JSON das funções GET
-const usersJSON = await getUsers()
-const employeesJSON = await getEmployees()
-
-// Atribuindo variável para o ARRAY principal do JSON
-const usersARRAY = usersJSON.usuarios
-const employeesARRAY = employeesJSON.funcionarios
+import { postValidationEmployee, postValidationUser, getEmployees, getUsers, postUser } from './functions.js'
 
 // OBJETOS DE ESTRUTURA DO HTML
 const inputEmaildLogin = document.getElementById('email-login')
@@ -46,35 +38,28 @@ const login = async() => {
 
     } else {
 
+        let login = {
+            email: email,
+            senha: password
+        }
+
         let valLoginUser, valLoginEmployee
+        let userValidation = await postValidationUser(login)
+        let employeeValidation = await postValidationEmployee(login)
 
-        usersARRAY.forEach(user => {
-
-            if(email == user.email && password == user.senha){
-
-                window.location.href = './src/pages/whos-whatching.html'
+        if(userValidation.status){
+            localStorage.setItem('userId', userValidation.usuario[0].id)
+            window.location.href = './src/pages/whos-whatching.html'
+        } else {
+            valLoginUser = true
+        }
                 
-            } else {
-
-                valLoginUser = true
-            
-            }
-            
-        })
-        
-        employeesARRAY.forEach(employee => {
-            
-            if(email == employee.email && password == employee.senha){
-                
-                window.location.href = './src/pages/cms.html'
-
-            } else {
-
-                valLoginEmployee = true
-
-            }
-
-        })
+        if(employeeValidation.status){
+            localStorage.setItem('employeeId', employeeValidation.funcionario[0].id)
+            window.location.href = './src/pages/cms.html'
+        } else {
+            valLoginEmployee = true
+        }
 
         if(valLoginEmployee && valLoginUser){
 
@@ -117,10 +102,12 @@ const register = async() => {
 
     } else {
 
-        usersARRAY.forEach(user => {
+        const users = await getUsers()
+        const employees = await getEmployees()
+        let valLoginUser, valLoginEmployee
 
-            if(email == user.email){
-                
+        users.usuarios.forEach(user => {
+            if(email == user.email){ 
                 Swal.fire({
                     position: 'top',
                     timer: 2000,
@@ -131,15 +118,12 @@ const register = async() => {
                     width: '25rem',
                     heightAuto: false,
                 })      
-
-            }
-            
+                valLoginUser = true
+            }           
         })
 
-        usersARRAY.forEach(employee => {
-
-            if(email == employee.email){
-                
+        employees.funcionarios.forEach(employee => {
+            if(email == employee.email){              
                 Swal.fire({
                     position: 'top',
                     timer: 2000,
@@ -149,21 +133,24 @@ const register = async() => {
                     showConfirmButton: false,
                     width: '25rem',
                     heightAuto: false,
-                })      
-
-            }
-            
+                })
+                valLoginEmployee = true
+            }    
         })
 
-        const newUser = {
-            'nome': name,
-            'email': email,
-            'senha': password
+        if(!valLoginEmployee && !valLoginUser){
+
+            const newUser = {
+                'nome': name,
+                'email': email,
+                'senha': password
+            }
+
+            let user = await postUser(newUser)
+            localStorage.setItem('userId', user.usuario.id)
+            window.location.href = './src/pages/whos-whatching.html'
+            
         }
-
-        let user = await postUser(newUser)
-
-        console.log(user)
 
     }
 

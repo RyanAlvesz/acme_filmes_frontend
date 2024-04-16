@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/output.css">
-    <link rel="stylesheet" href="../css/remove-scrollbar.css">
     <link rel="stylesheet" href="../css/movie-info.css">
     <script src="../js/movie-info.js" type="module" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js" defer></script>
@@ -34,7 +33,7 @@
                         <img src="../images/svg/add.svg" alt="Adicionar" class="h-full">
                     </button>
                 </div>
-                <p class="text-2xl text-justify leading-[calc(20vh/6)] w-2/3 overflow-scroll h-[20vh]" id="movie-description"></p>
+                <p class="text-2xl text-justify leading-[calc(3.5vh)] w-2/3 overflow-y-scroll h-[20vh] scroll pr-3" id="movie-description"></p>
                 <img id="movie-classification" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/DJCTQ_-_12.svg/1024px-DJCTQ_-_12.svg.png" alt="12" class="w-10 h-10">
                 <div id="movie-classification-description" class="absolute top-[calc(100%+15px)] bg-gray-shadow flex w-3/5 flex-col gap-2 p-4 rounded-xl opacity-0 ease-linear duration-100 pointer-events-none">
                     <span class="font-semibold text-xl"></span>

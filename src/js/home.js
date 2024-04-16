@@ -5,6 +5,8 @@
 import { getMoviesByGenre, getFavoriteMovies } from "./functions.js"
 import { createMoviesCard } from "./movie-card.js"
 
+const colorThief = new ColorThief()
+
 const scrollHome = document.getElementById('scroll-home')
 const closeMenu = document.getElementById('close-menu')
 const openMenu = document.getElementById('open-menu')
@@ -33,7 +35,10 @@ const setFeaturedMovie = async(featuredMovie) => {
     FMyear.textContent = featuredMovie.year
     FMdirector.textContent = featuredMovie.director
     FMcardMobile.style.backgroundImage = `url('${featuredMovie.poster}')`
+    // FMcardMobileImg.src = '../images/background.png'
     FMcardMobileImg.src = featuredMovie.poster
+
+    
 
 }
 

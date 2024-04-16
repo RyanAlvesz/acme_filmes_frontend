@@ -20,3 +20,16 @@
 .movie-info div:nth-child(5){
     grid-area: g5;
 }
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll::-webkit-scrollbar{
+    width: 4px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background: #FFFFFF;
+    border-radius: 12px;
+}

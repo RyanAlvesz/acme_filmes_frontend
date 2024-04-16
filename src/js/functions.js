@@ -177,13 +177,37 @@ export const postUser = async(user) => {
                 senha: user.senha
             })
         }
-        const response = fetch(url, options)
-        const data = response.json()
+        const response = await fetch(url, options)
+        const data = await response.json()
         return data
     } catch (error) {
         return false
     }
 
+
+}
+
+export const postValidationUser = async(user) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/validacao/usuario`
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: user.email,
+                senha: user.senha
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+        
+    } catch (error) {
+        return false
+    }
 
 }
 
@@ -196,6 +220,31 @@ export const getEmployees = async() => {
         const response = await fetch(url)
         const data = await response.json()
         return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const postValidationEmployee = async(employee) => {
+
+    try {
+        
+        const url = `http://localhost:8080/v2/acme_filmes/validacao/usuario`
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: employee.email,
+                senha: employee.senha
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+        
     } catch (error) {
         return false
     }
