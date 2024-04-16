@@ -1,7 +1,7 @@
 'use strict'
 
-import { allMoviesJSON } from "./movies-json.js"
-import { createMoviesCard } from "./movie-card.js"
+import { createMoviesCard } from './movie-card.js'
+import { getMovies } from './functions.js'
 
 const main = document.getElementById('main')
 
@@ -15,9 +15,12 @@ let size = {
 const createMovies = (moviesArray, cardSize) => {
     
     moviesArray.forEach(movie => {
-        main.appendChild(createMoviesCard(movie, cardSize, false))
+        main.appendChild(createMoviesCard(movie, cardSize))
     })
 
 }
 
-createMovies(allMoviesJSON.filmes, size)
+window.addEventListener('load', async() => {
+    const moviesJSON = await getMovies() 
+    createMovies(moviesJSON.filmes, size)
+})

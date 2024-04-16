@@ -1,21 +1,21 @@
-export const createMoviesCard = (movie, size, hover) => {
+export const createMoviesCard = (movie, size) => {
 
     const button = document.createElement('button')
-    button.classList.add(size.h, size.w, 'flex-shrink-0', 'rounded-md', 'bg-cover', 'bg-center', 'ease-linear', 'duration-300')
-    button.style.backgroundImage = `url('${movie.poster}')`
+    button.classList.add(size.h, size.w, 'flex-shrink-0', 'rounded-md', 'overflow-hidden')
 
     button.addEventListener('click', () => {localStorage.setItem('movieId', movie.id)})
 
     const a = document.createElement('a')
     a.href = './movie-info.html'
-    a.classList.add('inline-block', 'h-full', 'w-full')
+    a.classList.add('flex', 'h-full', 'w-full')
+
+    const img = document.createElement('img')
+    img.classList.add('w-full', 'h-full', 'object-cover', 'hover:scale-110', 'ease-linear', 'duration-700')
+    img.src = movie.foto_capa
+    img.alt = movie.nome
 
     button.append(a)
-
-    if(hover){
-        button.classList.add('hover:-translate-y-[0.5rem]')
-    }
-
+    a.append(img)
 
     return button
 

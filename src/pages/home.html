@@ -9,30 +9,48 @@
     <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/output.css">
     <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/remove-scrollbar.css">
     <script src="../js/header-color.js" defer></script>
     <script src="../js/home.js" type="module" defer></script>
-    <title>Home</title>
+    <title>Início</title>
 </head>
-<body class="min-h-screen font-poppins bg-dark_gray grid grid-rows-[calc(10vh+2rem)_1fr] relative">
-    <div class="absolute inset-0 gradiente h-screen -z-10"></div>
-    <div id="featured-movie-bagckround" class="absolute inset-0 h-screen bg-cover bg-center bg-no-repeat bg-fixed -z-20"></div>
-    <header id="90" class="flex items-center justify-between sticky top-0 px-14 z-[1000] ease-linear duration-200">
-        <ul class="w-[30vw] h-full flex items-center text-white text-xl font-light">
-            <li class="w-[7vw] flex items-center hover:font-semibold hover:text-main">
+<body class="min-h-screen font-poppins bg-dark_gray grid grid-rows-[calc(10vh+2rem)_1fr_10vh] relative max-md:grid-rows-[1fr]">
+    <div class="absolute inset-0 h-[calc(100vh+0.5px)] gradiente -z-10"></div>
+    <div id="featured-movie-bagckround" class="absolute inset-0 h-screen bg-cover bg-center bg-no-repeat bg-fixed -z-20 max-md:hidden"></div>
+    <header id="90" class="flex items-center justify-between sticky top-0 px-14 z-[1000] ease-linear duration-200 max-md:top-auto max-md:bottom-0 max-md:fixed max-md:bg-gray-header max-md:h-[8.5vh] max-md:w-full max-md:px-7">
+        <ul class="w-[35vw] h-full flex items-center text-white text-xl font-light max-md:hidden">
+            <li class="w-[8vw] flex items-center hover:font-semibold hover:text-main">
                 <a href="./movies.html"> FILMES </a>
             </li>
-            <li class="w-[7vw] flex items-center hover:font-semibold hover:text-main">
+            <li class="w-[8vw] flex items-center hover:font-semibold hover:text-main">
                 <a href="./actors.html"> ATORES </a>
             </li>
-            <li class="w-[7vw] flex items-center hover:font-semibold hover:text-main">
+            <li class="w-[8vw] flex items-center hover:font-semibold hover:text-main">
                 <a href="./about.html"> SOBRE </a>
             </li>
         </ul>
-        <button id="scroll-home" class="h-3/5">
+        <ul id="menu" class="hidden max-md:flex bg-gradient-to-tr from-main-soft to-purple w-screen h-screen fixed bottom-0 left-0 flex-col items-center justify-center text-white text-4xl gap-4 font-medium translate-y-full ease-linear duration-200">
+            <button id="close-menu" class="w-[5.5vh] h-[5.5vh] absolute top-6 right-6">
+                <img src="../images/svg/close.svg" alt="Fechar menu" class="w-full h-full">
+            </button>
+            <li class="w-fit flex items-center">
+                <a href="./movies.html"> FILMES </a>
+            </li>
+            <li class="w-fit flex items-center">
+                <a href="./actors.html"> ATORES </a>
+            </li>
+            <li class="w-fit flex items-center">
+                <a href="./about.html"> SOBRE </a>
+            </li>
+        </ul>
+        <button id="open-menu" class="hidden w-[5.5vh] h-[5.5vh] max-md:flex">
+            <img src="../images/svg/menu.svg" alt="Menu" class="w-full h-full">
+        </button>
+        <button id="scroll-home" class="h-3/5 max-md:h-4/5">
             <img src="../images/logo.png" alt="Acme Filmes" class="h-full">
         </button>
-        <div class="w-[30vw] h-full flex justify-end items-center gap-3">
-            <div class="flex gap-1 text-base text-white">
+        <div class="w-[35vw] h-full flex justify-end items-center gap-3 max-md:w-fit">
+            <div class="flex gap-1 text-base text-white max-md:hidden">
                 <span> Bem-vinde </span>
                 <span id="user-nickname"> Gabriela </span>
             </div>
@@ -41,8 +59,8 @@
             </button>
         </div>
     </header>
-    <main id="main" class="flex flex-col px-14">
-        <div class="flex flex-col h-[calc(50vh-2rem)] justify-center gap-6">
+    <main id="main" class="flex flex-col px-14 max-md:px-7 max-md:pb-[calc(1rem+5.5vh)] max-md:pt-8">
+        <div class="flex flex-col h-[calc(50vh-2rem)] justify-center gap-6 max-md:hidden">
             <h2 id="featured-movie-title" class="font-bold text-7xl text-white leading-[115%] w-[35%] 2xl:text-8xl"></h2>
             <div class="text-white flex items-center gap-2">
                 <div class="flex gap-1">
@@ -61,6 +79,20 @@
                 </button>
             </div>
         </div>
+        <div id="featured-movie-mobile" class="hidden max-md:flex h-[calc(70vh-1.75rem)] p-4 mb-7 rounded-lg bg-barbie bg-center bg-cover items-end justify-center gap-4 shadow-[0_0px_10px_2px_rgba(255,255,255,0.15)]">
+            <img id="featured-movie-mobile-img" class="hidden">
+            <button class="w-full h-fit py-2 rounded-lg bg-main shadow-md">
+                <a href="" class="w-full h-full flex items-center justify-center gap-2">
+                    <span class="text-white font-medium">Assitir</span>
+                </a>
+            </button>
+            <button class="w-full h-fit py-2 rounded-lg bg-secundary shadow-md flex items-center justify-center gap-2">
+                <span class="text-white font-medium">Minha Lista</span>
+            </button>
+        </div>
     </main>
+    <footer class="bg-gradient-to-r from-main to-secundary flex items-center justify-center mt-[4vh] max-md:hidden">
+        <p class="text-white font-semibold max-sm:text-sm"> Copyright 2024 | Ryan Alves de Carvalho</p>
+    </footer>
 </body>
 </html>

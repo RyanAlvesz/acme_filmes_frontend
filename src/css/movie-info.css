@@ -1,0 +1,22 @@
+.movie-info{
+    grid-template-areas: 
+    "g1 g2"
+    "g3 g4"
+    "g5 g4";
+}
+
+.movie-info div:nth-child(1){
+    grid-area: g1;
+}
+.movie-info div:nth-child(2){
+    grid-area: g2;
+}
+.movie-info div:nth-child(3){
+    grid-area: g3;
+}
+.movie-info div:nth-child(4){
+    grid-area: g4;
+}
+.movie-info div:nth-child(5){
+    grid-area: g5;
+}

@@ -10,6 +10,7 @@ module.exports = {
         'main': '#FF0000',
         'main-soft': '#FD3131',
         'secundary': '#3064B4',
+        'purple': '#994a71',
         'dark_gray': '#141414',
         'medium_gray': '#333333',
         'gray': '#9D9D9D',

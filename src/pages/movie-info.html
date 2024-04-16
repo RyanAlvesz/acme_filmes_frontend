@@ -8,53 +8,60 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/output.css">
+    <link rel="stylesheet" href="../css/remove-scrollbar.css">
+    <link rel="stylesheet" href="../css/movie-info.css">
     <script src="../js/movie-info.js" type="module" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js" defer></script>
     <script src="../js/back.js" defer></script>
-    <title> Barbie </title>
 </head>
-<body class="h-screen font-poppins bg-dark_gray grid grid-rows-[10vh_1fr] bg-barbie-banner bg-cover bg-center px-14 pt-8 relative">
-    <div class="absolute inset-0 bg-gray-shadow/50 -z-10"></div>
+<body id="movie-background" class="min-h-screen font-poppins bg-dark_gray grid grid-rows-[10vh_1fr] bg-cover bg-center bg-fixed px-14 pt-8 relative">
+    <div class="absolute inset-0 bg-gray-shadow/40 -z-10"></div>
     <header class="flex items-center">
         <button id="back" class="flex gap-2 items-center justify-center">
             <img src="../images/svg/arrow-left.svg" alt="Voltar" class="w-10 h-10">
             <span class="text-white text-2xl font-medium"> VOLTAR </span>
         </button>
     </header>
-    <main class="grid grid-rows-2 justify-center py-8">
+    <main class="grid grid-rows-2 justify-center pb-8">
         <div class="flex gap-6 items-center">
-            <button class="h-[32vh] w-[calc(32vh*30/45)] bg-barbie bg-cover bg-center flex items-center justify-center rounded-xl flex-shrink-0">
+            <button id="movie-poster" class="h-[32vh] w-[calc(32vh*30/45)] bg-cover bg-center flex items-center justify-center rounded-xl flex-shrink-0">
                 <img src="../images/svg/play.svg" alt="Assistir" class="w-6 h-6">
             </button>
-            <div class="flex flex-col gap-4 justify-center text-white h-[30vh]">
+            <div class="flex flex-col gap-4 justify-center text-white h-[30vh] relative">
                 <div class="flex gap-6 items-center">
-                    <h1 class="font-semibold text-[4.5rem] uppercase leading-none" id="movie-title"> Barbie </h1>
+                    <h1 id="movie-title" class="font-semibold text-[4.5rem] uppercase leading-none"></h1>
                     <button class="h-12 w-12">
                         <img src="../images/svg/add.svg" alt="Adicionar" class="h-full">
                     </button>
                 </div>
-                <p class="text-xl text-justify w-1/2" id="movie-description">Depois de ser expulsa da Barbieland por ser uma boneca de aparência menos do que perfeita, Barbie parte para o mundo humano em busca da verdadeira felicidade.</p>
-                <p class="text-2xl text-justify w-1/2 font-semibold" id="movie-classification">12 anos</p>
+                <p class="text-2xl text-justify leading-[calc(20vh/6)] w-2/3 overflow-scroll h-[20vh]" id="movie-description"></p>
+                <img id="movie-classification" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/DJCTQ_-_12.svg/1024px-DJCTQ_-_12.svg.png" alt="12" class="w-10 h-10">
+                <div id="movie-classification-description" class="absolute top-[calc(100%+15px)] bg-gray-shadow flex w-3/5 flex-col gap-2 p-4 rounded-xl opacity-0 ease-linear duration-100 pointer-events-none">
+                    <span class="font-semibold text-xl"></span>
+                    <span class="text-justify"></span>
+                </div>
             </div>
         </div>
-        <div class="grid grid-cols-2 text-white">
-            <div class="flex flex-col gap-4 text-xl font-light">
+        <div class="grid text-white movie-info gap-8">
+            <div class="flex flex-col gap-4 text-xl font-light h-fit">
                 <h3 class="uppercase font-semibold"> Duração </h3>
-                <p id="movie-duration"> 1 Hora e 54 Minutos</p>
+                <p id="movie-duration"></p>
             </div>
-            <div class="flex flex-col gap-4 text-xl font-light">
+            <div class="flex flex-col gap-4 text-xl font-light h-fit">
                 <h3 class="uppercase font-semibold"> Data de Lançamento </h3>
-                <p id="movie-release"> 20 de julho de 2023 </p>
+                <p id="movie-release"></p>
             </div>
-            <div class="flex flex-col gap-4 text-xl font-light">
+            <div id="movie-directors" class="flex flex-col gap-4 text-xl font-light opacity-0 h-fit">
                 <h3 class="uppercase font-semibold"> Diretor </h3>
-                <p id="movie-director"> Greta Gerwig </p>
+                <div class="flex flex-col gap-2"></div>
             </div>
-            <div class="flex flex-col gap-4 text-xl font-light">
+            <div id="movie-actors" class="flex flex-col gap-4 text-xl font-light opacity-0 h-fit">
                 <h3 class="uppercase font-semibold"> Atores </h3>
-                <div class="flex flex-col gap-4">
-                    <a href="./actor-info.html" id="movie-duration" class="hover:underline w-fit"> Margot Robbie </a>
-                    <a href="./actor-info.html" id="movie-duration" class="hover:underline w-fit"> Ryan Goslin </a>
-                </div>
+                <div class="flex flex-col gap-2"></div>
+            </div>
+            <div id="movie-genres" class="flex flex-col gap-4 text-xl font-light opacity-0 h-fit">
+                <h3 class="uppercase font-semibold"> Gêneros </h3>
+                <div class="flex flex-col gap-2"></div>
             </div>
         </div>
     </main>
