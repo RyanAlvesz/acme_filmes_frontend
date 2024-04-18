@@ -3,7 +3,7 @@
 import { postValidationEmployee, postValidationUser, getEmployees, getUsers, postUser } from './functions.js'
 
 // OBJETOS DE ESTRUTURA DO HTML
-const inputEmaildLogin = document.getElementById('email-login')
+const inputEmailLogin = document.getElementById('email-login')
 const inputPasswordLogin = document.getElementById('password-login')
 const inputNameRegister = document.getElementById('name-register')
 const inputEmailRegister = document.getElementById('email-register')
@@ -18,9 +18,10 @@ const formContainer = document.getElementById('form-container')
 const buttonLogin = document.getElementById('login')
 const buttonRegister = document.getElementById('register')
 
+// Função para Login
 const login = async() => {
 
-    const email = inputEmaildLogin.value
+    const email = inputEmailLogin.value
     const password = inputPasswordLogin.value
 
     if (email == '' || !email.includes('@') || password == ''){
@@ -81,6 +82,7 @@ const login = async() => {
 
 }
 
+// Função para cadastro
 const register = async() => {
 
     const name = inputNameRegister.value
@@ -156,6 +158,7 @@ const register = async() => {
 
 }
 
+// Função para trocar a mostrar ou ocultar a senha (trocando o tipo do input de password para text)
 const changeInputPasswordVisibilty = (e) => {
     
     if(!e.target.src.includes('open')){
@@ -168,6 +171,7 @@ const changeInputPasswordVisibilty = (e) => {
 
 }
 
+// Função para trocar a alternar a tela entre login e cadastro
 const moveOverlay = () => {
 
     containerOverlay.classList.toggle('translate-x-full')
@@ -180,13 +184,14 @@ const moveOverlay = () => {
     formContainer.children[0].classList.toggle('opacity-0')
 
     formContainer.children[1].classList.toggle('-translate-x-full')
-    formContainer.children[1].classList.toggle('max-lg:translate-x-0')
+    formContainer.children[1].classList.toggle('max-lg:translate-x-full')
     formContainer.children[1].classList.toggle('-z-10')
     formContainer.children[1].classList.toggle('z-10')
     formContainer.children[1].classList.toggle('opacity-0')
 
 }
 
+// Hover ícones de login
 for (let icons of hoverWhiteIcon) {
 
     icons.parentNode.addEventListener('mouseover', () => {
@@ -223,11 +228,23 @@ for (let icons of hoverWhiteIcon) {
 
 }
 
+// Alterar visibilidade da senha
 inputPasswordLogin.nextElementSibling.addEventListener('click', changeInputPasswordVisibilty)
 inputPasswordRegister.nextElementSibling.addEventListener('click', changeInputPasswordVisibilty)
+
+// Animação de troca de tela de Login e Cadastro
 buttonChangeOverlayRegister.addEventListener('click', moveOverlay)
 buttonChangeOverlayRegisterMobile.addEventListener('click', moveOverlay)
 buttonChangeOverlayLogin.addEventListener('click', moveOverlay)
 buttonChangeOverlayLoginMobile.addEventListener('click', moveOverlay)
+
+// Ao clickar no botão, tentar fazer o login ou se cadastrar
 buttonLogin.addEventListener('click', login)
 buttonRegister.addEventListener('click', register)
+
+// Ao precisonar ENTER, tentar fazer o login ou se cadastrar
+inputEmailLogin.addEventListener('keypress', (event) => { if (event.key === 'Enter') { login() }})
+inputPasswordLogin.addEventListener('keypress', (event) => { if (event.key === 'Enter') { login() }})
+inputNameRegister.addEventListener('keypress', (event) => { if (event.key === 'Enter') { register() }})
+inputEmailRegister.addEventListener('keypress', (event) => { if (event.key === 'Enter') { register() }})
+inputPasswordRegister.addEventListener('keypress', (event) => { if (event.key === 'Enter') { register() }})

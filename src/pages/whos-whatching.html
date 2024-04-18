@@ -13,102 +13,46 @@
     <title>Quem está assistindo?</title>
 </head>
 <body class="h-screen font-poppins bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray grid grid-rows-[20vh_1fr]">
-    <header class="flex items-center justify-center">
+    <header class="flex items-center justify-between px-14">
+        <div class="w-[30vh]"></div>
         <img src="../images/logo.png" alt="Logo" class="w-48">
+        <button id="manage-profiles" class="flex items-center justify-end w-[30vh]">
+            <img id="manage-profiles-img" src="../images/svg/pencil.svg" alt="Editar" class="w-11 h-8 pr-3">
+            <span id="manage-profiles-text" class="text-white text-2xl"> Gerenciar </span>
+        </button>
     </header>
-    <main class="flex flex-col items-center justify-center -translate-y-[10vh] gap-6 relative">
-        <h1 class="text-white font-semibold text-[2.5rem]"> Quem está assistindo? </h1>
-        <div class="flex items-center justify-center gap-8 h-[20vh]">
-            <div class="flex flex-col items-center justify-around h-full relative">
-                <button class="w-32 h-32 bg-1989 bg-cover bg-center"></button>
-                <a href="./home.html" class="w-full h-full absolute"></a>
-                <span class="text-xl text-white"> Gabie </span>
+    <main class="flex flex-col items-center justify-center -translate-y-[10vh] gap-10 relative">
+        <h1 id="page-title" class="text-white text-3xl"> Quem está assistindo? </h1>
+        <div id="container-profiles" class="flex items-center justify-center gap-8 h-[20vh] min-w-full"></div>
+        <div id="container-add-profile" class="absolute h-screen w-screen hidden flex-col items-center justify-center gap-12 px-[25vw] bg-dark_gray">
+            <div class="absolute top-0 right-14 h-[20vh] flex items-center">
+                <button id="button-close-create-profile" class="">
+                    <img src="../images/svg/close.svg" alt="Fechar" class="w-10 h-10">
+                </button>
             </div>
-            <div class="flex flex-col items-center justify-around h-full">
-                <button class="w-32 h-32 bg-evermore bg-cover bg-center"></button>
-                <span class="text-xl text-white"> Ryan </span>
-            </div>
-            <div class="flex flex-col items-center justify-around h-full">
-                <div class="flex items-center justify-center w-32 h-32">
-                    <button class="h-4/5 w-4/5 rounded-full bg-gray flex items-center justify-center p-1" id="button-add-profile">
-                        <img src="../images/svg/plus.svg" alt="Adicionar" class="">
-                    </button>
-                </div>
-                <span class="text-xl text-white"> Adicionar Perfil </span>
-            </div>
-        </div>
-        <div id="container-add-profile" class="absolute h-[45vh] w-[40vw] hidden flex-col items-center justify-center gap-12 pb-8 bg-dark_gray rounded-2xl shadow-[0px_0px_3px_0px] shadow-black/90">
-            <div class="flex flex-col items-center w-full px-4">
-                <div class="w-full flex justify-end">
-                    <button id="button-close-create-profile">
-                        <img src="../images/svg/close.svg" alt="Fechar" class="w-10 h-10">
-                    </button>
-                </div>
-                <h2 class="text-white font-semibold text-[2.5rem]">Criar Perfil</h2>
-            </div>
-            <form action="#" class="grid grid-cols-[auto_1fr] items-center justify-center gap-8 w-full px-10">
-                <button type="button" id="button-choose-icon" class="h-[20vh] w-[20vh] bg-standard bg-cover bg-center relative">
+            <h2 class="text-white text-3xl">Criar Perfil</h2>
+            <form class="grid grid-cols-[auto_1fr] items-center justify-center gap-8 w-full px-10">
+                <button type="button" class="h-[20vh] w-[20vh] bg-standard bg-cover bg-center relative">
                     <div class="absolute w-8 h-8 rounded-full bg-main p-2 bottom-3 right-3">
                         <img src="../images/svg/edit.svg" alt="editar" class="w-full h-full">
                     </div>
                 </button>
                 <div class="flex flex-col items-end justify-between h-full">
                     <div class="flex flex-col justify-center gap-1 w-full">
-                        <label for="nickname" class="text-white">Apelido</label>
+                        <label for="nickname" class="text-white text-lg">Apelido</label>
                         <input type="text" name="nickname" id="nickname" autocomplete="off" class="h-10 focus:outline-none px-2 bg-medium_gray text-white">
                     </div>
-                    <button class="bg-secundary rounded-lg px-12 py-3 text-xl text-white">Salvar</button>
+                    <button id="button-create-profile" type="button" class="bg-secundary rounded-lg px-12 h-12 text-xl text-white">Salvar</button>
                 </div>
             </form>
         </div>
-        <div id="container-choose-icon" class="absolute hidden flex-col px-6 py-4 gap-6 min-h-[50vh] min-w-[40vw] bg-dark_gray rounded-2xl shadow-[0px_0px_3px_0px] shadow-black/90"> 
-            <div class="w-full flex justify-end">
+        <div id="container-choose-icon" class="absolute hidden grid-rows-[calc(10vh+2.5rem/2)_1fr] gap-2 min-h-screen w-screen bg-dark_gray rounded-2xl shadow-[0px_0px_3px_0px] shadow-black/90"> 
+            <div class="w-full flex items-end justify-end px-14">
                 <button id="button-close-choose-icon">
                     <img src="../images/svg/close.svg" alt="Fechar" class="w-10 h-10">
                 </button>
             </div>
-            <div class="w-full grid grid-rows-[auto_15vh] gap-4 -translate-y-8">
-                <h2 class="text-white text-xl font-semibold px-14"> Taylor Swift - The Eras</h2>
-                <div class="grid grid-cols-[auto_1fr_auto] gap-2">
-                    <button class="">
-                        <img src="../images/svg/arrow-prev.svg" alt="" class="w-12">
-                    </button>
-                    <div class="flex items-center gap-4 w-[40vw] overflow-x-scroll overflow-y-hidden">
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-speak-now"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-red"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-1989"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-reputation"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-lover"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-folklore"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-evermore"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-midnights"></button>
-                    </div>
-                    <button class="">
-                        <img src="../images/svg/arrow-next.svg" alt="" class="w-12">
-                    </button>
-                </div>
-            </div>
-            <div class="w-full grid grid-rows-[auto_15vh] gap-4 -translate-y-8">
-                <h2 class="text-white text-xl font-semibold px-14"> Taylor Swift - The Eras</h2>
-                <div class="grid grid-cols-[auto_1fr_auto] gap-2">
-                    <button class="">
-                        <img src="../images/svg/arrow-prev.svg" alt="" class="w-12">
-                    </button>
-                    <div class="flex items-center gap-4 w-[40vw] overflow-x-scroll overflow-y-hidden">
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-speak-now"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-red"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-1989"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-reputation"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-lover"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-folklore"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-evermore"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-midnights"></button>
-                    </div>
-                    <button class="">
-                        <img src="../images/svg/arrow-next.svg" alt="" class="w-12">
-                    </button>
-                </div>
-            </div>
+            <div id="container-icons" class="flex flex-col items-center gap-6 px-14"></div>
         </div>
     </main>
 </body>

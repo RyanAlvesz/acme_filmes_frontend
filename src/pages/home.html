@@ -19,7 +19,7 @@
     <div class="absolute inset-0 h-[calc(100vh+0.5px)] gradiente -z-10"></div>
     <div id="featured-movie-bagckround" class="absolute inset-0 h-screen bg-cover bg-center bg-no-repeat bg-fixed -z-20 max-md:hidden"></div>
     <header id="90" class="flex items-center justify-between sticky top-0 px-14 z-[1000] ease-linear duration-200 max-md:top-auto max-md:bottom-0 max-md:fixed max-md:bg-gray-header max-md:h-[8.5vh] max-md:w-full max-md:px-7">
-        <ul class="w-[35vw] h-full flex items-center text-white text-xl font-light max-md:hidden">
+        <ul class="w-[35vw] h-full flex items-center text-white text-xl font-light max-lg:gap-3 max-md:hidden">
             <li class="w-[8vw] flex items-center hover:font-semibold hover:text-main">
                 <a href="./movies.html"> FILMES </a>
             </li>
@@ -30,7 +30,7 @@
                 <a href="./about.html"> SOBRE </a>
             </li>
         </ul>
-        <ul id="menu" class="hidden max-md:flex bg-gradient-to-tr from-main-soft to-purple w-screen h-screen fixed bottom-0 left-0 flex-col items-center justify-center text-white text-4xl gap-4 font-medium translate-y-full ease-linear duration-200">
+        <ul id="menu" class="hidden max-md:flex bg-gradient-to-tr from-main-soft to-purple w-screen h-screen fixed bottom-0 left-0 flex-col items-center justify-center text-white text-3xl gap-6 font-medium translate-y-full ease-linear duration-200">
             <button id="close-menu" class="w-[5.5vh] h-[5.5vh] absolute top-6 right-6">
                 <img src="../images/svg/close.svg" alt="Fechar menu" class="w-full h-full">
             </button>
@@ -62,7 +62,7 @@
     </header>
     <main id="main" class="flex flex-col px-14 max-md:px-7 max-md:pb-[calc(1rem+5.5vh)] max-md:pt-8">
         <div class="flex flex-col h-[calc(50vh-2rem)] justify-center gap-6 max-md:hidden">
-            <h2 id="featured-movie-title" class="font-bold text-7xl text-white leading-[115%] w-[35%] 2xl:text-8xl"></h2>
+            <h2 id="featured-movie-title" class="font-bold text-7xl text-white leading-[115%] w-[40%] 2xl:text-8xl max-lg:w-[55%]"></h2>
             <div class="text-white flex items-center gap-2">
                 <div class="flex gap-1">
                     <span>Um filme por</span>
@@ -72,7 +72,7 @@
                 <span id="featured-movie-year" class="text-secundary font-bold"></span>
             </div>
             <div class="flex items-center gap-4">
-                <button class="bg-main rounded-3xl px-14 h-12 text-2xl text-white font-semibold">
+                <button id="featured-movie-play" class="bg-main rounded-3xl px-14 h-12 text-2xl text-white font-semibold">
                     PLAY
                 </button>
                 <button class="h-12 rounded-full">
@@ -82,10 +82,8 @@
         </div>
         <div id="featured-movie-mobile" class="hidden max-md:flex h-[calc(70vh-1.75rem)] p-4 mb-7 rounded-lg bg-barbie bg-center bg-cover items-end justify-center gap-4 shadow-[0_0px_10px_2px_rgba(255,255,255,0.15)]">
             <img id="featured-movie-mobile-img" class="hidden">
-            <button class="w-full h-fit py-2 rounded-lg bg-main shadow-md">
-                <a href="" class="w-full h-full flex items-center justify-center gap-2">
-                    <span class="text-white font-medium">Assitir</span>
-                </a>
+            <button id="featured-movie-mobile-play" class="w-full h-fit py-2 rounded-lg bg-main shadow-md flex items-center justify-center gap-2">
+                <span class="text-white font-medium">PLAY</span>
             </button>
             <button class="w-full h-fit py-2 rounded-lg bg-secundary shadow-md flex items-center justify-center gap-2">
                 <span class="text-white font-medium">Minha Lista</span>

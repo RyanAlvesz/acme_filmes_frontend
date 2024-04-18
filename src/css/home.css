@@ -4,6 +4,6 @@
 
 @media (max-width: 768px) {
     .gradiente{
-        background: linear-gradient(180deg, rgba(253, 49, 49,1) 5%, rgba(20,20,20,0) 95%);
+        background: linear-gradient(180deg, rgba(48, 100, 180, 1) 5%, rgba(20,20,20,0) 95%);
     }
 }
