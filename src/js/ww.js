@@ -1,11 +1,12 @@
 'use strict'
 
-import {getProfilesByUser, getProfileIcons, postProfile, getProfileIconsByCategories } from './functions.js'
+import {getProfilesByUser, getProfileIcons, postProfile, updateProfile, getProfileIconsByCategories } from './functions.js'
 
 const userId = localStorage.getItem('userId')
 
 const inputNickname = document.getElementById('nickname')
 const containerAddProfile = document.getElementById('container-add-profile')
+const containerAddProfileTitle = document.getElementById('container-add-profile-title')
 const containerChooseIcon = document.getElementById('container-choose-icon')
 const buttonCloseCreateProfile = document.getElementById('button-close-create-profile')
 const buttonChooseIcon = containerAddProfile.children[2].children[0]
@@ -20,12 +21,13 @@ const pageTitle = document.getElementById('page-title')
 const createProfileCards = (profile) => {
 
     const button = document.createElement('button')
-    button.classList.add('flex', 'flex-col', 'items-center', 'justify-around', 'h-full', 'relative', '[&>img:nth-child(1)]:hover:drop-shadow-[0px_0px_5px_#994a71]')
+    button.classList.add('flex', 'flex-col', 'items-center', 'justify-around', 'h-full', 'relative', '[&>img:nth-child(1)]:hover:drop-shadow-[0px_0px_5px_#994a71]', 'icon')
 
     button.addEventListener('click', () => {
         localStorage.setItem('profileId', profile.id)
         localStorage.setItem('iconId', profile.id_foto_perfil)
-        window.location = './home.html'
+        localStorage.setItem('iconURL', profile.foto_perfil)
+        // window.location = './home.html'
     })
 
     const img = document.createElement('img')
@@ -47,7 +49,7 @@ const createAddProfileButton = () => {
 
     const divMain = document.createElement('div')
     divMain.classList.add('flex', 'flex-col', 'items-center', 'justify-around', 'h-full', 'cursor-pointer')
-    divMain.addEventListener('click', addContainerCreateProfile)
+    divMain.addEventListener('click', () => {addContainerCreateProfile({method: 'post'})})
 
     const divSecundary = document.createElement('div')
     divSecundary.classList.add('flex', 'items-center', 'justify-center', 'w-32', 'h-32') 
@@ -102,13 +104,25 @@ const CloseChooseIcon = () => {
 
 }
 
-const addContainerCreateProfile = async() => {
-
+const addContainerCreateProfile = async(info) => {
+    
     const icons = await getProfileIcons()
-    const randomIconId = Math.floor(Math.random()*(icons.fotos.length)) 
-    buttonChooseIcon.style.backgroundImage = `url(${icons.fotos[randomIconId].foto})`
-    buttonChooseIcon.id = icons.fotos[randomIconId].id
-
+    
+    if(info.method.toLowerCase() == 'post'){
+        containerAddProfileTitle.textContent = 'Criar Perfil' 
+        const randomIconId = Math.floor(Math.random()*(icons.fotos.length)) 
+        buttonChooseIcon.style.backgroundImage = `url(${icons.fotos[randomIconId].foto})`
+        buttonChooseIcon.id = icons.fotos[randomIconId].id
+    }else{
+        containerAddProfileTitle.textContent = 'Editar Perfil'
+        icons.fotos.forEach((icon)=>{
+            if(icon.id == info.iconId){
+                buttonChooseIcon.style.backgroundImage = `url(${icon.foto})`
+                buttonChooseIcon.id = icon.id
+            }
+        })
+    }
+    
     containerAddProfile.classList.remove('hidden')
     containerAddProfile.classList.add('flex')
 
@@ -119,13 +133,17 @@ const registerProfile = async() => {
     const id_profile_icon = buttonChooseIcon.id
     const nickname = inputNickname.value
 
-    const newProfile = {
+    const profile = {
         apelido: nickname,
         id_usuario: userId,
         id_foto_perfil: id_profile_icon
     }
 
-    const rsPost = await postProfile(newProfile)
+    if(containerAddProfileTitle.textContent == 'Criar Perfil'){
+        const rsPost = await postProfile(profile)
+    }else{
+        const rsUpdate = await updateProfile(profile)
+    }
 
     inputNickname.value = ''
     closeContainerCreateProfile()
@@ -231,13 +249,18 @@ manageProfiles.addEventListener('click', () => {
 
     if(text == 'Fechar'){
         for (let button of containerProfiles.children) {
-            const buttonEdit = createButtonEdit()
-            buttonEdit.addEventListener('click', addContainerCreateProfile)
-            button.appendChild(buttonEdit)
+            if(button.classList.contains('icon')){
+                const buttonEdit = createButtonEdit()
+                buttonEdit.addEventListener('click', () => {addContainerCreateProfile({method: 'update', iconId: button.id})})
+                inputNickname.value = button.children[1].textContent
+                button.appendChild(buttonEdit)
+            }
         }
     }else{
         for (let button of containerProfiles.children) {
-            button.removeChild(button.children[2])
+            if(button.classList.contains('icon')){
+                button.removeChild(button.children[2])
+            }
         }
     }
 
