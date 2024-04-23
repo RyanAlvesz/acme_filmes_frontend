@@ -16,17 +16,26 @@
     <title>Início</title>
 </head>
 <body class="min-h-screen font-poppins bg-dark_gray grid grid-rows-[calc(10vh+2rem)_1fr_10vh] relative max-md:grid-rows-[1fr]">
-    <div class="absolute inset-0 h-[calc(100vh+0.5px)] gradiente -z-10"></div>
+    <div id="featured-movie-mobile-gradient" class="gradient absolute inset-0 h-[calc(100vh+0.5px)] -z-10"></div>
     <div id="featured-movie-bagckround" class="absolute inset-0 h-screen bg-cover bg-center bg-no-repeat bg-fixed -z-20 max-md:hidden"></div>
-    <header id="90" class="flex items-center justify-between sticky top-0 px-14 z-[1000] ease-linear duration-200 max-md:top-auto max-md:bottom-0 max-md:fixed max-md:bg-gray-header max-md:h-[8.5vh] max-md:w-full max-md:px-7">
-        <ul class="w-[35vw] h-full flex items-center text-white text-xl font-light max-lg:gap-3 max-md:hidden">
-            <li class="w-[8vw] flex items-center hover:font-semibold hover:text-main">
+    <div class="w-screen h-screen fixed bg-dark_gray z-50 flex flex-col items-center justify-center gap-8 max-md:gap-6 max-sm:gap-4" id="loading">
+        <div class="w-[30vh] h-[30vh] flex items-center justify-center relative bg-gradient-to-bl from-main-soft to-secundary p-2">
+            <img src="../images/loading.gif" alt="Michale Jackson comendo pipoca" class="w-full h-full object-cover">
+        </div>
+        <span class="text-3xl font-bold text-white max-md:text-2xl max-sm:text-xl"> Passando trailers... </span>
+    </div>
+    <header id="90" class="flex items-center justify-between sticky top-0 px-14 z-40 ease-linear duration-200 max-md:top-auto max-md:bottom-0 max-md:fixed max-md:bg-gray-header max-md:h-[8.5vh] max-md:w-full max-md:px-7">
+        <ul class="w-[35vw] h-full flex items-center text-white text-lg max-lg:gap-3 max-md:hidden">
+            <li class="w-fit pr-6 flex items-center hover:text-main">
                 <a href="./movies.html"> FILMES </a>
             </li>
-            <li class="w-[8vw] flex items-center hover:font-semibold hover:text-main">
+            <li class="w-fit pr-6 flex items-center hover:text-main">
                 <a href="./actors.html"> ATORES </a>
             </li>
-            <li class="w-[8vw] flex items-center hover:font-semibold hover:text-main">
+            <li class="w-fit pr-6 flex items-center hover:text-main">
+                <a href="./whos-whatching.html"> TROCAR PERFIL </a>
+            </li>
+            <li class="w-fit flex items-center hover:text-main">
                 <a href="./about.html"> SOBRE </a>
             </li>
         </ul>
@@ -41,6 +50,9 @@
                 <a href="./actors.html"> ATORES </a>
             </li>
             <li class="w-fit flex items-center">
+                <a href="./whos-whatching.html"> TROCAR PERFIL </a>
+            </li>
+            <li class="w-fit flex items-center">
                 <a href="./about.html"> SOBRE </a>
             </li>
         </ul>
@@ -52,15 +64,15 @@
         </button>
         <div class="w-[35vw] h-full flex justify-end items-center gap-3 max-md:w-fit">
             <div class="flex gap-1 text-base text-white max-md:hidden">
-                <span> Bem-vinde </span>
-                <span id="user-nickname"> Gabriela </span>
+                <span> Olá, </span>
+                <span id="profile-nickname"></span>
             </div>
-            <button class="flex items-center justify-center w-[5.5vh] h-[5.5vh] rounded-full bg-red bg-cover bg-center">
+            <button id="profile-icon" class="flex items-center justify-center w-[5.5vh] h-[5.5vh] rounded-full bg-cover bg-center">
                 <a href="./profile.html" class="inline-block h-full w-full"></a>
             </button>
         </div>
     </header>
-    <main id="main" class="flex flex-col px-14 max-md:px-7 max-md:pb-[calc(1rem+5.5vh)] max-md:pt-8">
+    <main class="flex flex-col px-14 max-md:px-7 max-md:pb-[calc(1rem+5.5vh)] max-md:pt-8 max-md:items-center">
         <div class="flex flex-col h-[calc(50vh-2rem)] justify-center gap-6 max-md:hidden">
             <h2 id="featured-movie-title" class="font-bold text-7xl text-white leading-[115%] w-[40%] 2xl:text-8xl max-lg:w-[55%]"></h2>
             <div class="text-white flex items-center gap-2">
@@ -69,29 +81,32 @@
                     <span id="featured-movie-director"></span>
                 </div>
                 <div class="w-1 h-1 rounded-full bg-white"></div>
-                <span id="featured-movie-year" class="text-secundary font-bold"></span>
+                <span id="featured-movie-year" class="text-secundary font-extrabold"></span>
             </div>
             <div class="flex items-center gap-4">
                 <button id="featured-movie-play" class="bg-main rounded-3xl px-14 h-12 text-2xl text-white font-semibold">
                     PLAY
                 </button>
-                <button class="h-12 rounded-full">
-                    <img src="../images/svg/add.svg" alt="" class="h-full w-full">
+                <button id="button-favorite-featured-movie" class="h-12 rounded-full border-2 border-white">
+                    <img src="../images/svg/add.svg" alt="Adicionar filme na lista" class="h-full w-full">
                 </button>
             </div>
         </div>
-        <div id="featured-movie-mobile" class="hidden max-md:flex h-[calc(70vh-1.75rem)] p-4 mb-7 rounded-lg bg-barbie bg-center bg-cover items-end justify-center gap-4 shadow-[0_0px_10px_2px_rgba(255,255,255,0.15)]">
+        <div id="featured-movie-mobile" class="hidden max-md:flex h-[calc((100vw-3.5rem)*45/30)] w-[calc(100vw-3.5rem)] p-4 mb-7 rounded-lg bg-center bg-cover items-end justify-center gap-4 shadow-[0_0px_10px_2px_rgba(255,255,255,0.15)] cursor-pointer">
             <img id="featured-movie-mobile-img" class="hidden">
             <button id="featured-movie-mobile-play" class="w-full h-fit py-2 rounded-lg bg-main shadow-md flex items-center justify-center gap-2">
-                <span class="text-white font-medium">PLAY</span>
+                <img src="../images/svg/play.svg" alt="Assitir" class="w-3 h-3">
+                <span class="text-white font-medium max-sm:text-sm">PLAY</span>
             </button>
-            <button class="w-full h-fit py-2 rounded-lg bg-secundary shadow-md flex items-center justify-center gap-2">
-                <span class="text-white font-medium">Minha Lista</span>
+            <button id="button-favorite-featured-movie-mobile" class="w-full h-fit py-2 rounded-lg bg-secundary shadow-md flex items-center justify-center gap-1">
+                <img src="../images/svg/add.svg" alt="Favoritar" class="w-5 h-5">
+                <span class="text-white font-medium max-sm:text-sm">Minha Lista</span>
             </button>
         </div>
+        <div id="section-container" class="flex flex-col"></div>
     </main>
     <footer class="bg-gradient-to-r from-main to-secundary flex items-center justify-center mt-[4vh] max-md:hidden">
-        <p class="text-white font-semibold max-sm:text-sm"> Copyright 2024 | Ryan Alves de Carvalho</p>
+        <p class="text-white font-semibold"> Copyright 2024 | Ryan Alves de Carvalho</p>
     </footer>
 </body>
 </html>

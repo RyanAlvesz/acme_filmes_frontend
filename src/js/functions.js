@@ -58,7 +58,7 @@ export const updateClassification = async(classification, id) => {
     try {
         const url = `http://localhost:8080/v2/acme_filmes/classificacao/${id}`
         const options = {
-            method: 'UPDATE',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -180,7 +180,7 @@ export const getMoviesByGenre = async() => {
 
 }
 
-export const getFavoriteMovies = async(id) => {
+export const getFavoriteMoviesProfile = async(id) => {
 
     try {
         const url = `http://localhost:8080/v2/acme_filmes/filmes/perfil/${id}`
@@ -266,6 +266,43 @@ export const getUsers = async() => {
 
 }
 
+export const getUserById = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/usuario/${id}`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const postValidationUser = async(user) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/validacao/usuario`
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: user.email,
+                senha: user.senha
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+        
+    } catch (error) {
+        return false
+    }
+
+}
+
 export const postUser = async(user) => {
 
     try{
@@ -291,16 +328,17 @@ export const postUser = async(user) => {
 
 }
 
-export const postValidationUser = async(user) => {
+export const updateUser = async(user, id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/validacao/usuario`
+        const url = `http://localhost:8080/v2/acme_filmes/usuario/${id}`
         const options = {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
+                nome: user.nome,
                 email: user.email,
                 senha: user.senha
             })
@@ -308,7 +346,22 @@ export const postValidationUser = async(user) => {
         const response = await fetch(url, options)
         const data = await response.json()
         return data
-        
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const deleteUser = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/usuario/${id}`
+        const options = {
+            method: 'DELETE'
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
     } catch (error) {
         return false
     }
@@ -370,7 +423,7 @@ export const updateProfileIconCategory = async(profileIconCategory, id) => {
     try {
         const url = `http://localhost:8080/v2/acme_filmes/categoria_foto_perfil/${id}`
         const options = {
-            method: 'UPDATE',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -486,7 +539,7 @@ export const updateProfileIcon = async(profileIcon, id) => {
     try {
         const url = `http://localhost:8080/v2/acme_filmes/foto_perfil/${id}`
         const options = {
-            method: 'UPDATE',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -591,7 +644,7 @@ export const updateProfile = async(profile, id) => {
     try {
         const url = `http://localhost:8080/v2/acme_filmes/perfil/${id}`
         const options = {
-            method: 'UPDATE',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -626,6 +679,96 @@ export const deleteProfile = async(id) => {
 
 }
 
+// #region FAVORITE MOVIES
+
+export const getFavoriteMovies = async() => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filmes_favoritos`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const getFavoriteMovieById = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme_favorito/${id}`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const postFavoriteMovie = async(favoriteMovie) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme_favorito`
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id_filme: favoriteMovie.id_filme,
+                id_perfil: favoriteMovie.id_perfil
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const updateFavoriteMovie = async(favoriteMovie, id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme_favorito/${id}`
+        const options = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id_filme: favoriteMovie.id_filme,
+                id_perfil: favoriteMovie.id_perfil
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const deleteFavoriteMovie = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme_favorito/${id}`
+        const options = {
+            method: 'DELETE'
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
 // #region EMPLOYEES
 
 export const getEmployees = async() => {
@@ -641,11 +784,24 @@ export const getEmployees = async() => {
 
 }
 
+export const getEmployeeById = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/funcionario/${id}`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
 export const postValidationEmployee = async(employee) => {
 
     try {
         
-        const url = `http://localhost:8080/v2/acme_filmes/validacao/usuario`
+        const url = `http://localhost:8080/v2/acme_filmes/validacao/funcionario`
         const options = {
             method: 'POST',
             headers: {
@@ -660,6 +816,70 @@ export const postValidationEmployee = async(employee) => {
         const data = await response.json()
         return data
         
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const postEmployee = async(employee) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/funcionario`
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nome: employee.nome,
+                email: employee.email,
+                senha: employee.senha
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const updateEmployee = async(employee, id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/funcionario/${id}`
+        const options = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nome: employee.nome,
+                email: employee.email,
+                senha: employee.senha
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const deleteEmployee = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/funcionario/${id}`
+        const options = {
+            method: 'DELETE'
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
     } catch (error) {
         return false
     }

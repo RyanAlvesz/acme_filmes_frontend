@@ -15,22 +15,22 @@
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js" defer></script>
     <title>Atores</title>
 </head>
-<body class="min-h-screen font-poppins bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray grid grid-rows-[14vh_1fr] pb-12 relative gap-8">
-    <header id="70" class="grid grid-cols-[35vw_1fr_35vw] items-center sticky top-0 px-14 ease-linear duration-200 z-50">
-        <a href="./home.html" class="h-[10vh]">
+<body class="min-h-screen font-poppins bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray grid grid-rows-[14vh_1fr] pb-12 relative gap-8 max-md:grid-rows-[auto_1fr] max-md:gap-4">
+    <header id="70" class="grid grid-cols-[35vw_1fr_35vw] items-center sticky top-0 px-14 ease-linear duration-200 z-50 max-md:grid-cols-1 max-md:py-4 max-md:gap-4 max-sm:px-7 max-md:relative">
+        <a href="./home.html" class="h-[10vh] max-md:h-[8vh]">
             <img src="../images/logo.png" alt="Acme Filmes" class="h-full">
         </a>
-        <h2 class="text-white text-3xl font-semibold place-self-center">
+        <h2 class="text-white text-3xl font-semibold place-self-center max-md:text-2xl">
             ATORES
         </h2>
-        <div id="search-container" class="flex overflow-hidden py-1 px-2 gap-2 rounded-md justify-self-end place-self-center">
-            <input type="text" name="search" id="search" class="hidden w-[25vw] bg-transparent hover:outline-none text-white focus:outline-none cursor-pointer" placeholder="Procurando por um ator?" autocomplete="off">
+        <div id="search-container" class="flex overflow-hidden py-1 px-2 gap-2 rounded-md justify-self-end place-self-center max-md:w-full max-md:bg-medium_gray/70 max-md:py-2">
+            <input type="text" name="search" id="search" class="hidden w-[25vw] bg-transparent hover:outline-none text-white focus:outline-none cursor-pointer max-md:w-full max-md:flex" placeholder="Procurando por um ator?" autocomplete="off">
             <label id="search-button" for="search" class="h-[4vh] w-[4vh] cursor-pointer">
                 <img src="../images/svg/search.svg" alt="Buscar atores" class="h-full">
             </label>
         </div>
     </header>
-    <main id="main" class="flex flex-wrap gap-10 px-14">
+    <main id="main" class="flex flex-wrap gap-10 px-14 max-sm:px-7">
     </main>
 </body>
 </html>

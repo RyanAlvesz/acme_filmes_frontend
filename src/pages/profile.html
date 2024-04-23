@@ -10,97 +10,64 @@
     <link rel="stylesheet" href="../css/output.css">
     <link rel="stylesheet" href="../css/remove-scrollbar.css">
     <script src="../js/profile.js" type="module" defer></script>
+    <script src="../js/back.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
     <title>Editar Perfil</title>
 </head>
-<body class="h-screen font-poppins bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray grid grid-rows-[20vh_1fr] place-content-center">
-    <header class="flex items-center justify-center">
-        <img src="../images/logo.png" alt="Logo" class="w-48">
+<body class="min-h-screen font-poppins relative bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray grid grid-rows-[20vh_1fr] items-center justify-center max-md:grid-rows-[10vh_1fr]">
+    <header class="flex items-center justify-between w-screen px-14 max-md:px-7 max-sm:px-4 max-md:justify-start h-full">
+        <button id="back" class="flex gap-2 items-center w-[30vh] max-md:w-fit">
+            <img src="../images/svg/arrow-left.svg" alt="Voltar" class="w-10 h-10 max-sm:w-8 max-sm:h-8">
+            <span class="text-white text-2xl font-medium max-sm:text-lg"> VOLTAR </span>
+        </button>
+        <img src="../images/logo.png" alt="Logo" class="w-48 max-md:hidden">
+        <div class="w-[30vh] max-md:hidden"></div>
     </header>
-    <main class="flex flex-col justify-center -translate-y-[10vh] gap-3 relative w-[50vw]">
-        <h1 class="text-white font-light text-[2.2rem] px-2"> Editar Perfil </h1>
-        <div class="flex gap-8 px-2">
-            <button type="button" id="button-choose-icon" class="h-[20vh] w-[20vh] bg-red bg-cover bg-center relative flex-shrink-0">
-                <div class="absolute w-8 h-8 rounded-full bg-main p-2 bottom-3 right-3">
+    <main class="flex flex-col justify-center -translate-y-[10vh] gap-3 px-[25vw] max-md:items-center max-md:px-14 max-sm:px-7 max-md:translate-y-0 max-sm:pb-6">
+        <h1 class="text-white font-light text-3xl px-2 max-sm:text-2xl"> Editar Perfil </h1>
+        <div class="flex gap-8 px-2 max-md:flex-col max-md:items-center max-md:gap-3 max-md:w-full">
+            <button type="button" id="button-choose-icon" class="h-[20vh] w-[20vh] bg-cover bg-center relative flex-shrink-0 max-md:h-[18vh] max-md:w-[18vh]">
+                <div class="absolute w-8 h-8 rounded-full bg-gradient-to-tl from-secundary to-main-soft p-2 bottom-3 right-3 max-md:bottom-2 max-md:right-2">
                     <img src="../images/svg/edit.svg" alt="editar" class="w-full h-full">
                 </div>
             </button>
             <form class="flex flex-col gap-4 w-full">
                 <div class="flex flex-col gap-1 text-white">
                     <label for="nickname" class="text-base">Apelido</label>
-                    <input type="text" id="nickname" value="Gabbie" class="bg-medium_gray px-2 py-3">
+                    <input type="text" id="nickname" class="bg-medium_gray px-2 py-3 focus:outline-none">
                 </div>
                 <div class="flex flex-col gap-1 text-white">
-                    <label for="name" class="text-base">Nome</label>
-                    <input type="text" id="name" value="Gabriela Fernandes Calvacanti" class="bg-medium_gray px-2 py-3">
+                    <label for="name" class="text-base">Usuário</label>
+                    <input type="text" id="name" class="bg-medium_gray px-2 py-3 focus:outline-none">
                 </div>
                 <div class="flex flex-col gap-1 text-white">
-                    <label for="email" class="text-base">E-MAIL</label>
-                    <input type="text" id="email" value="gabriela@email.com" class="bg-medium_gray px-2 py-3">
+                    <label for="email" class="text-base">E-mail</label>
+                    <input type="text" id="email" class="bg-medium_gray px-2 py-3 focus:outline-none">
                 </div>
                 <div class="flex flex-col gap-1 text-white">
                     <label for="password" class="text-base">Senha</label>
-                    <input type="password" id="password" value="Gabriela" class="bg-medium_gray px-2 py-3">
+                    <div class="flex items-center gap-2 bg-medium_gray px-2 py-3">
+                        <input type="password" id="password" class="bg-transparent w-full focus:outline-none">
+                        <button type="button" id="show-password">
+                            <img src="../images/svg/eye.svg" alt="Ver senha" class="h-6 w-6">
+                        </button>
+                    </div>
                 </div>
-                <div class="flex flex-col gap-1 text-white">
-                    <label for="new-password" class="text-base">Nova Senha</label>
-                    <input type="password" id="new-password" value="Gabriela" class="bg-medium_gray px-2 py-3">
-                </div>
-                <div class="grid grid-cols-3 gap-4 text-white text-xl pt-2">
-                    <button type="button" id="exit" class="bg-main py-2 rounded-md"> Sair </button>
-                    <button type="button" id="delete" class="bg-main py-2 rounded-md"> Excluir Perfil </button>
+                <div class="grid grid-cols-3 gap-4 text-white text-xl mt-2 max-sm:grid-cols-1 max-sm:grid-rows-3 max-sm:mt-4">
+                    <button type="button" id="exit" class="bg-main py-2 rounded-md max-sm:order-3"> Sair </button>
+                    <button type="button" id="delete" class="bg-main py-2 rounded-md max-sm:order-2"> Excluir conta </button>
                     <button type="button" id="save" class="bg-secundary py-2 rounded-md"> Salvar </button>
                 </div>
             </form>
         </div>
-        <div id="container-choose-icon" class="absolute hidden flex-col px-6 py-4 gap-6 min-h-[50vh] w-[48vw] left-[1vw] bg-dark_gray rounded-2xl shadow-[0px_0px_3px_0px] shadow-gray-shadow/30"> 
-            <div class="w-full flex justify-end">
-                <button id="button-close-choose-icon">
-                    <img src="../images/svg/close.svg" alt="Fechar" class="w-10 h-10">
-                </button>
-            </div>
-            <div class="w-full grid grid-rows-[auto_15vh] gap-4 -translate-y-8">
-                <h2 class="text-white text-xl font-semibold px-10"> Taylor Swift - The Eras</h2>
-                <div class="grid grid-cols-[auto_1fr_auto] gap-2">
-                    <button class="">
-                        <img src="../images/svg/arrow-prev.svg" alt="" class="w-12">
-                    </button>
-                    <div class="flex items-center gap-4 w-[40vw] overflow-x-scroll overflow-y-hidden">
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-speak-now"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-red"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-1989"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-reputation"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-lover"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-folklore"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-evermore"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-midnights"></button>
-                    </div>
-                    <button class="">
-                        <img src="../images/svg/arrow-next.svg" alt="" class="w-12">
-                    </button>
-                </div>
-            </div>
-            <div class="w-full grid grid-rows-[auto_15vh] gap-4 -translate-y-8">
-                <h2 class="text-white text-xl font-semibold px-10"> Taylor Swift - The Eras</h2>
-                <div class="grid grid-cols-[auto_1fr_auto] gap-2">
-                    <button class="">
-                        <img src="../images/svg/arrow-prev.svg" alt="" class="w-12">
-                    </button>
-                    <div class="flex items-center gap-4 w-[40vw] overflow-x-scroll overflow-y-hidden">
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-speak-now"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-red"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-1989"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-reputation"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-lover"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-folklore"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-evermore"></button>
-                        <button class="h-[15vh] w-[15vh] bg-cover bg-center flex-shrink-0 bg-midnights"></button>
-                    </div>
-                    <button class="">
-                        <img src="../images/svg/arrow-next.svg" alt="" class="w-12">
-                    </button>
-                </div>
-            </div>
-        </div>
     </main>
+    <div id="container-choose-icon" class="fixed inset-0 hidden grid-rows-[calc(10vh+2.5rem/2)_1fr] gap-2 min-h-screen w-screen bg-dark_gray max-sm:grid-rows-[calc(7.5vh+2.5rem/2)_1fr]"> 
+        <div class="w-full flex items-end justify-end px-14 max-md:px-7 max-sm:px-4">
+            <button id="button-close-choose-icon">
+                <img src="../images/svg/close.svg" alt="Fechar" class="w-10 h-10">
+            </button>
+        </div>
+        <div id="container-icons" class="flex flex-col items-center gap-6 px-14 max-md:px-0 overflow-y-scroll"></div>
+    </div>
 </body>
 </html>

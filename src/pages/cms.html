@@ -9,7 +9,8 @@
     <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/output.css">
     <link rel="stylesheet" href="../css/remove-scrollbar.css">
-    <script src="../js/cms.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js" defer></script>
+    <script type="module" src="../js/cms.js" defer></script>
     <title>CMS</title>
 </head>
 <body class="min-h-screen font-poppins grid grid-cols-[2fr_8fr]">
@@ -44,159 +45,15 @@
                         <img src="../images/svg/search-blue.svg" alt="Buscar filmes" class="h-full">
                     </label>
                 </div>
-                <div class="flex items-center gap-4 h-[calc(5vh)]">
-                    <button type="button" class="h-full w-[5vh] p-3 rounded-full bg-secundary flex items-center justify-center">
-                        <img src="../images/svg/edit.svg" alt="Editar">
-                    </button>
-                    <button type="button" class="h-full rounded-md px-4 bg-secundary flex items-center justify-center gap-2">
-                        <span class="text-white"> Adicionar </span>
-                        <img src="../images/svg/add.svg" alt="Adicionar Filme" class="w-[calc(5vh-12px)] h-[calc(5vh-12px)]">
-                    </button>
-                </div>
+                <button type="button" id="create-movie" class="rounded-md px-4 bg-secundary flex items-center justify-center gap-2 h-[5vh]">
+                    <span class="text-white"> Adicionar </span>
+                    <img src="../images/svg/add.svg" alt="Adicionar Filme" class="w-[calc(5vh-12px)] h-[calc(5vh-12px)]">
+                </button>
             </div>
             <div class="flex flex-wrap gap-2 overflow-y-auto py-8" id="movies-container">
-                <div class="bg-dark_gray h-fit w-[calc((80vw-3.5rem-1rem)/3)] overflow-hidden rounded-md p-3 gap-3 grid grid-cols-[auto_1fr] ease-linear duration-200 hover:scale-[1.01]">
-                    <img src="../images/icons/movies/poor-things.png" alt="Poor Things" class="w-[calc(((80vw-3.5rem-1rem)/3-1.5rem)/3)] h-[calc((((80vw-3.5rem-1rem)/3-1.5rem)/3)*45/30)] object-cover rounded-md">
-                    <div class="flex flex-col gap-2 text-white justify-center">
-                        <div class="flex flex-col">
-                            <h2 class="font-semibold text-lg drop-shadow-[-1px_1px_0px_#ff0000] 2xl:text-2xl">Pobres Criaturas</h2>
-                            <span class="font-semibold text-xs 2xl:text-base">01/02/2024</span>
-                        </div>
-                        <p class="text-[10px] font-semibold text-balance 2xl:text-[12px]">A jovem Bella Baxter é trazida de volta à vida pelo cientista Dr. Godwin Baxter. Querendo ver mais do mundo, ela foge com um advogado e viaja pelos continentes. Livre dos preconceitos de sua época, Bella exige igualdade e libertação.</p>
-                    </div>
-                </div>
-                <div class="bg-dark_gray h-fit w-[calc((80vw-3.5rem-1rem)/3)] overflow-hidden rounded-md p-3 gap-3 grid grid-cols-[auto_1fr] ease-linear duration-200 hover:scale-[1.01]">
-                    <img src="../images/icons/movies/poor-things.png" alt="Poor Things" class="w-[calc(((80vw-3.5rem-1rem)/3-1.5rem)/3)] h-[calc((((80vw-3.5rem-1rem)/3-1.5rem)/3)*45/30)] object-cover rounded-md">
-                    <div class="flex flex-col gap-2 text-white justify-center">
-                        <div class="flex flex-col">
-                            <h2 class="font-semibold text-lg drop-shadow-[-1px_1px_0px_#ff0000] 2xl:text-2xl">Pobres Criaturas</h2>
-                            <span class="font-semibold text-xs 2xl:text-base">01/02/2024</span>
-                        </div>
-                        <p class="text-[10px] font-semibold text-balance 2xl:text-[12px]">A jovem Bella Baxter é trazida de volta à vida pelo cientista Dr. Godwin Baxter. Querendo ver mais do mundo, ela foge com um advogado e viaja pelos continentes. Livre dos preconceitos de sua época, Bella exige igualdade e libertação.</p>
-                    </div>
-                </div>
-                <div class="bg-dark_gray h-fit w-[calc((80vw-3.5rem-1rem)/3)] overflow-hidden rounded-md p-3 gap-3 grid grid-cols-[auto_1fr] ease-linear duration-200 hover:scale-[1.01]">
-                    <img src="../images/icons/movies/poor-things.png" alt="Poor Things" class="w-[calc(((80vw-3.5rem-1rem)/3-1.5rem)/3)] h-[calc((((80vw-3.5rem-1rem)/3-1.5rem)/3)*45/30)] object-cover rounded-md">
-                    <div class="flex flex-col gap-2 text-white justify-center">
-                        <div class="flex flex-col">
-                            <h2 class="font-semibold text-lg drop-shadow-[-1px_1px_0px_#ff0000] 2xl:text-2xl">Pobres Criaturas</h2>
-                            <span class="font-semibold text-xs 2xl:text-base">01/02/2024</span>
-                        </div>
-                        <p class="text-[10px] font-semibold text-balance 2xl:text-[12px]">A jovem Bella Baxter é trazida de volta à vida pelo cientista Dr. Godwin Baxter. Querendo ver mais do mundo, ela foge com um advogado e viaja pelos continentes. Livre dos preconceitos de sua época, Bella exige igualdade e libertação.</p>
-                    </div>
-                </div>
-                <div class="bg-dark_gray h-fit w-[calc((80vw-3.5rem-1rem)/3)] overflow-hidden rounded-md p-3 gap-3 grid grid-cols-[auto_1fr] ease-linear duration-200 hover:scale-[1.01]">
-                    <img src="../images/icons/movies/poor-things.png" alt="Poor Things" class="w-[calc(((80vw-3.5rem-1rem)/3-1.5rem)/3)] h-[calc((((80vw-3.5rem-1rem)/3-1.5rem)/3)*45/30)] object-cover rounded-md">
-                    <div class="flex flex-col gap-2 text-white justify-center">
-                        <div class="flex flex-col">
-                            <h2 class="font-semibold text-lg drop-shadow-[-1px_1px_0px_#ff0000] 2xl:text-2xl">Pobres Criaturas</h2>
-                            <span class="font-semibold text-xs 2xl:text-base">01/02/2024</span>
-                        </div>
-                        <p class="text-[10px] font-semibold text-balance 2xl:text-[12px]">A jovem Bella Baxter é trazida de volta à vida pelo cientista Dr. Godwin Baxter. Querendo ver mais do mundo, ela foge com um advogado e viaja pelos continentes. Livre dos preconceitos de sua época, Bella exige igualdade e libertação.</p>
-                    </div>
-                </div>
-                <div class="bg-dark_gray h-fit w-[calc((80vw-3.5rem-1rem)/3)] overflow-hidden rounded-md p-3 gap-3 grid grid-cols-[auto_1fr] ease-linear duration-200 hover:scale-[1.01]">
-                    <img src="../images/icons/movies/poor-things.png" alt="Poor Things" class="w-[calc(((80vw-3.5rem-1rem)/3-1.5rem)/3)] h-[calc((((80vw-3.5rem-1rem)/3-1.5rem)/3)*45/30)] object-cover rounded-md">
-                    <div class="flex flex-col gap-2 text-white justify-center">
-                        <div class="flex flex-col">
-                            <h2 class="font-semibold text-lg drop-shadow-[-1px_1px_0px_#ff0000] 2xl:text-2xl">Pobres Criaturas</h2>
-                            <span class="font-semibold text-xs 2xl:text-base">01/02/2024</span>
-                        </div>
-                        <p class="text-[10px] font-semibold text-balance 2xl:text-[12px]">A jovem Bella Baxter é trazida de volta à vida pelo cientista Dr. Godwin Baxter. Querendo ver mais do mundo, ela foge com um advogado e viaja pelos continentes. Livre dos preconceitos de sua época, Bella exige igualdade e libertação.</p>
-                    </div>
-                </div>
-                <div class="bg-dark_gray h-fit w-[calc((80vw-3.5rem-1rem)/3)] overflow-hidden rounded-md p-3 gap-3 grid grid-cols-[auto_1fr] ease-linear duration-200 hover:scale-[1.01]">
-                    <img src="../images/icons/movies/poor-things.png" alt="Poor Things" class="w-[calc(((80vw-3.5rem-1rem)/3-1.5rem)/3)] h-[calc((((80vw-3.5rem-1rem)/3-1.5rem)/3)*45/30)] object-cover rounded-md">
-                    <div class="flex flex-col gap-2 text-white justify-center">
-                        <div class="flex flex-col">
-                            <h2 class="font-semibold text-lg drop-shadow-[-1px_1px_0px_#ff0000] 2xl:text-2xl">Pobres Criaturas</h2>
-                            <span class="font-semibold text-xs 2xl:text-base">01/02/2024</span>
-                        </div>
-                        <p class="text-[10px] font-semibold text-balance 2xl:text-[12px]">A jovem Bella Baxter é trazida de volta à vida pelo cientista Dr. Godwin Baxter. Querendo ver mais do mundo, ela foge com um advogado e viaja pelos continentes. Livre dos preconceitos de sua época, Bella exige igualdade e libertação.</p>
-                    </div>
-                </div>
-                <div class="bg-dark_gray h-fit w-[calc((80vw-3.5rem-1rem)/3)] overflow-hidden rounded-md p-3 gap-3 grid grid-cols-[auto_1fr] ease-linear duration-200 hover:scale-[1.01]">
-                    <img src="../images/icons/movies/poor-things.png" alt="Poor Things" class="w-[calc(((80vw-3.5rem-1rem)/3-1.5rem)/3)] h-[calc((((80vw-3.5rem-1rem)/3-1.5rem)/3)*45/30)] object-cover rounded-md">
-                    <div class="flex flex-col gap-2 text-white justify-center">
-                        <div class="flex flex-col">
-                            <h2 class="font-semibold text-lg drop-shadow-[-1px_1px_0px_#ff0000] 2xl:text-2xl">Pobres Criaturas</h2>
-                            <span class="font-semibold text-xs 2xl:text-base">01/02/2024</span>
-                        </div>
-                        <p class="text-[10px] font-semibold text-balance 2xl:text-[12px]">A jovem Bella Baxter é trazida de volta à vida pelo cientista Dr. Godwin Baxter. Querendo ver mais do mundo, ela foge com um advogado e viaja pelos continentes. Livre dos preconceitos de sua época, Bella exige igualdade e libertação.</p>
-                    </div>
-                </div>
-                <div class="bg-dark_gray h-fit w-[calc((80vw-3.5rem-1rem)/3)] overflow-hidden rounded-md p-3 gap-3 grid grid-cols-[auto_1fr] ease-linear duration-200 hover:scale-[1.01]">
-                    <img src="../images/icons/movies/poor-things.png" alt="Poor Things" class="w-[calc(((80vw-3.5rem-1rem)/3-1.5rem)/3)] h-[calc((((80vw-3.5rem-1rem)/3-1.5rem)/3)*45/30)] object-cover rounded-md">
-                    <div class="flex flex-col gap-2 text-white justify-center">
-                        <div class="flex flex-col">
-                            <h2 class="font-semibold text-lg drop-shadow-[-1px_1px_0px_#ff0000] 2xl:text-2xl">Pobres Criaturas</h2>
-                            <span class="font-semibold text-xs 2xl:text-base">01/02/2024</span>
-                        </div>
-                        <p class="text-[10px] font-semibold text-balance 2xl:text-[12px]">A jovem Bella Baxter é trazida de volta à vida pelo cientista Dr. Godwin Baxter. Querendo ver mais do mundo, ela foge com um advogado e viaja pelos continentes. Livre dos preconceitos de sua época, Bella exige igualdade e libertação.</p>
-                    </div>
-                </div>
-                <div class="bg-dark_gray h-fit w-[calc((80vw-3.5rem-1rem)/3)] overflow-hidden rounded-md p-3 gap-3 grid grid-cols-[auto_1fr] ease-linear duration-200 hover:scale-[1.01]">
-                    <img src="../images/icons/movies/poor-things.png" alt="Poor Things" class="w-[calc(((80vw-3.5rem-1rem)/3-1.5rem)/3)] h-[calc((((80vw-3.5rem-1rem)/3-1.5rem)/3)*45/30)] object-cover rounded-md">
-                    <div class="flex flex-col gap-2 text-white justify-center">
-                        <div class="flex flex-col">
-                            <h2 class="font-semibold text-lg drop-shadow-[-1px_1px_0px_#ff0000] 2xl:text-2xl">Pobres Criaturas</h2>
-                            <span class="font-semibold text-xs 2xl:text-base">01/02/2024</span>
-                        </div>
-                        <p class="text-[10px] font-semibold text-balance 2xl:text-[12px]">A jovem Bella Baxter é trazida de volta à vida pelo cientista Dr. Godwin Baxter. Querendo ver mais do mundo, ela foge com um advogado e viaja pelos continentes. Livre dos preconceitos de sua época, Bella exige igualdade e libertação.</p>
-                    </div>
-                </div>
-                <div class="bg-dark_gray h-fit w-[calc((80vw-3.5rem-1rem)/3)] overflow-hidden rounded-md p-3 gap-3 grid grid-cols-[auto_1fr] ease-linear duration-200 hover:scale-[1.01]">
-                    <img src="../images/icons/movies/poor-things.png" alt="Poor Things" class="w-[calc(((80vw-3.5rem-1rem)/3-1.5rem)/3)] h-[calc((((80vw-3.5rem-1rem)/3-1.5rem)/3)*45/30)] object-cover rounded-md">
-                    <div class="flex flex-col gap-2 text-white justify-center">
-                        <div class="flex flex-col">
-                            <h2 class="font-semibold text-lg drop-shadow-[-1px_1px_0px_#ff0000] 2xl:text-2xl">Pobres Criaturas</h2>
-                            <span class="font-semibold text-xs 2xl:text-base">01/02/2024</span>
-                        </div>
-                        <p class="text-[10px] font-semibold text-balance 2xl:text-[12px]">A jovem Bella Baxter é trazida de volta à vida pelo cientista Dr. Godwin Baxter. Querendo ver mais do mundo, ela foge com um advogado e viaja pelos continentes. Livre dos preconceitos de sua época, Bella exige igualdade e libertação.</p>
-                    </div>
-                </div>
-                <div class="bg-dark_gray h-fit w-[calc((80vw-3.5rem-1rem)/3)] overflow-hidden rounded-md p-3 gap-3 grid grid-cols-[auto_1fr] ease-linear duration-200 hover:scale-[1.01]">
-                    <img src="../images/icons/movies/poor-things.png" alt="Poor Things" class="w-[calc(((80vw-3.5rem-1rem)/3-1.5rem)/3)] h-[calc((((80vw-3.5rem-1rem)/3-1.5rem)/3)*45/30)] object-cover rounded-md">
-                    <div class="flex flex-col gap-2 text-white justify-center">
-                        <div class="flex flex-col">
-                            <h2 class="font-semibold text-lg drop-shadow-[-1px_1px_0px_#ff0000] 2xl:text-2xl">Pobres Criaturas</h2>
-                            <span class="font-semibold text-xs 2xl:text-base">01/02/2024</span>
-                        </div>
-                        <p class="text-[10px] font-semibold text-balance 2xl:text-[12px]">A jovem Bella Baxter é trazida de volta à vida pelo cientista Dr. Godwin Baxter. Querendo ver mais do mundo, ela foge com um advogado e viaja pelos continentes. Livre dos preconceitos de sua época, Bella exige igualdade e libertação.</p>
-                    </div>
-                </div>
-                <div class="bg-dark_gray h-fit w-[calc((80vw-3.5rem-1rem)/3)] overflow-hidden rounded-md p-3 gap-3 grid grid-cols-[auto_1fr] ease-linear duration-200 hover:scale-[1.01]">
-                    <img src="../images/icons/movies/poor-things.png" alt="Poor Things" class="w-[calc(((80vw-3.5rem-1rem)/3-1.5rem)/3)] h-[calc((((80vw-3.5rem-1rem)/3-1.5rem)/3)*45/30)] object-cover rounded-md">
-                    <div class="flex flex-col gap-2 text-white justify-center">
-                        <div class="flex flex-col">
-                            <h2 class="font-semibold text-lg drop-shadow-[-1px_1px_0px_#ff0000] 2xl:text-2xl">Pobres Criaturas</h2>
-                            <span class="font-semibold text-xs 2xl:text-base">01/02/2024</span>
-                        </div>
-                        <p class="text-[10px] font-semibold text-balance 2xl:text-[12px]">A jovem Bella Baxter é trazida de volta à vida pelo cientista Dr. Godwin Baxter. Querendo ver mais do mundo, ela foge com um advogado e viaja pelos continentes. Livre dos preconceitos de sua época, Bella exige igualdade e libertação.</p>
-                    </div>
-                </div>
-                <div class="bg-dark_gray h-fit w-[calc((80vw-3.5rem-1rem)/3)] overflow-hidden rounded-md p-3 gap-3 grid grid-cols-[auto_1fr] ease-linear duration-200 hover:scale-[1.01]">
-                    <img src="../images/icons/movies/poor-things.png" alt="Poor Things" class="w-[calc(((80vw-3.5rem-1rem)/3-1.5rem)/3)] h-[calc((((80vw-3.5rem-1rem)/3-1.5rem)/3)*45/30)] object-cover rounded-md">
-                    <div class="flex flex-col gap-2 text-white justify-center">
-                        <div class="flex flex-col">
-                            <h2 class="font-semibold text-lg drop-shadow-[-1px_1px_0px_#ff0000] 2xl:text-2xl">Pobres Criaturas</h2>
-                            <span class="font-semibold text-xs 2xl:text-base">01/02/2024</span>
-                        </div>
-                        <p class="text-[10px] font-semibold text-balance 2xl:text-[12px]">A jovem Bella Baxter é trazida de volta à vida pelo cientista Dr. Godwin Baxter. Querendo ver mais do mundo, ela foge com um advogado e viaja pelos continentes. Livre dos preconceitos de sua época, Bella exige igualdade e libertação.</p>
-                    </div>
-                </div>
-                <div class="bg-dark_gray h-fit w-[calc((80vw-3.5rem-1rem)/3)] overflow-hidden rounded-md p-3 gap-3 grid grid-cols-[auto_1fr] ease-linear duration-200 hover:scale-[1.01]">
-                    <img src="../images/icons/movies/poor-things.png" alt="Poor Things" class="w-[calc(((80vw-3.5rem-1rem)/3-1.5rem)/3)] h-[calc((((80vw-3.5rem-1rem)/3-1.5rem)/3)*45/30)] object-cover rounded-md">
-                    <div class="flex flex-col gap-2 text-white justify-center">
-                        <div class="flex flex-col">
-                            <h2 class="font-semibold text-lg drop-shadow-[-1px_1px_0px_#ff0000] 2xl:text-2xl">Pobres Criaturas</h2>
-                            <span class="font-semibold text-xs 2xl:text-base">01/02/2024</span>
-                        </div>
-                        <p class="text-[10px] font-semibold text-balance 2xl:text-[12px]">A jovem Bella Baxter é trazida de volta à vida pelo cientista Dr. Godwin Baxter. Querendo ver mais do mundo, ela foge com um advogado e viaja pelos continentes. Livre dos preconceitos de sua época, Bella exige igualdade e libertação.</p>
-                    </div>
-                </div>
-                     
             </div>
+            <form class="">  
+            </form>
         </section>
     </main>
 </body>

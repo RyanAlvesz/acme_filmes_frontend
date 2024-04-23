@@ -10,50 +10,80 @@
     <link rel="stylesheet" href="../css/output.css">
     <link rel="stylesheet" href="../css/remove-scrollbar.css">
     <script src="../js/ww.js" type="module" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
     <title>Quem está assistindo?</title>
 </head>
-<body class="h-screen font-poppins bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray grid grid-rows-[20vh_1fr]">
-    <header class="flex items-center justify-between px-14">
-        <div class="w-[30vh]"></div>
-        <img src="../images/logo.png" alt="Logo" class="w-48">
-        <button id="manage-profiles" class="flex items-center justify-end w-[30vh]">
-            <img id="manage-profiles-img" src="../images/svg/pencil.svg" alt="Editar" class="w-11 h-8 pr-3">
-            <span id="manage-profiles-text" class="text-white text-2xl"> Gerenciar </span>
+<body class="h-screen font-poppins bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray grid grid-rows-[20vh_1fr] max-sm:grid-rows-[15vh_1fr] max-md:gap-4">
+    <header id="header" class="flex items-center justify-between px-14 z-10 max-md:px-7 max-sm:px-4 max-md:z-0">
+        <div class="w-[30vh] max-md:w-10"></div>
+        <img src="../images/logo.png" alt="Logo" class="w-48 max-md:w-36 max-sm:w-28">
+        <button id="manage-profiles" class="flex items-center justify-end w-[30vh] max-md:w-10">
+            <img id="manage-profiles-img" src="../images/svg/pencil.svg" alt="Editar" class="w-10 h-10 pr-2 max-md:pr-0">
+            <span id="manage-profiles-text" class="text-white text-2xl max-md:hidden"> Editar </span>
         </button>
     </header>
-    <main class="flex flex-col items-center justify-center -translate-y-[10vh] gap-10 relative">
-        <h1 id="page-title" class="text-white text-3xl"> Quem está assistindo? </h1>
-        <div id="container-profiles" class="flex items-center justify-center gap-8 h-[20vh] min-w-full"></div>
-        <div id="container-add-profile" class="absolute h-screen w-screen hidden flex-col items-center justify-center gap-12 px-[25vw] bg-dark_gray">
-            <div class="absolute top-0 right-14 h-[20vh] flex items-center">
-                <button id="button-close-create-profile" class="">
-                    <img src="../images/svg/close.svg" alt="Fechar" class="w-10 h-10">
-                </button>
-            </div>
-            <h2 id="container-add-profile-title" class="text-white text-3xl">Criar Perfil</h2>
-            <form class="grid grid-cols-[auto_1fr] items-center justify-center gap-8 w-full px-10">
-                <button type="button" class="h-[20vh] w-[20vh] bg-standard bg-cover bg-center relative">
-                    <div class="absolute w-8 h-8 rounded-full bg-main p-2 bottom-3 right-3">
-                        <img src="../images/svg/edit.svg" alt="editar" class="w-full h-full">
-                    </div>
-                </button>
-                <div class="flex flex-col items-end justify-between h-full">
-                    <div class="flex flex-col justify-center gap-1 w-full">
-                        <label for="nickname" class="text-white text-lg">Apelido</label>
-                        <input type="text" name="nickname" id="nickname" autocomplete="off" class="h-10 focus:outline-none px-2 bg-medium_gray text-white">
-                    </div>
-                    <button id="button-create-profile" type="button" class="bg-secundary rounded-lg px-12 h-12 text-xl text-white">Salvar</button>
-                </div>
-            </form>
-        </div>
-        <div id="container-choose-icon" class="absolute hidden grid-rows-[calc(10vh+2.5rem/2)_1fr] gap-2 min-h-screen w-screen bg-dark_gray rounded-2xl shadow-[0px_0px_3px_0px] shadow-black/90"> 
-            <div class="w-full flex items-end justify-end px-14">
-                <button id="button-close-choose-icon">
-                    <img src="../images/svg/close.svg" alt="Fechar" class="w-10 h-10">
-                </button>
-            </div>
-            <div id="container-icons" class="flex flex-col items-center gap-6 px-14"></div>
-        </div>
+    <main class="flex flex-col items-center justify-center -translate-y-[10vh] gap-10 relative max-md:-translate-y-0 max-md:justify-start max-sm:gap-4">
+        <h1 id="page-title" class="text-white text-3xl text-center font-semibold max-md:text-2xl max-sm:text-xl"> Quem está assistindo? </h1>
+        <div id="container-profiles" class="flex items-center justify-center gap-8 min-w-full max-md:flex-wrap max-md:h-fit max-md:px-7 max-sm:gap-y-4"></div>
     </main>
+    <div id="container-add-profile" class="fixed h-screen w-screen hidden flex-col items-center inset-0 justify-center gap-12 px-[25vw] bg-dark_gray max-md:px-14 max-sm:px-7 max-md:justify-start max-md:gap-8 max-sm:gap-4">
+        <div class="absolute top-0 right-14 h-[20vh] flex items-center max-sm:h-[15vh] max-md:right-7 max-sm:right-4">
+            <button id="button-close-create-profile">
+                <img src="../images/svg/close.svg" alt="Fechar" class="w-10 h-10">
+            </button>
+        </div>
+        <div class="h-fit flex items-center justify-center max-md:h-[20vh] max-sm:h-[15vh]">
+            <h2 class="text-white font-semibold text-3xl max-md:text-2xl">Criar Perfil</h2>
+        </div>
+        <form class="grid grid-cols-[auto_1fr] items-center justify-center gap-8 w-full px-10 max-md:px-0 max-md:grid-cols-1 max-md:content-center">
+            <button id="container-add-profile-icon" type="button" class="h-[20vh] w-[20vh] rounded-sm bg-cover bg-center relative max-md:place-self-center">
+                <div class="absolute w-8 h-8 rounded-full bg-gradient-to-tl from-secundary to-main-soft p-2 bottom-3 right-3 max-md:bottom-2 max-md:right-2">
+                    <img src="../images/svg/edit.svg" alt="editar" class="w-full h-full">
+                </div>
+            </button>
+            <div class="flex flex-col items-end justify-between h-full max-md:gap-6">
+                <div class="flex flex-col justify-center gap-1 w-full">
+                    <label for="nickname" class="text-white text-lg max-md:hidden">Apelido</label>
+                    <input type="text" name="nickname" id="nickname" autocomplete="off" placeholder="Apelido" class="h-10 placeholder:opacity-0 focus:outline-none px-2 bg-medium_gray text-white max-md:placeholder:opacity-100 placeholder:text-gray max-md:h-12">
+                </div>
+                <button id="button-create-profile" type="button" class="bg-secundary rounded-lg px-12 h-12 text-xl text-white max-sm:px-8 max-sm:h-10 max-sm:text-base">Salvar</button>
+            </div>
+        </form>
+    </div>
+    <div id="container-update-profile" class="fixed h-screen w-screen hidden flex-col items-center inset-0 justify-center gap-12 px-[25vw] bg-dark_gray max-md:px-14 max-sm:px-7 max-md:justify-start max-md:gap-8 max-sm:gap-4">
+        <div class="absolute top-0 right-14 h-[20vh] flex items-center max-sm:h-[15vh] max-md:right-7 max-sm:right-4">
+            <button id="button-close-update-profile">
+                <img src="../images/svg/close.svg" alt="Fechar" class="w-10 h-10">
+            </button>
+        </div>
+        <div class="h-fit flex items-center justify-center max-md:h-[20vh] max-sm:h-[15vh]">
+            <h2 class="text-white text-3xl font-semibold max-md:text-2xl">Editar perfil</h2>
+        </div>
+        <form class="grid grid-cols-[auto_1fr] items-center justify-center gap-8 w-full px-10 max-md:px-0 max-md:grid-cols-1 max-md:content-center">
+            <button id="container-update-profile-icon" type="button" class="h-[20vh] w-[20vh] bg-cover bg-center relative max-md:place-self-center">
+                <div class="absolute w-8 h-8 rounded-full bg-gradient-to-tl from-secundary to-main-soft p-2 bottom-3 right-3 max-md:bottom-2 max-md:right-2">
+                    <img src="../images/svg/edit.svg" alt="editar" class="w-full h-full">
+                </div>
+            </button>
+            <div class="flex flex-col items-end justify-between h-full max-md:gap-6">
+                <div class="flex flex-col justify-center gap-1 w-full">
+                    <label for="nickname" class="text-white text-lg max-md:hidden">Apelido</label>
+                    <input type="text" name="nickname" id="nickname-update" autocomplete="off" placeholder="Apelido" class="h-10 focus:outline-none px-2 bg-medium_gray text-white max-md:placeholder:opacity-100 placeholder:text-gray max-md:h-12">
+                </div>
+                <div class="flex w-full justify-end gap-4">
+                    <button id="button-delete-profile" type="button" class="bg-main rounded-lg px-12 h-12 text-xl text-white max-sm:px-8 max-sm:h-10 max-sm:text-base">Excluir</button>
+                    <button id="button-update-profile" type="button" class="bg-secundary rounded-lg px-12 h-12 text-xl text-white max-sm:px-8 max-sm:h-10 max-sm:text-base">Salvar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="container-choose-icon" class="fixed hidden grid-rows-[calc(10vh+2.5rem/2)_1fr] gap-2 inset-0 min-h-screen w-screen bg-dark_gray max-sm:grid-rows-[calc(7.5vh+2.5rem/2)_1fr]"> 
+        <div class="w-full flex items-end justify-end px-14 max-md:px-7 max-sm:px-4">
+            <button id="button-close-choose-icon">
+                <img src="../images/svg/close.svg" alt="Fechar" class="w-10 h-10">
+            </button>
+        </div>
+        <div id="container-icons" class="flex flex-col items-center gap-6 px-14 max-md:px-0 overflow-y-scroll"></div>
+    </div>
 </body>
 </html>

@@ -15,7 +15,10 @@ let size = {
 const createMovies = (moviesArray, cardSize) => {
     
     moviesArray.forEach(movie => {
-        main.appendChild(createMoviesCard(movie, cardSize))
+        const movieCard = createMoviesCard(movie, cardSize)
+        movieCard.classList.add('max-md:h-[calc(((100vw-3.5rem-1.5rem)/2)*45/30)]')
+        movieCard.classList.add('max-md:w-[calc((100vw-3.5rem-1.5rem)/2)]')
+        main.appendChild(movieCard)
     })
 
 }

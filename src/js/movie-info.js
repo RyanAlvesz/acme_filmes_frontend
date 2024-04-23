@@ -1,20 +1,25 @@
 'use strict'
 
-import { getMovieById, getClassificationById } from './functions.js'
+import { getMovieById, getClassificationById, deleteFavoriteMovie } from './functions.js'
+import { postFavoriteProfileMovie, validationFavoriteMovie } from './favorite-movie.js'
 
 const movieId = localStorage.getItem('movieId')
+const profileId = localStorage.getItem('profileId')
 
 const movieBackground = document.getElementById('movie-background')
 const moviePoster = document.getElementById('movie-poster')
 const movieTitle = document.getElementById('movie-title')
 const movieDescription = document.getElementById('movie-description')
 const movieClassification = document.getElementById('movie-classification')
+const movieClassificationMobile = document.getElementById('movie-classification-description-mobile')
 const movieClassificationDescription = document.getElementById('movie-classification-description')
 const movieDuration = document.getElementById('movie-duration')
 const movieRelease = document.getElementById('movie-release')
 const movieDirectors = document.getElementById('movie-directors')
 const movieActors = document.getElementById('movie-actors')
 const movieGenres = document.getElementById('movie-genres')
+const favoriteButton = document.getElementById('favorite-button')
+const x = window.matchMedia('(max-width: 768px)')
 
 const setMovieInfo = async (movie) => {
 
@@ -24,14 +29,16 @@ const setMovieInfo = async (movie) => {
     document.title = movie.nome
 
     movieBackground.style.backgroundImage = `url(${movie.foto_banner})`
-    moviePoster.style.backgroundImage =  `url(${movie.foto_capa})`
     movieTitle.textContent = movie.nome
     movieDescription.textContent = movie.sinopse
     movieClassification.src = classification.icone
     movieClassification.alt = classification.sigla
     movieClassificationDescription.children[0].textContent = classification.classificacao_indicativa
     movieClassificationDescription.children[1].textContent = classification.descricao
-    
+    movieClassificationMobile.textContent = classification.classificacao_indicativa
+
+    changeBgPoster(x, movie)
+
     let durationValues = movie.duracao.split(':')
     let hours = Number(durationValues[0]) > 1 ? 'horas' : 'hora'
     let duration = `${durationValues[0].split('')[1]} ${hours} e ${durationValues[1]} minutos`
@@ -46,6 +53,7 @@ const setMovieInfo = async (movie) => {
         movie.diretores.forEach(director => {
             let directorName = document.createElement('p')
             directorName.textContent = director.nome
+            directorName.classList.add('max-md:text-base')
             movieDirectors.children[1].appendChild(directorName)
         })
 
@@ -58,6 +66,7 @@ const setMovieInfo = async (movie) => {
             actorName.classList.add('hover:underline', 'w-fit')
             actorName.href = './actor-info.html'
             actorName.textContent = actor.nome
+            actorName.classList.add('max-md:text-base')
             actorName.addEventListener('click', () => {
                 localStorage.setItem('actorId', actor.id)
             })
@@ -69,19 +78,52 @@ const setMovieInfo = async (movie) => {
         movieGenres.classList.remove('opacity-0')
         movie.generos.forEach(genre => {
             let genreName = document.createElement('p')
+            genreName.classList.add('max-md:text-base')
             genreName.textContent = genre.nome
             movieGenres.children[1].appendChild(genreName)
         })
     }
 
+    const validationFavorite = await validationFavoriteMovie(profileId, movieId)
+
+    if(validationFavorite){
+        localStorage.setItem('movieFavorite', 'true')
+        favoriteButton.children[0].src = '../images/svg/correct.svg'
+    }else{
+        localStorage.setItem('movieFavorite', 'false')
+    }
+
 }
 
-window.addEventListener('load', async() => {
+const favoriteMovie = async() => {
 
-    const movie = await getMovieById(movieId)
-    setMovieInfo(movie.filme[0])
+    const movieFavorite = localStorage.getItem('movieFavorite')
 
-})
+    if(movieFavorite == 'true'){
+
+        const rsDelte = await deleteFavoriteMovie(localStorage.getItem('favoriteMovieId'))
+        favoriteButton.children[0].src = '../images/svg/add.svg'
+        localStorage.setItem('movieFavorite', 'false')
+
+    }else{
+
+        postFavoriteProfileMovie(profileId, movieId)
+        favoriteButton.children[0].src = '../images/svg/correct.svg'
+        localStorage.setItem('movieFavorite', 'true')
+
+    }
+
+}
+
+const changeBgPoster = (x, movie) => {
+    if (x.matches) {
+        moviePoster.style.backgroundImage = `url(${movie.foto_banner})`
+    } else {
+        moviePoster.style.backgroundImage = `url(${movie.foto_capa})`
+    }
+}
+
+favoriteButton.addEventListener('click', favoriteMovie)
 
 moviePoster.addEventListener('click', async() => {
 
@@ -93,6 +135,18 @@ moviePoster.addEventListener('click', async() => {
 movieClassification.addEventListener('mouseover', () => {
     movieClassificationDescription.classList.remove('opacity-0')
 })
+
 movieClassification.addEventListener('mouseout', () => {
     movieClassificationDescription.classList.add('opacity-0')
+})
+
+window.addEventListener('load', async() => {
+
+    const movie = await getMovieById(movieId)
+    setMovieInfo(movie.filme[0])
+
+    x.addEventListener('change', () => {    
+        changeBgPoster(x, movie.filme[0])
+    })
+
 })

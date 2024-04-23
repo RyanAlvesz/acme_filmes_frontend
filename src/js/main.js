@@ -99,7 +99,7 @@ const register = async() => {
             iconColor: '#FD3131',
             showConfirmButton: false,
             width: '25rem',
-            heightAuto: false,
+            heightAuto: false
         })   
 
     } else {

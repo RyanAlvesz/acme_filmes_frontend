@@ -13,52 +13,55 @@
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js" defer></script>
     <script src="../js/back.js" defer></script>
 </head>
-<body id="movie-background" class="min-h-screen font-poppins bg-dark_gray grid grid-rows-[10vh_1fr] bg-cover bg-center bg-fixed px-14 pt-8 relative">
-    <div class="absolute inset-0 bg-gray-shadow/40 -z-10"></div>
-    <header class="flex items-center">
+<body id="movie-background" class="min-h-screen font-poppins grid grid-rows-[10vh_1fr] bg-cover bg-center bg-fixed px-14 pt-8 relative max-md:px-0 max-md:pt-0">
+    <div class="absolute inset-0 bg-gray-shadow/40 -z-10 max-md:bg-gradient-to-b max-md:from-dark_gray max-md:via-gray-header max-md:to-dark_gray"></div>
+    <header class="flex items-center max-md:px-7 max-sm:px-4">
         <button id="back" class="flex gap-2 items-center justify-center">
-            <img src="../images/svg/arrow-left.svg" alt="Voltar" class="w-10 h-10">
-            <span class="text-white text-2xl font-medium"> VOLTAR </span>
+            <img src="../images/svg/arrow-left.svg" alt="Voltar" class="w-10 h-10 max-sm:w-8 max-sm:h-8">
+            <span class="text-white text-2xl font-medium max-sm:text-lg"> VOLTAR </span>
         </button>
     </header>
-    <main class="grid grid-rows-2 justify-center pb-8">
-        <div class="flex gap-6 items-center">
-            <button id="movie-poster" class="h-[32vh] w-[calc(32vh*30/45)] bg-cover bg-center flex items-center justify-center rounded-xl flex-shrink-0">
+    <main class="grid grid-rows-2 justify-center pb-8 max-md:px-7 max-md:gap-8 max-md:flex max-md:flex-col">
+        <div class="flex gap-6 items-center max-md:flex-col">
+            <button id="movie-poster" class="h-[32vh] w-[calc(32vh*30/45)] bg-cover bg-center flex items-center justify-center rounded-xl flex-shrink-0 max-md:w-[calc(100vw-3.5rem)] max-md:h-[calc((100vw-3.5rem)*9/16)] max-md:rounded-sm">
                 <img src="../images/svg/play.svg" alt="Assistir" class="w-6 h-6">
             </button>
-            <div class="flex flex-col gap-4 justify-center text-white h-[30vh] relative">
-                <div class="flex gap-6 items-center">
-                    <h1 id="movie-title" class="font-semibold text-[4.5rem] uppercase leading-none"></h1>
-                    <button class="h-12 w-12">
+            <div class="flex flex-col gap-4 justify-center text-white h-[30vh] relative max-md:h-fit">
+                <div class="flex gap-6 items-center max-md:justify-between">
+                    <h1 id="movie-title" class="font-semibold text-7xl uppercase leading-none max-md:text-3xl max-sm:text-2xl"></h1>
+                    <button id="favorite-button" class="h-12 w-12 border-2 border-white rounded-full max-md:w-8 max-md:h-8 max-sm:w-6 max-sm:h-6">
                         <img src="../images/svg/add.svg" alt="Adicionar" class="h-full">
                     </button>
                 </div>
-                <p class="text-2xl text-justify leading-[calc(3.5vh)] w-2/3 overflow-y-scroll h-[20vh] scroll pr-3" id="movie-description"></p>
-                <img id="movie-classification" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/DJCTQ_-_12.svg/1024px-DJCTQ_-_12.svg.png" alt="12" class="w-10 h-10">
-                <div id="movie-classification-description" class="absolute top-[calc(100%+15px)] bg-gray-shadow flex w-3/5 flex-col gap-2 p-4 rounded-xl opacity-0 ease-linear duration-100 pointer-events-none">
+                <p class="text-2xl text-justify leading-[calc(3.5vh)] w-2/3 overflow-y-scroll h-[20vh] scroll pr-3 max-md:pr-0 max-md:w-full max-md:h-fit max-md:text-base max-sm:text-sm" id="movie-description"></p>
+                <div class="flex items-center justify-between w-fit max-md:w-full">
+                    <img id="movie-classification" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/DJCTQ_-_12.svg/1024px-DJCTQ_-_12.svg.png" alt="12" class="w-10 h-10 max-md:w-8 max-md:h-8"> 
+                    <p id="movie-classification-description-mobile" class="hidden text-white text-xs font-medium max-md:flex"></p>
+                </div>
+                <div id="movie-classification-description" class="absolute top-[calc(100%+15px)] bg-gray-shadow flex w-3/5 flex-col gap-2 p-4 rounded-xl opacity-0 ease-linear duration-100 pointer-events-none max-md:hidden">
                     <span class="font-semibold text-xl"></span>
                     <span class="text-justify"></span>
                 </div>
             </div>
         </div>
-        <div class="grid text-white movie-info gap-8">
-            <div class="flex flex-col gap-4 text-xl font-light h-fit">
+        <div class="grid text-white movie-info gap-8 max-md:h-fit">
+            <div class="flex flex-col gap-4 text-xl font-light h-fit max-md:gap-2 max-md:text-lg">
                 <h3 class="uppercase font-semibold"> Duração </h3>
-                <p id="movie-duration"></p>
+                <p id="movie-duration" class="max-md:text-base"></p>
             </div>
-            <div class="flex flex-col gap-4 text-xl font-light h-fit">
+            <div class="flex flex-col gap-4 text-xl font-light h-fit max-md:gap-2 max-md:text-lg">
                 <h3 class="uppercase font-semibold"> Data de Lançamento </h3>
-                <p id="movie-release"></p>
+                <p id="movie-release" class="max-md:text-base"></p>
             </div>
-            <div id="movie-directors" class="flex flex-col gap-4 text-xl font-light opacity-0 h-fit">
+            <div id="movie-directors" class="flex flex-col gap-4 text-xl font-light opacity-0 h-fit max-md:gap-2 max-md:text-lg">
                 <h3 class="uppercase font-semibold"> Diretor </h3>
                 <div class="flex flex-col gap-2"></div>
             </div>
-            <div id="movie-actors" class="flex flex-col gap-4 text-xl font-light opacity-0 h-fit">
+            <div id="movie-actors" class="flex flex-col gap-4 text-xl font-light opacity-0 h-fit max-md:gap-2 max-md:text-lg">
                 <h3 class="uppercase font-semibold"> Atores </h3>
                 <div class="flex flex-col gap-2"></div>
             </div>
-            <div id="movie-genres" class="flex flex-col gap-4 text-xl font-light opacity-0 h-fit">
+            <div id="movie-genres" class="flex flex-col gap-4 text-xl font-light opacity-0 h-fit max-md:gap-2 max-md:text-lg">
                 <h3 class="uppercase font-semibold"> Gêneros </h3>
                 <div class="flex flex-col gap-2"></div>
             </div>

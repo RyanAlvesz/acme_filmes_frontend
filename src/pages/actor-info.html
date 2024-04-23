@@ -14,29 +14,29 @@
     <script src="../js/back.js" defer></script>
     <title></title>
 </head>
-<body class="min-h-screen font-poppins bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray grid grid-rows-[14vh_1fr] relative gap-8">
-    <header class="flex items-center px-14 pt-8">
+<body class="min-h-screen font-poppins bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray grid grid-rows-[14vh_1fr] relative gap-8 max-md:grid-rows-[10vh_1fr] max-md:gap-32">
+    <header class="flex items-center px-14 pt-8 max-md:pt-0 max-md:px-7 max-sm:px-4">
         <button id="back" class="flex gap-2 items-center justify-center">
-            <img src="../images/svg/arrow-left.svg" alt="Voltar" class="w-10 h-10">
-            <span class="text-white text-2xl font-medium"> VOLTAR </span>
+            <img src="../images/svg/arrow-left.svg" alt="Voltar" class="w-10 h-10 max-sm:w-8 max-sm:h-8">
+            <span class="text-white text-2xl font-medium max-sm:text-lg"> VOLTAR </span>
         </button>
     </header>
-    <main id="main" class="flex flex-col gap-10 px-14 w-1/2 text-white">
+    <main id="main" class="flex flex-col gap-10 px-14 w-1/2 text-white max-md:w-full max-md:px-7 max-md:gap-8 pb-6">
         <div class="flex flex-col gap-4 relative">
-            <h2 id="actor-name-shadow" class="text-[4.5rem] font-bold text-main absolute translate-x-[5px] -translate-y-[5px]"></h2>
-            <h2 id="actor-name" class="text-[4.5rem] font-bold drop-shadow-[-5px_5px_0px_#3064B4]"></h2>
+            <h2 id="actor-name-shadow" class="text-7xl font-bold text-main absolute translate-x-[5px] -translate-y-[5px] max-md:translate-x-[3px] max-md:-translate-y-[3px] max-md:text-4xl max-sm:text-3xl"></h2>
+            <h2 id="actor-name" class="text-7xl font-bold drop-shadow-[-5px_5px_0px_#3064B4] max-md:drop-shadow-[-3px_3px_0px_#3064B4] max-md:text-4xl max-sm:text-3xl"></h2>
             <div class="flex gap-4 items-center w-fit">
-                <span id="actor-birth" class="text-2xl font-semibold"></span>
+                <span id="actor-birth" class="text-2xl font-semibold max-md:text-lg"></span>
                 <div class="w-2 h-2 bg-white rounded-full opacity-0"></div>
-                <span id="actor-nationality" class="text-2xl font-medium"></span>
+                <span id="actor-nationality" class="text-2xl font-medium max-md:text-xl"></span>
             </div>
         </div>
-        <p id="actor-biography" class="text-justify text-2xl"></p>
-        <div class="flex flex-col gap-4">
-            <p class="text-2xl font-semibold">FILMES</p>
-            <div id="actor-movies-container" class="flex overflow-x-auto overflow-y-hidden h-[20vh] w-[calc(50vw-7rem)] gap-6"></div>
+        <p id="actor-biography" class="text-justify text-2xl max-md:text-base"></p>
+        <div class="flex flex-col gap-4 max-md:gap-2">
+            <p class="text-2xl font-semibold max-md:text-xl">FILMES</p>
+            <div id="actor-movies-container" class="flex overflow-x-auto overflow-y-hidden h-[20vh] w-[calc(50vw-7rem)] gap-6 max-md:w-[calc(100vw-3.5rem)]"></div>
         </div>
     </main>
-    <div id="actor-photo" class="fixed top-0 right-0 h-screen w-1/2 bg-cover bg-center"></div>
+    <div id="actor-photo" class="fixed top-0 right-0 h-screen w-1/2 bg-cover bg-center max-md:rounded-full max-md:absolute max-md:w-28 max-md:h-28 max-md:left-1/2 max-md:-translate-x-1/2 max-md:top-[10vh]"></div>
 </body>
 </html>
