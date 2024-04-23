@@ -31,7 +31,7 @@
                     <img src="../images/svg/edit.svg" alt="editar" class="w-full h-full">
                 </div>
             </button>
-            <form class="flex flex-col gap-4 w-full">
+            <form autocomplete="off" class="flex flex-col gap-4 w-full">
                 <div class="flex flex-col gap-1 text-white">
                     <label for="nickname" class="text-base">Apelido</label>
                     <input type="text" id="nickname" class="bg-medium_gray px-2 py-3 focus:outline-none">
@@ -45,11 +45,11 @@
                     <input type="text" id="email" class="bg-medium_gray px-2 py-3 focus:outline-none">
                 </div>
                 <div class="flex flex-col gap-1 text-white">
-                    <label for="password" class="text-base">Senha</label>
+                    <label for="new-password" class="text-base">Nova Senha</label>
                     <div class="flex items-center gap-2 bg-medium_gray px-2 py-3">
                         <input type="password" id="password" class="bg-transparent w-full focus:outline-none">
                         <button type="button" id="show-password">
-                            <img src="../images/svg/eye.svg" alt="Ver senha" class="h-6 w-6">
+                            <img src="../images/svg/eye-closed.svg" alt="Ver senha" class="h-6 w-6">
                         </button>
                     </div>
                 </div>

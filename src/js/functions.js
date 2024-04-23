@@ -112,7 +112,7 @@ export const getMovies = async() => {
 export const getFeaturedMovie = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme/destaque`
+        const url = `http://localhost:8080/v2/acme_filmes/destaque`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -332,6 +332,29 @@ export const updateUser = async(user, id) => {
 
     try {
         const url = `http://localhost:8080/v2/acme_filmes/usuario/${id}`
+        const options = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nome: user.nome,
+                email: user.email
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const updateUserPassword = async(user, id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/senha/usuario/${id}`
         const options = {
             method: 'PUT',
             headers: {

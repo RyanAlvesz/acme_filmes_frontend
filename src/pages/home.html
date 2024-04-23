@@ -18,7 +18,7 @@
 <body class="min-h-screen font-poppins bg-dark_gray grid grid-rows-[calc(10vh+2rem)_1fr_10vh] relative max-md:grid-rows-[1fr]">
     <div id="featured-movie-mobile-gradient" class="gradient absolute inset-0 h-[calc(100vh+0.5px)] -z-10"></div>
     <div id="featured-movie-bagckround" class="absolute inset-0 h-screen bg-cover bg-center bg-no-repeat bg-fixed -z-20 max-md:hidden"></div>
-    <div class="w-screen h-screen fixed bg-dark_gray z-50 flex flex-col items-center justify-center gap-8 max-md:gap-6 max-sm:gap-4" id="loading">
+    <div class="w-screen h-screen fixed bg-gradient-to-b from-black via-medium_gray to-black z-50 flex flex-col items-center justify-center gap-8 max-md:gap-6 max-sm:gap-4" id="loading">
         <div class="w-[30vh] h-[30vh] flex items-center justify-center relative bg-gradient-to-bl from-main-soft to-secundary p-2">
             <img src="../images/loading.gif" alt="Michale Jackson comendo pipoca" class="w-full h-full object-cover">
         </div>
@@ -77,11 +77,11 @@
             <h2 id="featured-movie-title" class="font-bold text-7xl text-white leading-[115%] w-[40%] 2xl:text-8xl max-lg:w-[55%]"></h2>
             <div class="text-white flex items-center gap-2">
                 <div class="flex gap-1">
-                    <span>Um filme por</span>
+                    <span>Um filme</span>
                     <span id="featured-movie-director"></span>
                 </div>
                 <div class="w-1 h-1 rounded-full bg-white"></div>
-                <span id="featured-movie-year" class="text-secundary font-extrabold"></span>
+                <span id="featured-movie-year" class="drop-shadow-[2.5px_2.5px_0px_#3064B4] font-extrabold"></span>
             </div>
             <div class="flex items-center gap-4">
                 <button id="featured-movie-play" class="bg-main rounded-3xl px-14 h-12 text-2xl text-white font-semibold">

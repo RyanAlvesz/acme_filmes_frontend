@@ -1,6 +1,6 @@
 'use strict'
 
-import {getProfileIconsByCategories, getProfileById, getUserById, updateProfile, updateUser, deleteUser} from './functions.js'
+import {getProfileIconsByCategories, getProfileById, getUserById, updateProfile, updateUser, updateUserPassword, deleteUser, getUsers} from './functions.js'
 
 const profileId = localStorage.getItem('profileId')
 const userId = localStorage.getItem('userId')
@@ -124,19 +124,54 @@ const setUserInfo = async() => {
     nickname.value = profile.perfil[0].apelido
     name.value = user.usuario[0].nome
     email.value = user.usuario[0].email
-    password.value = user.usuario[0].senha
 
 }
 
-const updateUserInfo = () => {
+const emailValidation = async() => {
 
-    const user = {
-        nome: name.value,
-        email: email.value,
-        senha: password.value
+    const user = await getUserById(userId)
+    const users = await getUsers()
+    let boolean = false
+
+    users.usuarios.forEach((userInfo)=>{
+        if(userInfo.email == email.value && userInfo.email != user.usuario[0].email){
+            boolean = true
+        }
+    })
+    
+    return boolean
+
+}
+
+const updateUserInfo = async() => {
+
+    const emailVal = await emailValidation()
+
+    if(password.value != '' && !emailVal){
+
+        const user = {
+            nome: name.value,
+            email: email.value,
+            senha: password.value
+        }
+
+        const rsUpdate = updateUserPassword(user, userId)
+
+    } else if (!emailVal) {
+
+        const user = {
+            nome: name.value,
+            email: email.value,
+            senha: password.value
+        }
+        
+        const rsUpdate = updateUser(user, userId)
+
+    } else {
+
+        console.log('ta errado o email')
+
     }
-
-    const rsUpdate = updateUser(user, userId)
 
 }
 
@@ -249,10 +284,10 @@ const changePasswordInputVisibility = () => {
 
     if(showPassword.children[0].src.includes('eye-closed.svg')){
         showPassword.children[0].src = '../images/svg/eye.svg'
-        password.type = 'password'
+        password.type = 'text'
     }else{
         showPassword.children[0].src = '../images/svg/eye-closed.svg'
-        password.type = 'text'
+        password.type = 'password'
     }
 
 }

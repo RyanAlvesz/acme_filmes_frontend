@@ -52,18 +52,23 @@ const setFeaturedMovie = async(featuredMovie) => {
     FMcover.style.backgroundImage = `url('${featuredMovie.foto_banner}')`
     FMtitle.textContent = featuredMovie.nome
     FMyear.textContent = featuredMovie.data_lancamento.split('-')[0]
-    FMdirector.textContent = featuredMovie.diretores[0].nome
     FMcardMobile.style.backgroundImage = `url('${featuredMovie.foto_capa}')`
     // FMcardMobileImg.src = featuredMovie.foto_capa   
     FMcardMobileImg.src = profileIconUrl
     FMcardMobileImg.crossOrigin = "Anonymous"
   
+    if(featuredMovie.diretores){
+        FMdirector.textContent = `por ${featuredMovie.diretores[0].nome}`
+    }else{
+        FMdirector.textContent = `para se divertir`
+    }
+
     FMcardMobileImg.addEventListener('load', function() {
        let rgb = colorThief.getPalette(FMcardMobileImg)[5]
         localStorage.setItem('FMrgb', rgb)
        changeBgMobile(x, rgb)
     })
-    
+
     FMplay.addEventListener('click', () => {window.location = './movie-info.html'; localStorage.setItem('movieId', featuredMovie.id)})
     FMcardMobilePlay.addEventListener('click', () => {window.location = './movie-info.html'; localStorage.setItem('movieId', featuredMovie.id)})
 
@@ -144,7 +149,7 @@ const setMovies = async() => {
 
     setTimeout(() => {
         loadingCard.classList.add('hidden')
-    }, 2000)
+    }, 1500)
 
 }
 

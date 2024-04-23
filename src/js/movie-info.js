@@ -1,6 +1,6 @@
 'use strict'
 
-import { getMovieById, getClassificationById, deleteFavoriteMovie } from './functions.js'
+import { getMovieById, deleteFavoriteMovie } from './functions.js'
 import { postFavoriteProfileMovie, validationFavoriteMovie } from './favorite-movie.js'
 
 const movieId = localStorage.getItem('movieId')
@@ -23,19 +23,16 @@ const x = window.matchMedia('(max-width: 768px)')
 
 const setMovieInfo = async (movie) => {
 
-    const classificationJSON = await getClassificationById(movie.id_classificacao)
-    const classification = classificationJSON.classificacao[0]
-
     document.title = movie.nome
 
     movieBackground.style.backgroundImage = `url(${movie.foto_banner})`
     movieTitle.textContent = movie.nome
     movieDescription.textContent = movie.sinopse
-    movieClassification.src = classification.icone
-    movieClassification.alt = classification.sigla
-    movieClassificationDescription.children[0].textContent = classification.classificacao_indicativa
-    movieClassificationDescription.children[1].textContent = classification.descricao
-    movieClassificationMobile.textContent = classification.classificacao_indicativa
+    movieClassification.src = movie.classificacao[0].icone
+    movieClassification.alt = movie.classificacao[0].silga
+    movieClassificationDescription.children[0].textContent = movie.classificacao[0].classificacao_indicativa
+    movieClassificationDescription.children[1].textContent = movie.classificacao[0].descricao
+    movieClassificationMobile.textContent = movie.classificacao[0].classificacao_indicativa
 
     changeBgPoster(x, movie)
 
