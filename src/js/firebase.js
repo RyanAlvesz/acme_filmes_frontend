@@ -15,15 +15,17 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const storage = getStorage()
 
-export const uploadImage = (file) => {
-    
-    const storageRef = ref(storage, 'images/'+file.name)
-    uploadBytes(storageRef, file)
-        .then((snapshot) => {
-            getDownloadURL(snapshot.ref).then((downloadURL) => {
-                console.log('Download URL', downloadURL)
-                return  downloadURL
+
+export const uploadImage = async (file) => {
+    let url
+    const storageRef = ref(storage, 'images/' + file.name)
+    await uploadBytes(storageRef, file)
+        .then(async (snapshot) => {
+            await getDownloadURL(snapshot.ref).then(async (downloadURL) => {
+                url = await downloadURL
             })
         })
-
+    return url
 }
+
+

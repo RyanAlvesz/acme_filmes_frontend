@@ -194,7 +194,7 @@ export const postMovie = async(movie) => {
         const options = {
             method: 'POST',
             headers: {
-                'Contety-Type': 'application/json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 nome: movie.nome,
