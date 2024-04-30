@@ -14,7 +14,7 @@ const containerChooseIcon = document.getElementById('container-choose-icon')
 const nickname = document.getElementById('nickname')
 const name = document.getElementById('name')
 const email = document.getElementById('email')
-const password = document.getElementById('password')
+const password = document.getElementById('new-password')
 
 // Buttons
 const saveButton = document.getElementById('save')
@@ -155,21 +155,22 @@ const updateUserInfo = async() => {
             senha: password.value
         }
 
-        const rsUpdate = updateUserPassword(user, userId)
+        const rsUpdate = await updateUserPassword(user, userId)
+        successMessage()
 
     } else if (!emailVal) {
 
         const user = {
             nome: name.value,
-            email: email.value,
-            senha: password.value
+            email: email.value
         }
         
-        const rsUpdate = updateUser(user, userId)
+        const rsUpdate = await updateUser(user, userId)
+        successMessage()
 
     } else {
 
-        console.log('ta errado o email')
+        failMessage()
 
     }
 
@@ -191,10 +192,7 @@ const updateProfileInfo = async() => {
 
 }
 
-const updateInfo = () => {
-
-    updateUserInfo()
-    updateProfileInfo()
+const successMessage = () => {
 
     Swal.fire({
         timer: 2000,
@@ -206,6 +204,28 @@ const updateInfo = () => {
         padding: '0 0 28px 0',
         heightAuto: false,
     })
+
+}
+
+const failMessage = () => {
+
+    Swal.fire({
+        timer: 2000,
+        title: '<p class="text-2xl text-secundary"> Email já cadastrado! <p>',
+        icon: 'error',
+        iconColor: '#FD3131',
+        showConfirmButton: false,
+        width: '25rem',
+        padding: '0 0 28px 0',
+        heightAuto: false,
+    })
+
+}
+
+const updateInfo = () => {
+
+    updateUserInfo()
+    updateProfileInfo() 
 
 }
 
@@ -243,7 +263,6 @@ const deleteUserFun = () => {
               if (result.isConfirmed) {
       
                   const rsDelete = await deleteUser(userId)
-                  console.log(rsDelete)
                   leave()
 
               }

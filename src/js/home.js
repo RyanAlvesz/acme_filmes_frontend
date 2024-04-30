@@ -54,7 +54,7 @@ const setFeaturedMovie = async(featuredMovie) => {
     FMyear.textContent = featuredMovie.data_lancamento.split('-')[0]
     FMcardMobile.style.backgroundImage = `url('${featuredMovie.foto_capa}')`
     // FMcardMobileImg.src = featuredMovie.foto_capa   
-    FMcardMobileImg.src = profileIconUrl
+    FMcardMobileImg.src = 'https://firebasestorage.googleapis.com/v0/b/acme-filmes.appspot.com/o/images%2Fttpd-17.jpeg?alt=media&token=506484e6-7c71-47c3-8dca-780642562ef8'
     FMcardMobileImg.crossOrigin = "Anonymous"
   
     if(featuredMovie.diretores){
@@ -91,6 +91,28 @@ const createMoviesSection = (genre) => {
         w: 'w-[calc((36vh-1rem-2rem)*300/450)]'
     }
 
+    const buttonLeft = document.createElement('button')
+    buttonLeft.classList.add('max-md:hidden', 'absolute', 'h-[calc(36vh-1rem-2rem)]', 'top-[calc(4vh+1rem)]', '-left-12', 'duration-100', 'ease-linear', 'opacity-0')
+    buttonLeft.addEventListener('click', () => {
+        moviesContainer.scrollLeft -= 150
+    })
+
+    const buttonLeftImg = document.createElement('img')
+    buttonLeftImg.classList.add('w-12')
+    buttonLeftImg.src = '../images/svg/arrow-prev.svg'
+    buttonLeftImg.alt = 'Seta para esquerda'
+
+    const buttonRight = document.createElement('button')
+    buttonRight.classList.add('max-md:hidden', 'absolute', 'h-[calc(36vh-1rem-2rem)]', 'top-[calc(4vh+1rem)]', '-right-12', 'duration-100', 'ease-linear', 'opacity-0')
+    buttonRight.addEventListener('click', () => {
+        moviesContainer.scrollLeft += 150
+    })
+
+    const buttonRightImg = document.createElement('img')
+    buttonRightImg.classList.add('w-12')
+    buttonRightImg.src = '../images/svg/arrow-next.svg'
+    buttonRightImg.alt = 'Seta para direita'
+
     genre.filmes.forEach(movie => {    
 
         const card = createMoviesCard(movie, cardSize)
@@ -98,13 +120,19 @@ const createMoviesSection = (genre) => {
 
     })
 
-    // Rolagem lateral
-
-    moviesContainer.addEventListener('wheel', (e) => {
-        moviesContainer.style.scrollBehavior = 'auto'
+    section.addEventListener('mouseover', () => {
+        buttonLeft.classList.remove('opacity-0')
+        buttonRight.classList.remove('opacity-0')
     })
 
-    section.replaceChildren(h2, moviesContainer)
+    section.addEventListener('mouseleave', () => {
+        buttonLeft.classList.add('opacity-0')
+        buttonRight.classList.add('opacity-0')
+    })
+    
+    section.replaceChildren(h2, moviesContainer, buttonLeft, buttonRight)
+    buttonLeft.appendChild(buttonLeftImg)
+    buttonRight.appendChild(buttonRightImg)
 
     return section
 

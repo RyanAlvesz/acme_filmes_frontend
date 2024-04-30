@@ -2,6 +2,10 @@
 
 import { getActors } from './functions.js'
 
+const searchBar = document.getElementById('search')
+
+let actorsARRAY
+
 const createActorCard = (actor) => {
 
     const button = document.createElement('button')
@@ -43,6 +47,7 @@ const createActorCard = (actor) => {
 const setActorsCards = (actors) => {
 
     const main = document.getElementById('main')
+    main.replaceChildren('')
     actors.forEach(actor => {
         const button = createActorCard(actor)
         main.appendChild(button)    
@@ -50,9 +55,23 @@ const setActorsCards = (actors) => {
 
 }
 
+searchBar.addEventListener('keyup', (e) => {
+
+    const search = e.target.value.toLowerCase()
+    const filteredActors = actorsARRAY.filter((actor) => {
+        return (
+            actor.nome.toLowerCase().includes(search)
+        );
+    });
+
+    setActorsCards(filteredActors);
+
+})
+
 window.addEventListener('load', async() => {
 
     const actors = await getActors()
+    actorsARRAY = actors.atores
     setActorsCards(actors.atores)
 
 })

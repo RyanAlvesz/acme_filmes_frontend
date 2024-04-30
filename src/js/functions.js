@@ -2,7 +2,7 @@
 
 // #region CLASSIFICATION
 
-export const getClassification = async() => {
+export const getClassifications = async() => {
 
     try {
         const url = `http://localhost:8080/v2/acme_filmes/classificacoes`
@@ -122,6 +122,19 @@ export const getFeaturedMovie = async() => {
 
 }
 
+export const getMoviesByName = async(name) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filmes/filtro?nome=${name}`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
 export const getMovieById = async(id) => {
 
     try {
@@ -133,25 +146,6 @@ export const getMovieById = async(id) => {
         return false
     }
 
-}
-
-export const postMovie = async(movie) => {
-
-    try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme`
-        const options = {
-            method: 'POST',
-            headers: {
-                'Contety-Type': 'application/json'
-            },
-            body: JSON.stringify(filme)
-        }
-        const response = await fetch(url, options)
-        const data = await response.json()
-        return data       
-    } catch (error) {
-        return false
-    }
 }
 
 export const getMoviesByActor = async(id) => {
@@ -193,13 +187,550 @@ export const getFavoriteMoviesProfile = async(id) => {
 
 }
 
+export const postMovie = async(movie) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme`
+        const options = {
+            method: 'POST',
+            headers: {
+                'Contety-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nome: movie.nome,
+                sinopse: movie.sinopse,
+                duracao: movie.duracao,
+                data_lancamento: movie.data_lancamento,
+                foto_capa: movie.foto_capa,
+                foto_banner: movie.foto_banner,
+                destaque: movie.destaque,
+                link_trailer: movie.link_trailer,
+                id_classificacao: movie.id_classificacao
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data       
+    } catch (error) {
+        return false
+    }
+}
+
+export const updateMovie = async(movie, id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme/${id}`
+        const options = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nome: movie.nome,
+                sinopse: movie.sinopse,
+                duracao: movie.duracao,
+                data_lancamento: movie.data_lancamento,
+                foto_capa: movie.foto_capa,
+                foto_banner: movie.foto_banner,
+                destaque: movie.destaque,
+                link_trailer: movie.link_trailer,
+                id_classificacao: movie.id_classificacao
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const updateAddFeaturedMovie = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/add_destaque/${id}`
+        const options = {
+            method: 'PUT'
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const deleteMovie = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme/${id}`
+        const options = {
+            method: 'DELETE'
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+// #region DIRECTOR
+
+export const getDirectors = async() => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/diretores`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const getDirectorById = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/diretor/${id}`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const getDirectorByMovieId = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/diretores/filme/${id}`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const postDirector = async(director) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/diretor`
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nome: director.nome
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const updateDirector = async(director, id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/diretor/${id}`
+        const options = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nome: director.nome
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const deleteDirector = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/diretor/${id}`
+        const options = {
+            method: 'DELETE'
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+// #region DIRECTORS MOVIES
+
+export const getDirectorsMovies = async() => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filmes_diretores`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const getDirectorMovieById = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme_diretor/${id}`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const postDirectorMovie = async(directorMovie) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme_diretor`
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id_filme: directorMovie.id_filme,
+                id_diretor: directorMovie.id_diretor
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const updateDirectorMovie = async(directorMovie, id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme_diretor/${id}`
+        const options = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id_filme: directorMovie.id_filme,
+                id_diretor: directorMovie.id_diretor
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const deleteDirectorMovie = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme_diretor/${id}`
+        const options = {
+            method: 'DELETE'
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+// #region GENRES
+
+export const getGenres = async() => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/generos`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const getGenreById = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/genero/${id}`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const postGenre = async(genre) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/genero`
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nome: genre.nome
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const updateGenre = async(genre, id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/genero/${id}`
+        const options = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nome: genre.nome
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const deleteGenre = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/genero/${id}`
+        const options = {
+            method: 'DELETE'
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+// #region MOVIES GENRES
+
+export const getMoviesGenres = async() => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filmes_generos`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const getMovieGenreById = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme_genero/${id}`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const postMovieGenre = async(movieGenre) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme_genero`
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id_filme: movieGenre.id_filme,
+                id_genero: movieGenre.id_genero
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const updateMovieGenre = async(movieGenre, id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme_genero/${id}`
+        const options = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id_filme: movieGenre.id_filme,
+                id_genero: movieGenre.id_genero
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const deleteMovieGenre = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme_genero/${id}`
+        const options = {
+            method: 'DELETE'
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
 // #region NATIONALITY
+
+export const getNationalities = async() => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/nacionalidades`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
 
 export const getNationalityById = async(id) => {
 
     try {
         const url = `http://localhost:8080/v2/acme_filmes/nacionalidade/${id}`
         const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const postNationality = async(nationality) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/nacionalidade`
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                pais: nationality.pais,
+                nome: nationality.nome,
+                bandeira: nationality.bandeira
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const updateNationality = async(nationality, id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/nacionalidade/${id}`
+        const options = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                pais: nationality.pais,
+                nome: nationality.nome,
+                bandeira: nationality.bandeira
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const deleteNationality = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/nacionalidade/${id}`
+        const options = {
+            method: 'DELETE'
+        }
+        const response = await fetch(url, options)
         const data = await response.json()
         return data
     } catch (error) {
@@ -236,6 +767,174 @@ export const getActorById = async(id) => {
 
 }
 
+export const getActorMoviesById = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/atores/filme/${id}`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const postActor = async(actor) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/ator`
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nome: actor.nome,
+                foto: actor.foto,
+                biografia: actor.biografia,
+                data_nascimento: actor.data_nascimento,
+                data_falecimento: actor.data_falecimento
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const updateActor = async(actor, id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/ator/${id}`
+        const options = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id_filme: actorMovie.id_filme,
+                id_ator: actorMovie.id_ator
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const deleteActor = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/ator/${id}`
+        const options = {
+            method: 'DELETE'
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+// #region ACTORS MOVIES
+
+export const getActorsMovies = async() => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filmes_atores/`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const getActorMovieById = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme_ator/${id}`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const postActorMovie = async(actorMovie) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme_ator`
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id_filme: actorMovie.id_filme,
+                id_ator: actorMovie.id_ator
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const updateActorMovie = async(actorMovie, id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme_ator/${id}`
+        const options = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id_filme: actorMovie.id_filme,
+                id_ator: actorMovie.id_ator
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const deleteActorMovie = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/filme_ator/${id}`
+        const options = {
+            method: 'DELETE'
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
 // #region ACTORS NATIONALITY
 
 export const getActorsNationalities = async() => {
@@ -243,6 +942,81 @@ export const getActorsNationalities = async() => {
     try {
         const url = `http://localhost:8080/v2/acme_filmes/nacionalidades_atores/`
         const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const getActorNationalityById = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/nacionalidade_ator/${id}`
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const postActorNationality = async(actorNationality) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/nacionalidade_ator`
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id_nacionalidade: actorNationality.id_nacionalidade,
+                id_ator: actorNationality.id_ator
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const updateActorNationality = async(actorNationality, id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/nacionalidade_ator/${id}`
+        const options = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id_nacionalidade: actorNationality.id_nacionalidade,
+                id_ator: actorNationality.id_ator
+            })
+        }
+        const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const deleteActorNationality = async(id) => {
+
+    try {
+        const url = `http://localhost:8080/v2/acme_filmes/nacionalidade_ator/${id}`
+        const options = {
+            method: 'DELETE'
+        }
+        const response = await fetch(url, options)
         const data = await response.json()
         return data
     } catch (error) {

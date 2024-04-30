@@ -1,0 +1,29 @@
+.grid-area{
+    grid-template-areas:
+    "nav header"
+    "nav main"
+}
+
+.grid-area nav{
+    grid-area: nav;
+    width: 20vw;
+}
+.grid-area header{
+    grid-area: header;
+    width: 80vw;
+    height: 25vh;
+}
+.grid-area main{
+    grid-area: main;
+    width: 80vw;
+    height: 75vh;
+}
+
+input[type="checkbox"]:checked + label::before{
+    background-color: #3064B4;
+}
+
+input[type="checkbox"]:checked + label::after{
+    background-image: url(../images/svg/correct.svg);
+}
+

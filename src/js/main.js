@@ -2,13 +2,14 @@
 
 import { postValidationEmployee, postValidationUser, getEmployees, getUsers, postUser } from './functions.js'
 
+const staySigned = localStorage.getItem('staySigned')
+
 // OBJETOS DE ESTRUTURA DO HTML
 const inputEmailLogin = document.getElementById('email-login')
 const inputPasswordLogin = document.getElementById('password-login')
 const inputNameRegister = document.getElementById('name-register')
 const inputEmailRegister = document.getElementById('email-register')
 const inputPasswordRegister = document.getElementById('password-register')
-const hoverWhiteIcon = document.getElementsByClassName('hover-white-icon')
 const buttonChangeOverlayRegister = document.getElementById('button-change-overlay-register')
 const buttonChangeOverlayRegisterMobile = document.getElementById('mobile-button-register')
 const buttonChangeOverlayLogin = document.getElementById('button-change-overlay-login')
@@ -17,6 +18,24 @@ const containerOverlay = document.getElementById('container-overlay')
 const formContainer = document.getElementById('form-container')
 const buttonLogin = document.getElementById('login')
 const buttonRegister = document.getElementById('register')
+const staySignedLogin = document.getElementById('stay-signed-login')
+const staySignedRegister = document.getElementById('stay-signed-register')
+
+// Alerta de informações incorretas
+const fillAllTheInfoMessage = () => {
+
+    Swal.fire({
+        position: 'top',
+        timer: 2000,
+        title: '<p class="text-2xl text-secundary"> Preencha todas as informações corretamente <p>',
+        icon: 'warning',
+        iconColor: '#FD3131',
+        showConfirmButton: false,
+        width: '25rem',
+        heightAuto: false
+    })  
+
+}
 
 // Função para Login
 const login = async() => {
@@ -26,16 +45,7 @@ const login = async() => {
 
     if (email == '' || !email.includes('@') || password == ''){
 
-        Swal.fire({
-            position: 'top',
-            timer: 2000,
-            title: '<p class="text-2xl text-secundary"> Preencha todas as informações corretamente <p>',
-            icon: 'warning',
-            iconColor: '#FD3131',
-            showConfirmButton: false,
-            width: '25rem',
-            heightAuto: false,
-        })   
+        fillAllTheInfoMessage()  
 
     } else {
 
@@ -50,6 +60,9 @@ const login = async() => {
 
         if(userValidation.status){
             localStorage.setItem('userId', userValidation.usuario[0].id)
+            if(staySignedLogin.checked){
+                localStorage.setItem('staySigned', 'true')
+            }
             window.location.href = './src/pages/whos-whatching.html'
         } else {
             valLoginUser = true
@@ -57,7 +70,7 @@ const login = async() => {
                 
         if(employeeValidation.status){
             localStorage.setItem('employeeId', employeeValidation.funcionario[0].id)
-            window.location.href = './src/pages/cms.html'
+            window.location.href = './src/pages/cms/movie-cms.html'
         } else {
             valLoginEmployee = true
         }
@@ -91,16 +104,7 @@ const register = async() => {
 
     if (name == '' || email == '' || !email.includes('@') || password == ''){
 
-        Swal.fire({
-            position: 'top',
-            timer: 2000,
-            title: '<p class="text-2xl text-secundary"> Preencha todas as informações corretamente <p>',
-            icon: 'warning',
-            iconColor: '#FD3131',
-            showConfirmButton: false,
-            width: '25rem',
-            heightAuto: false
-        })   
+         fillAllTheInfoMessage()
 
     } else {
 
@@ -150,6 +154,9 @@ const register = async() => {
 
             let user = await postUser(newUser)
             localStorage.setItem('userId', user.usuario.id)
+            if(staySignedRegister.checked){
+                localStorage.setItem('staySigned', 'true')
+            }
             window.location.href = './src/pages/whos-whatching.html'
             
         }
@@ -191,43 +198,6 @@ const moveOverlay = () => {
 
 }
 
-// Hover ícones de login
-for (let icons of hoverWhiteIcon) {
-
-    icons.parentNode.addEventListener('mouseover', () => {
-        
-        setTimeout(() => {
-
-        let iconSrc = icons.src
-
-            if(!iconSrc.includes('hover')){
-                let stringWhitoutSvg = iconSrc.split('.svg')
-                let src = stringWhitoutSvg[0] + '-hover.svg'
-                icons.src = src
-            }
-
-        }, 0.15 * 1000)
-
-        
-    })
-
-    icons.parentNode.addEventListener('mouseleave', () => {
-
-        setTimeout(() => {
-
-            let iconSrc = icons.src
-            
-            if (iconSrc.includes('hover')){
-                let src = iconSrc.split('-hover.svg')[0] + '.svg'
-                icons.src = src    
-            }
-
-        }, 0.25 * 1000)
-
-    })
-
-}
-
 // Alterar visibilidade da senha
 inputPasswordLogin.nextElementSibling.addEventListener('click', changeInputPasswordVisibilty)
 inputPasswordRegister.nextElementSibling.addEventListener('click', changeInputPasswordVisibilty)
@@ -248,3 +218,11 @@ inputPasswordLogin.addEventListener('keypress', (event) => { if (event.key === '
 inputNameRegister.addEventListener('keypress', (event) => { if (event.key === 'Enter') { register() }})
 inputEmailRegister.addEventListener('keypress', (event) => { if (event.key === 'Enter') { register() }})
 inputPasswordRegister.addEventListener('keypress', (event) => { if (event.key === 'Enter') { register() }})
+
+window.addEventListener('load', () => {
+
+    if(staySigned == 'true'){
+        window.location.href = './src/pages/whos-whatching.html'
+    }
+
+})

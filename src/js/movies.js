@@ -1,9 +1,10 @@
 'use strict'
 
 import { createMoviesCard } from './movie-card.js'
-import { getMovies } from './functions.js'
+import { getMovies, getMoviesByName } from './functions.js'
 
 const main = document.getElementById('main')
+const searchBar = document.getElementById('search')
 
 let size = {
 
@@ -14,6 +15,8 @@ let size = {
 
 const createMovies = (moviesArray, cardSize) => {
     
+    main.replaceChildren('')
+
     moviesArray.forEach(movie => {
         const movieCard = createMoviesCard(movie, cardSize)
         movieCard.classList.add('max-md:h-[calc(((100vw-3.5rem-1.5rem)/2)*45/30)]')
@@ -23,7 +26,24 @@ const createMovies = (moviesArray, cardSize) => {
 
 }
 
-window.addEventListener('load', async() => {
+const setAllMovies = async() => {
     const moviesJSON = await getMovies() 
     createMovies(moviesJSON.filmes, size)
+}
+
+searchBar.addEventListener('keyup', async() => {
+
+    const search = searchBar.value.toLowerCase()
+
+    if(search != ''){
+        const filteredMovies = await getMoviesByName(search) 
+        if(filteredMovies.status_code == 200){
+            createMovies(filteredMovies.filmes, size)
+        }
+    }else{
+        setAllMovies()
+    }
+
 })
+
+window.addEventListener('load', setAllMovies)
