@@ -53,8 +53,7 @@ const setFeaturedMovie = async(featuredMovie) => {
     FMtitle.textContent = featuredMovie.nome
     FMyear.textContent = featuredMovie.data_lancamento.split('-')[0]
     FMcardMobile.style.backgroundImage = `url('${featuredMovie.foto_capa}')`
-    // FMcardMobileImg.src = featuredMovie.foto_capa   
-    FMcardMobileImg.src = 'https://firebasestorage.googleapis.com/v0/b/acme-filmes.appspot.com/o/images%2Fttpd-17.jpeg?alt=media&token=506484e6-7c71-47c3-8dca-780642562ef8'
+    FMcardMobileImg.src = featuredMovie.foto_capa   
     FMcardMobileImg.crossOrigin = "Anonymous"
   
     if(featuredMovie.diretores){
@@ -64,7 +63,7 @@ const setFeaturedMovie = async(featuredMovie) => {
     }
 
     FMcardMobileImg.addEventListener('load', function() {
-       let rgb = colorThief.getPalette(FMcardMobileImg)[5]
+       let rgb = colorThief.getPalette(FMcardMobileImg)[0]
         localStorage.setItem('FMrgb', rgb)
        changeBgMobile(x, rgb)
     })
@@ -77,7 +76,7 @@ const setFeaturedMovie = async(featuredMovie) => {
 const createMoviesSection = (genre) => {
 
     const section = document.createElement('section')
-    section.classList.add('flex', 'flex-col', 'gap-4', 'pb-4', 'min-h-[40vh]', 'movies-container', 'relative')
+    section.classList.add('flex', 'flex-col', 'gap-4', 'pb-4', 'min-h-[40vh]', 'movies-container', 'relative', 'scroll-smooth')
 
     const h2 = document.createElement('h2')
     h2.classList.add('font-semibold', 'text-white', 'text-3xl', 'h-[4vh]', 'max-md:text-2xl')
@@ -85,16 +84,12 @@ const createMoviesSection = (genre) => {
     
     const moviesContainer = document.createElement('div')
     moviesContainer.classList.add('h-[calc(36vh-1rem-2rem)]', 'flex', 'items-end', 'gap-6', 'w-[calc(100vw-7rem)]', 'overflow-x-auto', 'place-self-center', 'max-md:w-[calc(100vw-3.5rem)]')
-    
-    const cardSize = {
-        h: 'h-[calc(36vh-1rem-2rem)]',
-        w: 'w-[calc((36vh-1rem-2rem)*300/450)]'
-    }
+    moviesContainer.style.scrollBehavior = 'smooth'
 
     const buttonLeft = document.createElement('button')
     buttonLeft.classList.add('max-md:hidden', 'absolute', 'h-[calc(36vh-1rem-2rem)]', 'top-[calc(4vh+1rem)]', '-left-12', 'duration-100', 'ease-linear', 'opacity-0')
     buttonLeft.addEventListener('click', () => {
-        moviesContainer.scrollLeft -= 150
+        moviesContainer.scrollLeft -= 300
     })
 
     const buttonLeftImg = document.createElement('img')
@@ -105,13 +100,18 @@ const createMoviesSection = (genre) => {
     const buttonRight = document.createElement('button')
     buttonRight.classList.add('max-md:hidden', 'absolute', 'h-[calc(36vh-1rem-2rem)]', 'top-[calc(4vh+1rem)]', '-right-12', 'duration-100', 'ease-linear', 'opacity-0')
     buttonRight.addEventListener('click', () => {
-        moviesContainer.scrollLeft += 150
+        moviesContainer.scrollLeft += 300
     })
 
     const buttonRightImg = document.createElement('img')
     buttonRightImg.classList.add('w-12')
     buttonRightImg.src = '../images/svg/arrow-next.svg'
     buttonRightImg.alt = 'Seta para direita'
+
+    const cardSize = {
+        h: 'h-[calc(36vh-1rem-2rem)]',
+        w: 'w-[calc((36vh-1rem-2rem)*300/450)]'
+    }
 
     genre.filmes.forEach(movie => {    
 

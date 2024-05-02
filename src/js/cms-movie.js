@@ -143,6 +143,18 @@ const postMovieFun = async() => {
 
     if(postInputValidation()){
         
+        Swal.fire({
+            position: 'center',
+            title: '<p class="text-2xl text-dark_gray"> Cadastrando filme... <p>',
+            imageUrl: "../../images/logo.png",
+            imageWidth: '60%',
+            imageAlt: "Logo acme",
+            showConfirmButton: false,
+            padding: '0 0 28px 0',
+            width: '25rem',
+            heightAuto: false
+        })
+
         const imagesUrl = await getPostImagesUrl()
     
         const movie = {
@@ -163,9 +175,9 @@ const postMovieFun = async() => {
         Swal.fire({
             position: 'center',
             timer: 2000,
-            title: '<p class="text-2xl text-dark_gray"> Filme cadastrado com sucesso <p>',
+            title: '<p class="text-2xl text-dark_gray"> Filme cadastrado com sucesso! <p>',
             icon: 'success',
-            iconColor: '#3064B4',
+            iconColor: '#FF0000',
             showConfirmButton: false,
             width: '25rem',
             heightAuto: false
@@ -214,7 +226,7 @@ const postInputValidation = () => {
 
 const getImageUrl = async (file) => {
 
-    const url = await uploadImage(file)
+    const url = await uploadImage(file, 'movies')
     return url
 
 }
@@ -234,6 +246,7 @@ const getPostImagesUrl = async () => {
 const setEditClassifications = async (classificationID) => {
 
     const classificationsJSON = await getClassifications()
+    editClassificationInput.replaceChildren('')
 
     classificationsJSON.classificacoes.forEach((classification) => {
         const option = createClassificationOption(classification)
@@ -281,7 +294,7 @@ const deleteMovieFun = () => {
             position: 'center',
             timer: 2000,
             title: '<p class="text-2xl text-secundary"> Filme em destaque <p>',
-            html: '<p class="text-xl text-dark-gray"> Adicione destaque para outro filme antes de excluir esse <p>',
+            html: '<p class="text-xl text-dark_gray"> Adicione destaque para outro filme antes de excluir esse <p>',
             icon: 'warning',
             iconColor: '#FD3131',
             showConfirmButton: false,
@@ -332,7 +345,7 @@ const deleteMovieFun = () => {
 
 }
 
-const editInputValidation = async () => {
+const editInputValidation = () => {
 
     let validation = false
 
@@ -353,6 +366,20 @@ const editInputValidation = async () => {
             iconColor: '#FD3131',
             showConfirmButton: false,
             width: '25rem',
+            heightAuto: false
+        })
+
+    } else if (localStorage.getItem('editMovieFeatured') == '1' && editFeaturedInput.checked == false) {
+
+        Swal.fire({
+            position: 'center',
+            timer: 3000,
+            title: '<p class="text-2xl text-secundary"> Não foi possível atualizar o filme <p>',
+            html: '<p class="text-xl text-dark-gray"> Adicione destaque para outro filme antes de remover o destaque desse <p>',
+            icon: 'warning',
+            iconColor: '#FD3131',
+            showConfirmButton: false,
+            width: '30rem',
             heightAuto: false
         })
 

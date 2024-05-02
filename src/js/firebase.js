@@ -16,9 +16,9 @@ const app = initializeApp(firebaseConfig)
 const storage = getStorage()
 
 
-export const uploadImage = async (file) => {
+export const uploadImage = async (file, storagePath) => {
     let url
-    const storageRef = ref(storage, 'images/' + file.name)
+    const storageRef = ref(storage, `images/${storagePath}/${file.name}`)
     await uploadBytes(storageRef, file)
         .then(async (snapshot) => {
             await getDownloadURL(snapshot.ref).then(async (downloadURL) => {
