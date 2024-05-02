@@ -34,14 +34,17 @@ const setMovieInfo = async (movie) => {
     movieClassificationDescription.children[1].textContent = movie.classificacao[0].descricao
     movieClassificationMobile.textContent = movie.classificacao[0].classificacao_indicativa
 
+    const DateTime = luxon.DateTime
+
     changeBgPoster(x, movie)
 
+    let dr = DateTime.fromISO(movie.duracao)
     let durationValues = movie.duracao.split(':')
     let hours = Number(durationValues[0]) > 1 ? 'horas' : 'hora'
-    let duration = `${durationValues[0].split('')[1]} ${hours} e ${durationValues[1]} minutos`
-    movieDuration.textContent = duration
+    let minutes = Number(durationValues[1]) > 1 ? 'minutos' : 'minuto'
+    let drFormatedText = `HH '${hours} e' mm '${minutes}'`
+    movieDuration.textContent = dr.toFormat(drFormatedText)
     
-    const DateTime = luxon.DateTime
     let dt = DateTime.fromISO(movie.data_lancamento)
     movieRelease.textContent = dt.toLocaleString(DateTime.DATE_FULL)
 
