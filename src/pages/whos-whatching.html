@@ -9,11 +9,16 @@
     <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/output.css">
     <link rel="stylesheet" href="../css/remove-scrollbar.css">
+    <link rel="stylesheet" href="../css/loading.css">
     <script src="../js/ww.js" type="module" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
     <title>Quem está assistindo?</title>
 </head>
 <body class="h-screen font-poppins bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray grid grid-rows-[20vh_1fr] max-sm:grid-rows-[15vh_1fr] max-md:gap-4">
+    <div class="w-screen h-screen fixed bg-gradient-to-b from-black via-medium_gray to-black z-50 flex flex-col items-center justify-center gap-8 max-md:gap-6 max-sm:gap-4" id="loading">
+        <img src="../images/logo.png" alt="Acme Filmes" class="h-[15vh]">
+        <div class="loader"></div>
+    </div>
     <header id="header" class="flex items-center justify-between px-14 z-10 max-md:px-7 max-sm:px-4 max-md:z-0">
         <div class="w-[30vh] max-md:w-10"></div>
         <img src="../images/logo.png" alt="Logo" class="w-48 max-md:w-36 max-sm:w-28">

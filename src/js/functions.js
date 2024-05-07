@@ -1,11 +1,13 @@
 'use strict'
 
+const apiUrl = 'https://acme-filmes-backend-1qiz.onrender.com'
+
 // #region CLASSIFICATION
 
 export const getClassifications = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/classificacoes`
+        const url = `${apiUrl}/v2/acme_filmes/classificacoes`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -18,7 +20,7 @@ export const getClassifications = async() => {
 export const getClassificationById = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/classificacao/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/classificacao/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -31,7 +33,7 @@ export const getClassificationById = async(id) => {
 export const postClassification = async(classification) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/classificacao`
+        const url = `${apiUrl}/v2/acme_filmes/classificacao`
         const options = {
             method: 'POST',
             headers: {
@@ -56,7 +58,7 @@ export const postClassification = async(classification) => {
 export const updateClassification = async(classification, id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/classificacao/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/classificacao/${id}`
         const options = {
             method: 'PUT',
             headers: {
@@ -81,7 +83,7 @@ export const updateClassification = async(classification, id) => {
 export const deleteClassification = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/classificacao/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/classificacao/${id}`
         const options = {
             method: 'DELETE'
         }
@@ -99,7 +101,7 @@ export const deleteClassification = async(id) => {
 export const getMovies = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filmes`
+        const url = `${apiUrl}/v2/acme_filmes/filmes`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -112,7 +114,7 @@ export const getMovies = async() => {
 export const getFeaturedMovie = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/destaque`
+        const url = `${apiUrl}/v2/acme_filmes/destaque`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -125,7 +127,7 @@ export const getFeaturedMovie = async() => {
 export const getMoviesByName = async(name) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filmes/filtro?nome=${name}`
+        const url = `${apiUrl}/v2/acme_filmes/filmes/filtro?nome=${name}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -138,7 +140,7 @@ export const getMoviesByName = async(name) => {
 export const getMovieById = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/filme/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -151,7 +153,7 @@ export const getMovieById = async(id) => {
 export const getMoviesByActor = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filmes/ator/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/filmes/ator/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -164,7 +166,7 @@ export const getMoviesByActor = async(id) => {
 export const getMoviesByGenre = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filmes/generos/`
+        const url = `${apiUrl}/v2/acme_filmes/filmes/generos/`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -177,7 +179,7 @@ export const getMoviesByGenre = async() => {
 export const getFavoriteMoviesProfile = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filmes/perfil/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/filmes/perfil/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -190,7 +192,7 @@ export const getFavoriteMoviesProfile = async(id) => {
 export const postMovie = async(movie) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme`
+        const url = `${apiUrl}/v2/acme_filmes/filme`
         const options = {
             method: 'POST',
             headers: {
@@ -219,7 +221,7 @@ export const postMovie = async(movie) => {
 export const updateMovie = async(movie, id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/filme/${id}`
         const options = {
             method: 'PUT',
             headers: {
@@ -249,7 +251,7 @@ export const updateMovie = async(movie, id) => {
 export const updateAddFeaturedMovie = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/add_destaque/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/add_destaque/${id}`
         const options = {
             method: 'PUT'
         }
@@ -265,7 +267,7 @@ export const updateAddFeaturedMovie = async(id) => {
 export const deleteMovie = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/filme/${id}`
         const options = {
             method: 'DELETE'
         }
@@ -283,7 +285,7 @@ export const deleteMovie = async(id) => {
 export const getDirectors = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/diretores`
+        const url = `${apiUrl}/v2/acme_filmes/diretores`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -296,7 +298,7 @@ export const getDirectors = async() => {
 export const getDirectorById = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/diretor/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/diretor/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -309,7 +311,7 @@ export const getDirectorById = async(id) => {
 export const getDirectorByMovieId = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/diretores/filme/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/diretores/filme/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -322,7 +324,7 @@ export const getDirectorByMovieId = async(id) => {
 export const postDirector = async(director) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/diretor`
+        const url = `${apiUrl}/v2/acme_filmes/diretor`
         const options = {
             method: 'POST',
             headers: {
@@ -344,7 +346,7 @@ export const postDirector = async(director) => {
 export const updateDirector = async(director, id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/diretor/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/diretor/${id}`
         const options = {
             method: 'PUT',
             headers: {
@@ -366,7 +368,7 @@ export const updateDirector = async(director, id) => {
 export const deleteDirector = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/diretor/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/diretor/${id}`
         const options = {
             method: 'DELETE'
         }
@@ -384,7 +386,7 @@ export const deleteDirector = async(id) => {
 export const getDirectorsMovies = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filmes_diretores`
+        const url = `${apiUrl}/v2/acme_filmes/filmes_diretores`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -397,7 +399,7 @@ export const getDirectorsMovies = async() => {
 export const getDirectorMovieById = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme_diretor/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/filme_diretor/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -410,7 +412,7 @@ export const getDirectorMovieById = async(id) => {
 export const postDirectorMovie = async(directorMovie) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme_diretor`
+        const url = `${apiUrl}/v2/acme_filmes/filme_diretor`
         const options = {
             method: 'POST',
             headers: {
@@ -433,7 +435,7 @@ export const postDirectorMovie = async(directorMovie) => {
 export const updateDirectorMovie = async(directorMovie, id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme_diretor/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/filme_diretor/${id}`
         const options = {
             method: 'PUT',
             headers: {
@@ -456,7 +458,7 @@ export const updateDirectorMovie = async(directorMovie, id) => {
 export const deleteDirectorMovie = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme_diretor/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/filme_diretor/${id}`
         const options = {
             method: 'DELETE'
         }
@@ -474,7 +476,7 @@ export const deleteDirectorMovie = async(id) => {
 export const getGenres = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/generos`
+        const url = `${apiUrl}/v2/acme_filmes/generos`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -487,7 +489,7 @@ export const getGenres = async() => {
 export const getGenreById = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/genero/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/genero/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -500,7 +502,7 @@ export const getGenreById = async(id) => {
 export const postGenre = async(genre) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/genero`
+        const url = `${apiUrl}/v2/acme_filmes/genero`
         const options = {
             method: 'POST',
             headers: {
@@ -522,7 +524,7 @@ export const postGenre = async(genre) => {
 export const updateGenre = async(genre, id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/genero/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/genero/${id}`
         const options = {
             method: 'PUT',
             headers: {
@@ -544,7 +546,7 @@ export const updateGenre = async(genre, id) => {
 export const deleteGenre = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/genero/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/genero/${id}`
         const options = {
             method: 'DELETE'
         }
@@ -562,7 +564,7 @@ export const deleteGenre = async(id) => {
 export const getMoviesGenres = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filmes_generos`
+        const url = `${apiUrl}/v2/acme_filmes/filmes_generos`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -575,7 +577,7 @@ export const getMoviesGenres = async() => {
 export const getMovieGenreById = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme_genero/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/filme_genero/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -588,7 +590,7 @@ export const getMovieGenreById = async(id) => {
 export const postMovieGenre = async(movieGenre) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme_genero`
+        const url = `${apiUrl}/v2/acme_filmes/filme_genero`
         const options = {
             method: 'POST',
             headers: {
@@ -611,7 +613,7 @@ export const postMovieGenre = async(movieGenre) => {
 export const updateMovieGenre = async(movieGenre, id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme_genero/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/filme_genero/${id}`
         const options = {
             method: 'PUT',
             headers: {
@@ -634,7 +636,7 @@ export const updateMovieGenre = async(movieGenre, id) => {
 export const deleteMovieGenre = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme_genero/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/filme_genero/${id}`
         const options = {
             method: 'DELETE'
         }
@@ -652,7 +654,7 @@ export const deleteMovieGenre = async(id) => {
 export const getNationalities = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/nacionalidades`
+        const url = `${apiUrl}/v2/acme_filmes/nacionalidades`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -665,7 +667,7 @@ export const getNationalities = async() => {
 export const getNationalityById = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/nacionalidade/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/nacionalidade/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -678,7 +680,7 @@ export const getNationalityById = async(id) => {
 export const postNationality = async(nationality) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/nacionalidade`
+        const url = `${apiUrl}/v2/acme_filmes/nacionalidade`
         const options = {
             method: 'POST',
             headers: {
@@ -702,7 +704,7 @@ export const postNationality = async(nationality) => {
 export const updateNationality = async(nationality, id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/nacionalidade/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/nacionalidade/${id}`
         const options = {
             method: 'PUT',
             headers: {
@@ -726,7 +728,7 @@ export const updateNationality = async(nationality, id) => {
 export const deleteNationality = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/nacionalidade/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/nacionalidade/${id}`
         const options = {
             method: 'DELETE'
         }
@@ -744,7 +746,7 @@ export const deleteNationality = async(id) => {
 export const getActors = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/atores`
+        const url = `${apiUrl}/v2/acme_filmes/atores`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -757,7 +759,7 @@ export const getActors = async() => {
 export const getActorById = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/ator/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/ator/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -770,7 +772,7 @@ export const getActorById = async(id) => {
 export const getActorMoviesById = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/atores/filme/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/atores/filme/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -783,7 +785,7 @@ export const getActorMoviesById = async(id) => {
 export const postActor = async(actor) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/ator`
+        const url = `${apiUrl}/v2/acme_filmes/ator`
         const options = {
             method: 'POST',
             headers: {
@@ -809,7 +811,7 @@ export const postActor = async(actor) => {
 export const updateActor = async(actor, id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/ator/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/ator/${id}`
         const options = {
             method: 'PUT',
             headers: {
@@ -832,7 +834,7 @@ export const updateActor = async(actor, id) => {
 export const deleteActor = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/ator/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/ator/${id}`
         const options = {
             method: 'DELETE'
         }
@@ -850,7 +852,7 @@ export const deleteActor = async(id) => {
 export const getActorsMovies = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filmes_atores/`
+        const url = `${apiUrl}/v2/acme_filmes/filmes_atores/`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -863,7 +865,7 @@ export const getActorsMovies = async() => {
 export const getActorMovieById = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme_ator/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/filme_ator/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -876,7 +878,7 @@ export const getActorMovieById = async(id) => {
 export const postActorMovie = async(actorMovie) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme_ator`
+        const url = `${apiUrl}/v2/acme_filmes/filme_ator`
         const options = {
             method: 'POST',
             headers: {
@@ -899,7 +901,7 @@ export const postActorMovie = async(actorMovie) => {
 export const updateActorMovie = async(actorMovie, id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme_ator/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/filme_ator/${id}`
         const options = {
             method: 'PUT',
             headers: {
@@ -922,7 +924,7 @@ export const updateActorMovie = async(actorMovie, id) => {
 export const deleteActorMovie = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme_ator/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/filme_ator/${id}`
         const options = {
             method: 'DELETE'
         }
@@ -940,7 +942,7 @@ export const deleteActorMovie = async(id) => {
 export const getActorsNationalities = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/nacionalidades_atores/`
+        const url = `${apiUrl}/v2/acme_filmes/nacionalidades_atores/`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -953,7 +955,7 @@ export const getActorsNationalities = async() => {
 export const getActorNationalityById = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/nacionalidade_ator/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/nacionalidade_ator/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -966,7 +968,7 @@ export const getActorNationalityById = async(id) => {
 export const postActorNationality = async(actorNationality) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/nacionalidade_ator`
+        const url = `${apiUrl}/v2/acme_filmes/nacionalidade_ator`
         const options = {
             method: 'POST',
             headers: {
@@ -989,7 +991,7 @@ export const postActorNationality = async(actorNationality) => {
 export const updateActorNationality = async(actorNationality, id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/nacionalidade_ator/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/nacionalidade_ator/${id}`
         const options = {
             method: 'PUT',
             headers: {
@@ -1012,7 +1014,7 @@ export const updateActorNationality = async(actorNationality, id) => {
 export const deleteActorNationality = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/nacionalidade_ator/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/nacionalidade_ator/${id}`
         const options = {
             method: 'DELETE'
         }
@@ -1030,7 +1032,7 @@ export const deleteActorNationality = async(id) => {
 export const getUsers = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/usuarios/`
+        const url = `${apiUrl}/v2/acme_filmes/usuarios/`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -1043,7 +1045,7 @@ export const getUsers = async() => {
 export const getUserById = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/usuario/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/usuario/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -1056,7 +1058,7 @@ export const getUserById = async(id) => {
 export const postValidationUser = async(user) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/validacao/usuario`
+        const url = `${apiUrl}/v2/acme_filmes/validacao/usuario`
         const options = {
             method: 'POST',
             headers: {
@@ -1080,7 +1082,7 @@ export const postValidationUser = async(user) => {
 export const postUser = async(user) => {
 
     try{
-        const url = `http://localhost:8080/v2/acme_filmes/usuario/`
+        const url = `${apiUrl}/v2/acme_filmes/usuario/`
         const options = {
             method: 'POST',
             headers: {
@@ -1105,7 +1107,7 @@ export const postUser = async(user) => {
 export const updateUser = async(user, id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/usuario/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/usuario/${id}`
         const options = {
             method: 'PUT',
             headers: {
@@ -1128,7 +1130,7 @@ export const updateUser = async(user, id) => {
 export const updateUserPassword = async(user, id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/senha/usuario/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/senha/usuario/${id}`
         const options = {
             method: 'PUT',
             headers: {
@@ -1152,7 +1154,7 @@ export const updateUserPassword = async(user, id) => {
 export const deleteUser = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/usuario/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/usuario/${id}`
         const options = {
             method: 'DELETE'
         }
@@ -1170,7 +1172,7 @@ export const deleteUser = async(id) => {
 export const getProfileIconsCategories = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/categorias_foto_perfil`
+        const url = `${apiUrl}/v2/acme_filmes/categorias_foto_perfil`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -1183,7 +1185,7 @@ export const getProfileIconsCategories = async() => {
 export const getProfileIconCategoryById = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/categoria_foto_perfil/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/categoria_foto_perfil/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -1196,7 +1198,7 @@ export const getProfileIconCategoryById = async(id) => {
 export const postProfileIconCategory = async(profileIconCategory) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/categoria_foto_perfil`
+        const url = `${apiUrl}/v2/acme_filmes/categoria_foto_perfil`
         const options = {
             method: 'POST',
             headers: {
@@ -1218,7 +1220,7 @@ export const postProfileIconCategory = async(profileIconCategory) => {
 export const updateProfileIconCategory = async(profileIconCategory, id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/categoria_foto_perfil/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/categoria_foto_perfil/${id}`
         const options = {
             method: 'PUT',
             headers: {
@@ -1240,7 +1242,7 @@ export const updateProfileIconCategory = async(profileIconCategory, id) => {
 export const deleteProfileIconCategory = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/categoria_foto_perfil/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/categoria_foto_perfil/${id}`
         const options = {
             method: 'DELETE'
         }
@@ -1258,7 +1260,7 @@ export const deleteProfileIconCategory = async(id) => {
 export const getProfileIcons = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/fotos_perfil`
+        const url = `${apiUrl}/v2/acme_filmes/fotos_perfil`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -1271,7 +1273,7 @@ export const getProfileIcons = async() => {
 export const getProfileIconById = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/foto_perfil/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/foto_perfil/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -1284,7 +1286,7 @@ export const getProfileIconById = async(id) => {
 export const getProfileIconByCategory = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/foto_perfil/categoria/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/foto_perfil/categoria/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -1297,7 +1299,7 @@ export const getProfileIconByCategory = async(id) => {
 export const getProfileIconsByCategories = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/fotos_perfil/categorias/`
+        const url = `${apiUrl}/v2/acme_filmes/fotos_perfil/categorias/`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -1310,7 +1312,7 @@ export const getProfileIconsByCategories = async() => {
 export const postProfileIcon = async(profileIcon) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/foto_perfil`
+        const url = `${apiUrl}/v2/acme_filmes/foto_perfil`
         const options = {
             method: 'POST',
             headers: {
@@ -1334,7 +1336,7 @@ export const postProfileIcon = async(profileIcon) => {
 export const updateProfileIcon = async(profileIcon, id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/foto_perfil/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/foto_perfil/${id}`
         const options = {
             method: 'PUT',
             headers: {
@@ -1358,7 +1360,7 @@ export const updateProfileIcon = async(profileIcon, id) => {
 export const deleteProfileIcon = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/foto_perfil/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/foto_perfil/${id}`
         const options = {
             method: 'DELETE'
         }
@@ -1376,7 +1378,7 @@ export const deleteProfileIcon = async(id) => {
 export const getProfiles = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/perfis`
+        const url = `${apiUrl}/v2/acme_filmes/perfis`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -1389,7 +1391,7 @@ export const getProfiles = async() => {
 export const getProfileById = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/perfil/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/perfil/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -1402,7 +1404,7 @@ export const getProfileById = async(id) => {
 export const getProfilesByUser = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/perfis/usuario/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/perfis/usuario/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -1415,7 +1417,7 @@ export const getProfilesByUser = async(id) => {
 export const postProfile = async(profile) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/perfil`
+        const url = `${apiUrl}/v2/acme_filmes/perfil`
         const options = {
             method: 'POST',
             headers: {
@@ -1439,7 +1441,7 @@ export const postProfile = async(profile) => {
 export const updateProfile = async(profile, id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/perfil/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/perfil/${id}`
         const options = {
             method: 'PUT',
             headers: {
@@ -1463,7 +1465,7 @@ export const updateProfile = async(profile, id) => {
 export const deleteProfile = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/perfil/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/perfil/${id}`
         const options = {
             method: 'DELETE'
         }
@@ -1481,7 +1483,7 @@ export const deleteProfile = async(id) => {
 export const getFavoriteMovies = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filmes_favoritos`
+        const url = `${apiUrl}/v2/acme_filmes/filmes_favoritos`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -1494,7 +1496,7 @@ export const getFavoriteMovies = async() => {
 export const getFavoriteMovieById = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme_favorito/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/filme_favorito/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -1507,7 +1509,7 @@ export const getFavoriteMovieById = async(id) => {
 export const postFavoriteMovie = async(favoriteMovie) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme_favorito`
+        const url = `${apiUrl}/v2/acme_filmes/filme_favorito`
         const options = {
             method: 'POST',
             headers: {
@@ -1530,7 +1532,7 @@ export const postFavoriteMovie = async(favoriteMovie) => {
 export const updateFavoriteMovie = async(favoriteMovie, id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme_favorito/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/filme_favorito/${id}`
         const options = {
             method: 'PUT',
             headers: {
@@ -1553,7 +1555,7 @@ export const updateFavoriteMovie = async(favoriteMovie, id) => {
 export const deleteFavoriteMovie = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/filme_favorito/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/filme_favorito/${id}`
         const options = {
             method: 'DELETE'
         }
@@ -1571,7 +1573,7 @@ export const deleteFavoriteMovie = async(id) => {
 export const getEmployees = async() => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/funcionarios`
+        const url = `${apiUrl}/v2/acme_filmes/funcionarios`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -1584,7 +1586,7 @@ export const getEmployees = async() => {
 export const getEmployeeById = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/funcionario/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/funcionario/${id}`
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -1598,7 +1600,7 @@ export const postValidationEmployee = async(employee) => {
 
     try {
         
-        const url = `http://localhost:8080/v2/acme_filmes/validacao/funcionario`
+        const url = `${apiUrl}/v2/acme_filmes/validacao/funcionario`
         const options = {
             method: 'POST',
             headers: {
@@ -1622,7 +1624,7 @@ export const postValidationEmployee = async(employee) => {
 export const postEmployee = async(employee) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/funcionario`
+        const url = `${apiUrl}/v2/acme_filmes/funcionario`
         const options = {
             method: 'POST',
             headers: {
@@ -1646,7 +1648,7 @@ export const postEmployee = async(employee) => {
 export const updateEmployee = async(employee, id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/funcionario/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/funcionario/${id}`
         const options = {
             method: 'PUT',
             headers: {
@@ -1670,7 +1672,7 @@ export const updateEmployee = async(employee, id) => {
 export const deleteEmployee = async(id) => {
 
     try {
-        const url = `http://localhost:8080/v2/acme_filmes/funcionario/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/funcionario/${id}`
         const options = {
             method: 'DELETE'
         }

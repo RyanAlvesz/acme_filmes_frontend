@@ -1,6 +1,7 @@
 'use strict'
 
 import {getProfileIconsByCategories, getProfileById, getUserById, updateProfile, updateUser, updateUserPassword, deleteUser, getUsers} from './functions.js'
+import { closeLoading } from './loading.js'
 
 const profileId = localStorage.getItem('profileId')
 const userId = localStorage.getItem('userId')
@@ -124,6 +125,8 @@ const setUserInfo = async() => {
     nickname.value = profile.perfil[0].apelido
     name.value = user.usuario[0].nome
     email.value = user.usuario[0].email
+
+    closeLoading()
 
 }
 

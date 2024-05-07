@@ -1,6 +1,7 @@
 'use strict'
 
 import {getProfilesByUser, getProfileById, getProfileIcons, postProfile, updateProfile, getProfileIconsByCategories, deleteProfile } from './functions.js'
+import { closeLoading } from './loading.js'
 
 const userId = localStorage.getItem('userId')
 
@@ -523,4 +524,5 @@ window.addEventListener('load', async() => {
     const icons = await getProfileIconsByCategories()
     setIconSection(icons.fotos_perfil)
     setProfileCards()
+    closeLoading()
 })

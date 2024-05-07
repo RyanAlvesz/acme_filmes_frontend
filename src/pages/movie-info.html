@@ -9,11 +9,16 @@
     <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/output.css">
     <link rel="stylesheet" href="../css/movie-info.css">
+    <link rel="stylesheet" href="../css/loading.css">
     <script src="../js/movie-info.js" type="module" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js" defer></script>
     <script src="../js/back.js" defer></script>
 </head>
 <body id="movie-background" class="min-h-screen bg-dark_gray font-poppins grid grid-rows-[10vh_1fr] bg-cover bg-center bg-fixed px-14 pt-8 relative max-md:px-0 max-md:pt-0">
+    <div class="w-screen h-screen fixed bg-gradient-to-b from-black via-medium_gray to-black z-50 flex flex-col items-center justify-center gap-8 max-md:gap-6 max-sm:gap-4" id="loading">
+        <img src="../images/logo.png" alt="Acme Filmes" class="h-[15vh]">
+        <div class="loader"></div>
+    </div>
     <div class="absolute inset-0 bg-gray-shadow/40 -z-10 max-md:bg-gradient-to-b max-md:from-dark_gray max-md:via-gray-header max-md:to-dark_gray"></div>
     <header class="flex items-center max-md:px-7 max-sm:px-4">
         <button id="back" class="flex gap-2 items-center justify-center">
@@ -53,16 +58,16 @@
                 <h3 class="uppercase font-semibold"> Data de Lançamento </h3>
                 <p id="movie-release" class="max-md:text-base"></p>
             </div>
-            <div id="movie-directors" class="flex flex-col gap-4 text-xl font-light opacity-0 h-fit max-md:gap-2 max-md:text-lg">
-                <h3 class="uppercase font-semibold"> Diretor </h3>
+            <div id="movie-genres" class="flex flex-col gap-4 text-xl font-light opacity-0 h-fit max-md:gap-2 max-md:text-lg">
+                <h3 class="uppercase font-semibold"> Gêneros </h3>
                 <div class="flex flex-col gap-2"></div>
             </div>
             <div id="movie-actors" class="flex flex-col gap-4 text-xl font-light opacity-0 h-fit max-md:gap-2 max-md:text-lg">
                 <h3 class="uppercase font-semibold"> Atores </h3>
                 <div class="flex flex-col gap-2"></div>
             </div>
-            <div id="movie-genres" class="flex flex-col gap-4 text-xl font-light opacity-0 h-fit max-md:gap-2 max-md:text-lg">
-                <h3 class="uppercase font-semibold"> Gêneros </h3>
+            <div id="movie-directors" class="flex flex-col gap-4 text-xl font-light opacity-0 h-fit max-md:gap-2 max-md:text-lg">
+                <h3 class="uppercase font-semibold"> Diretor </h3>
                 <div class="flex flex-col gap-2"></div>
             </div>
         </div>

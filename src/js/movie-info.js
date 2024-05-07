@@ -2,6 +2,7 @@
 
 import { getMovieById, deleteFavoriteMovie } from './functions.js'
 import { postFavoriteProfileMovie, validationFavoriteMovie } from './favorite-movie.js'
+import { closeLoading } from './loading.js'
 
 const movieId = localStorage.getItem('movieId')
 const profileId = localStorage.getItem('profileId')
@@ -92,6 +93,8 @@ const setMovieInfo = async (movie) => {
     }else{
         localStorage.setItem('movieFavorite', 'false')
     }
+
+    closeLoading()
 
 }
 

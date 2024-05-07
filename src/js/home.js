@@ -5,6 +5,7 @@
 import { getMoviesByGenre, getFavoriteMoviesProfile, getFeaturedMovie, deleteFavoriteMovie} from './functions.js'
 import { postFavoriteProfileMovie, validationFavoriteMovie } from './favorite-movie.js'
 import { createMoviesCard } from './movie-card.js'
+import { closeLoading } from './loading.js'
 
 const colorThief = new ColorThief()
 
@@ -22,7 +23,6 @@ const buttonFavoriteFeaturedMovie = document.getElementById('button-favorite-fea
 const buttonFavoriteFeaturedMovieMobile = document.getElementById('button-favorite-featured-movie-mobile')
 const sectionContainer = document.getElementById('section-container')
 const FMmobileGradient = document.getElementById('featured-movie-mobile-gradient')
-const loadingCard = document.getElementById('loading')
 const x = window.matchMedia('(max-width: 768px)')
 
 const setFeaturedMovie = async(featuredMovie) => {
@@ -175,9 +175,7 @@ const setMovies = async() => {
     addMovies(moviesByGenreJSON.generos)
     setFeaturedMovie(featuredMovie.filme)
 
-    setTimeout(() => {
-        loadingCard.classList.add('hidden')
-    }, 1500)
+    closeLoading()
 
 }
 
