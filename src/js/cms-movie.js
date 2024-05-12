@@ -2,7 +2,7 @@
 
 import { getClassifications, getMovies, getMoviesByName, postMovie, updateMovie, deleteMovie } from './functions.js'
 import { uploadImage } from './firebase.js'
-
+import { closeLoading } from './loading.js'
 
 const moviesSection = document.getElementById('movies-section')
 const buttonCreateMovie = document.getElementById('create-movie')
@@ -90,6 +90,7 @@ const createMovies = (moviesArray) => {
 const setMovies = async () => {
     const moviesJSON = await getMovies()
     createMovies(moviesJSON.filmes)
+    closeLoading()
 }
 
 const createClassificationOption = (classification) => {
@@ -151,7 +152,7 @@ const postMovieFun = async() => {
             imageAlt: "Logo acme",
             showConfirmButton: false,
             padding: '0 0 28px 0',
-            width: '25rem',
+            width: '30rem',
             heightAuto: false
         })
 
@@ -197,8 +198,8 @@ const postInputValidation = () => {
         synopsisInput.value == '' ||
         durationInput.value == '' ||
         releaseDateInput.value == '' ||
-        posterInput.length === 0 ||
-        bannerInput.length === 0 ||
+        posterInput.files.length == 0 ||
+        bannerInput.files.length == 0 ||
         classificationInput.value == '' ||
         trailerInput.value == ''
     ) {
@@ -260,6 +261,9 @@ const setEditClassifications = async (classificationID) => {
 }
 
 const setEditMovie = (movie) => {
+
+    editPosterInput.value = ''
+    editBannerInput.value = ''
 
     editNameInput.value = movie.nome
     editSynopsisInput.value = movie.sinopse

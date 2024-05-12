@@ -818,8 +818,11 @@ export const updateActor = async(actor, id) => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                id_filme: actorMovie.id_filme,
-                id_ator: actorMovie.id_ator
+                nome: actor.nome,
+                foto: actor.foto,
+                biografia: actor.biografia,
+                data_nascimento: actor.data_nascimento,
+                data_falecimento: actor.data_falecimento
             })
         }
         const response = await fetch(url, options)
@@ -1645,10 +1648,10 @@ export const postEmployee = async(employee) => {
 
 }
 
-export const updateEmployee = async(employee, id) => {
+export const updateEmployeePassword = async(employee, id) => {
 
     try {
-        const url = `${apiUrl}/v2/acme_filmes/funcionario/${id}`
+        const url = `${apiUrl}/v2/acme_filmes/senha/funcionario/${id}`
         const options = {
             method: 'PUT',
             headers: {
@@ -1661,6 +1664,30 @@ export const updateEmployee = async(employee, id) => {
             })
         }
         const response = await fetch(url, options)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return false
+    }
+
+}
+
+export const updateEmployee = async(employee, id) => {
+
+    try {
+        const url = `${apiUrl}/v2/acme_filmes/funcionario/${id}`
+        const options = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nome: employee.nome,
+                email: employee.email
+            })
+        }
+        const response = await fetch(url, options)
+        console.log(response);
         const data = await response.json()
         return data
     } catch (error) {

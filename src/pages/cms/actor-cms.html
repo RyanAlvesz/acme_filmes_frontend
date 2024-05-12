@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../../images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/output.css">
+    <link rel="stylesheet" href="../../css/remove-scrollbar.css">
+    <link rel="stylesheet" href="../../css/cms.css">
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.css" />
+    <script src="https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script type="module" src="../../js/cms-actor.js" defer></script>
+    <script type="module" src="../../js/exit-cms.js" defer></script>
+    <script type="module" src="../../js/firebase.js" defer></script>
+    <title> CMS - ATOR </title>
+</head>
+<body class="min-h-screen font-poppins grid grid-area bg-cold-gray">
+    <div id="loading" class="absolute bottom-0 right-0 flex items-center justify-center w-[80vw] h-[75vh] bg-cold-gray z-50">
+        <div class="loader"></div>
+    </div>
+    <nav class="grid grid-rows-[20vh_80vh] h-screen items-center bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray px-7 pb-8">
+        <img src="../../images/logo.png" alt="Acme Filmes" class="w-4/5 place-self-center">
+        <div class="h-[80vh] overflow-y-scroll pb-8">
+            <div class="flex flex-col items-center justify-center text-white text-xl gap-4 overflow-y-scroll">
+                <button type="button" class="rounded-xl w-full">
+                    <a href="./movie-cms.html" class="flex h-full w-full items-center justify-center py-2"> FILMES </a>  
+                </button>
+                <button type="button" class="rounded-xl bg-main w-full font-bold">
+                    <a href="#" class="flex h-full w-full items-center justify-center py-2"> ATORES </a>  
+                </button>
+                <button type="button" class="rounded-xl w-full">
+                    <a href="./genre-cms.html" class="flex h-full w-full items-center justify-center py-2"> GÊNEROS </a>  
+                </button>
+                <button type="button" class="rounded-xl w-full">
+                    <a href="./director-cms.html" class="flex h-full w-full items-center justify-center py-2"> DIRETORES </a>  
+                </button>
+                <button type="button" class="rounded-xl w-full">
+                    <a href="./classification-cms.html" class="flex h-full w-full items-center justify-center py-2"> CLASSIFICAÇÕES </a>  
+                </button>
+                <button type="button" class="rounded-xl w-full">
+                    <a href="./movie-actor-cms.html" class="flex h-full w-full items-center justify-center py-2"> ATORES DOS FILMES </a>  
+                </button>
+                <button type="button" class="rounded-xl w-full">
+                    <a href="./movie-genre-cms.html" class="flex h-full w-full items-center justify-center py-2"> GÊNEROS DOS FILMES </a>  
+                </button>
+                <button type="button" class="rounded-xl w-full">
+                    <a href="./movie-director-cms.html" class="flex h-full w-full items-center justify-center py-2"> DIRETORES DOS FILMES </a>  
+                </button>
+                <button type="button" class="rounded-xl w-full">
+                    <a href="./nationality-cms.html" class="flex h-full w-full items-center justify-center py-2"> NACIONALIDADES </a>  
+                </button>
+                <button type="button" class="rounded-xl w-full">
+                    <a href="./actor-nationality-cms.html" class="flex h-full w-full items-center justify-center py-2"> NACIONALIDADES DOS ATORES </a>  
+                </button>
+                <button type="button" class="rounded-xl w-full">
+                    <a href="./profile-icon-category-cms.html" class="flex h-full w-full items-center justify-center py-2"> CATEGORIAS FOTO DE PERFIL </a>  
+                </button>
+                <button type="button" class="rounded-xl w-full">
+                    <a href="./profile-icon-cms.html" class="flex h-full w-full items-center justify-center py-2"> FOTOS DE PERFIL </a>  
+                </button>
+                <button type="button" class="rounded-xl w-full">
+                    <a href="./employee-cms.html" class="flex h-full w-full items-center justify-center py-2"> FUNCIONÁRIOS </a>  
+                </button>
+            </div>
+        </div>
+    </nav>
+    <header class="flex flex-col justify-between py-8 px-7">
+        <div class="flex items-center justify-between">
+            <h2 class="text-white text-4xl font-semibold" id="section-title">ATORES</h2>
+            <div class="flex gap-4">
+                <img src="../../images/loading.gif" alt="Michael Jackson comendo pipoca" class="rounded-full w-12 h-12 object-cover">
+                <button id="exit-cms-button" class="flex items-center justify-center p-2 w-12 h-12 bg-main rounded-full">
+                    <img src="../../images/svg/exit.svg" alt="Sair">
+                </button>
+            </div>
+        </div>
+        <div class="flex justify-between items-center">
+            <div class="flex bg-white border border-secundary overflow-hidden py-1 px-2 gap-2 rounded-md h-[5vh]">
+                <input type="text" name="search" id="search" class="w-[25vw] h-full bg-transparent hover:outline-none placeholder:text-secundary text-secundary focus:outline-none cursor-pointer" placeholder="Pesquise por nome" autocomplete="off" required>
+                <label id="search-button" for="search" class="flex h-[calc(5vh-12px)] w-[calc(5vh-8px)] cursor-pointer">
+                    <img src="../../images/svg/search-blue.svg" alt="Buscar filmes" class="h-full">
+                </label>
+            </div>
+            <button type="button" id="create-actor" class="rounded-md px-4 bg-secundary flex items-center justify-center gap-2 h-[5vh]">
+                <span class="text-white"> Adicionar </span>
+                <img src="../../images/svg/add.svg" alt="Adicionar Filme" class="w-[calc(5vh-12px)] h-[calc(5vh-12px)]">
+            </button>
+        </div>
+    </header>
+    <main class="px-7 relative">
+        <section id="actors-section" class="flex flex-wrap gap-2 max-h-[75vh] overflow-y-scroll pb-8 pt-1"></section>
+        <div id="post-actor-container" class="hidden inset-0 h-screen w-screen bg-dark_gray flex flex-col p-12 gap-16">
+            <div class="flex items-center justify-between font-bold">
+                <div class="w-12"></div>
+                <h2 class="text-white text-3xl drop-shadow-[0px_0px_2px_#FF0000]"> Cadastrar Ator </h2>
+                <button class="place-self-end" id="close-post-actor">
+                    <img src="../../images/svg/close.svg" alt="Fechar" class="h-12 w-12">
+                </button>
+            </div>
+            <form autocomplete="off" class="grid grid-cols-2 grid-rows-3 items-center gap-12 justify-items-center h-fit text-white px-44 gap-x-8 font-medium text-xl">
+                <div class="flex flex-col gap-4 w-full">
+                    <label for="name" class="text-xl drop-shadow-[0px_0px_2px_#3064B4]"> Nome </label>
+                    <input type="text" id="name" class="w-full p-2 rounded-md text-dark_gray outline-main" autocomplete="off" required>
+                </div>
+                <div class="flex flex-col gap-4 w-full">
+                    <label for="biography" class="drop-shadow-[0px_0px_2px_#3064B4]"> Biografia </label>
+                    <input type="text" id="biography" class="w-full p-2 rounded-md text-dark_gray outline-main" required>
+                </div>
+                <div class="flex flex-col gap-4 w-full">
+                    <label for="birth-date" class="drop-shadow-[0px_0px_2px_#3064B4]"> Data de Nascimento </label>
+                    <input type="date" id="birth-date" class="w-full p-2 rounded-md text-dark_gray outline-main" value="2000-01-01" required>
+                </div>
+                <div class="flex flex-col gap-4 w-full">
+                    <label for="death-date" class="drop-shadow-[0px_0px_2px_#3064B4]"> Data de Falecimento</label>
+                    <input type="date" id="death-date" class="w-full p-2 rounded-md text-dark_gray outline-main" required>
+                </div>
+                <div class="flex flex-col gap-4 w-full">
+                    <label for="image" class="drop-shadow-[0px_0px_2px_#3064B4]">Foto</label>
+                    <input type="file" id="image" class="file:cursor-pointer file:rounded-full file:py-2 file:mr-4 file:px-6 file:border-0 file:text-base file:font-semibold file:bg-main-soft file:text-white hover:file:bg-main text-sm" required accept="image/*">
+                </div>
+                <button type="button" id="button-register-actor" class="bg-main rounded-md w-fit px-6 py-2 text-white font-semibold justify-self-end">
+                    Cadastrar
+                </button>
+            </form>  
+        </div>
+        <div id="edit-actor-container" class="hidden fixed inset-0 h-screen w-screen bg-dark_gray flex flex-col p-12 gap-16">
+            <div class="flex items-center justify-between font-bold">
+                <div class="w-12"></div>
+                <h2 class="text-white text-3xl drop-shadow-[0px_0px_2px_#FF0000]"> Editar Ator </h2>
+                <button class="place-self-end" id="close-edit-actor">
+                    <img src="../../images/svg/close.svg" alt="Fechar" class="h-12 w-12">
+                </button>
+            </div>
+            <form autocomplete="off" class="grid grid-cols-2 grid-rows-3 items-center gap-12 justify-items-center h-fit text-white px-44 gap-x-8 font-medium text-xl">
+                <div class="flex flex-col gap-4 w-full">
+                    <label for="edit-name" class="text-xl drop-shadow-[0px_0px_2px_#3064B4]"> Nome </label>
+                    <input type="text" id="edit-name" class="w-full p-2 rounded-md text-dark_gray outline-main" autocomplete="off" required>
+                </div>
+                <div class="flex flex-col gap-4 w-full">
+                    <label for="edit-biography" class="drop-shadow-[0px_0px_2px_#3064B4]"> Biografia </label>
+                    <input type="text" id="edit-biography" class="w-full p-2 rounded-md text-dark_gray outline-main" required>
+                </div>
+                <div class="flex flex-col gap-4 w-full">
+                    <label for="edit-birth-date" class="drop-shadow-[0px_0px_2px_#3064B4]"> Data de Nascimento </label>
+                    <input type="date" id="edit-birth-date" class="w-full p-2 rounded-md text-dark_gray outline-main" value="2000-01-01" required>
+                </div>
+                <div class="flex flex-col gap-4 w-full">
+                    <label for="edit-death-date" class="drop-shadow-[0px_0px_2px_#3064B4]"> Data de Falecimento </label>
+                    <input type="date" id="edit-death-date" class="w-full p-2 rounded-md text-dark_gray outline-main">
+                </div>
+                <div class="flex flex-col gap-4 w-full">
+                    <label for="edit-image" class="drop-shadow-[0px_0px_2px_#3064B4]">Foto</label>
+                    <div class="flex items-center gap-4">
+                        <img class="h-12 w-12 object-cover shrink-0 rounded-full">
+                        <input type="file" id="edit-image" class="file:cursor-pointer file:rounded-full file:py-2 file:mr-4 file:px-6 file:border-0 file:text-base file:font-semibold file:bg-main-soft file:text-white hover:file:bg-main text-sm" required accept="image/*">
+                    </div>
+                </div>
+                <div class="flex gap-8 place-self-center justify-self-end">
+                    <button type="button" id="button-delete-actor" class="bg-main rounded-md w-fit px-6 py-2 text-white font-semibold">
+                        Excluir
+                    </button>
+                    <button type="button" id="button-edit-actor" class="bg-secundary rounded-md w-fit px-6 py-2 text-white font-semibold">
+                        Salvar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

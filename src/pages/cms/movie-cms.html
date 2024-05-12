@@ -20,6 +20,9 @@
     <title> CMS - FILME </title>
 </head>
 <body class="min-h-screen font-poppins grid grid-area bg-cold-gray">
+    <div id="loading" class="absolute bottom-0 right-0 flex items-center justify-center w-[80vw] h-[75vh] bg-cold-gray z-50">
+        <div class="loader"></div>
+    </div>
     <nav class="grid grid-rows-[20vh_80vh] h-screen items-center bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray px-7 pb-8">
         <img src="../../images/logo.png" alt="Acme Filmes" class="w-4/5 place-self-center">
         <div class="h-[80vh] overflow-y-scroll pb-8">
@@ -28,40 +31,40 @@
                     <a href="#" class="flex h-full w-full items-center justify-center py-2"> FILMES </a>  
                 </button>
                 <button type="button" class="rounded-xl w-full">
-                    <a href="./actor-cms" class="flex h-full w-full items-center justify-center py-2"> ATORES </a>  
+                    <a href="./actor-cms.html" class="flex h-full w-full items-center justify-center py-2"> ATORES </a>  
                 </button>
                 <button type="button" class="rounded-xl w-full">
-                    <a href="./genre-cms" class="flex h-full w-full items-center justify-center py-2"> GÊNEROS </a>  
+                    <a href="./genre-cms.html" class="flex h-full w-full items-center justify-center py-2"> GÊNEROS </a>  
                 </button>
                 <button type="button" class="rounded-xl w-full">
-                    <a href="./director-cms" class="flex h-full w-full items-center justify-center py-2"> DIRETORES </a>  
+                    <a href="./director-cms.html" class="flex h-full w-full items-center justify-center py-2"> DIRETORES </a>  
                 </button>
                 <button type="button" class="rounded-xl w-full">
-                    <a href="./classification-cms" class="flex h-full w-full items-center justify-center py-2"> CLASSIFICAÇÕES </a>  
+                    <a href="./classification-cms.html" class="flex h-full w-full items-center justify-center py-2"> CLASSIFICAÇÕES </a>  
                 </button>
                 <button type="button" class="rounded-xl w-full">
-                    <a href="./movie-actor-cms" class="flex h-full w-full items-center justify-center py-2"> ATORES DOS FILMES </a>  
+                    <a href="./movie-actor-cms.html" class="flex h-full w-full items-center justify-center py-2"> ATORES DOS FILMES </a>  
                 </button>
                 <button type="button" class="rounded-xl w-full">
-                    <a href="./movie-genre-cms" class="flex h-full w-full items-center justify-center py-2"> GÊNEROS DOS FILMES </a>  
+                    <a href="./movie-genre-cms.html" class="flex h-full w-full items-center justify-center py-2"> GÊNEROS DOS FILMES </a>  
                 </button>
                 <button type="button" class="rounded-xl w-full">
-                    <a href="./movie-director-cms" class="flex h-full w-full items-center justify-center py-2"> DIRETORES DOS FILMES </a>  
+                    <a href="./movie-director-cms.html" class="flex h-full w-full items-center justify-center py-2"> DIRETORES DOS FILMES </a>  
                 </button>
                 <button type="button" class="rounded-xl w-full">
-                    <a href="./nationality-cms" class="flex h-full w-full items-center justify-center py-2"> NACIONALIDADES </a>  
+                    <a href="./nationality-cms.html" class="flex h-full w-full items-center justify-center py-2"> NACIONALIDADES </a>  
                 </button>
                 <button type="button" class="rounded-xl w-full">
-                    <a href="./actor-nationality-cms" class="flex h-full w-full items-center justify-center py-2"> NACIONALIDADES DOS ATORES </a>  
+                    <a href="./actor-nationality-cms.html" class="flex h-full w-full items-center justify-center py-2"> NACIONALIDADES DOS ATORES </a>  
                 </button>
                 <button type="button" class="rounded-xl w-full">
-                    <a href="./profile-icon-category-cms" class="flex h-full w-full items-center justify-center py-2"> CATEGORIAS FOTO DE PERFIL </a>  
+                    <a href="./profile-icon-category-cms.html" class="flex h-full w-full items-center justify-center py-2"> CATEGORIAS FOTO DE PERFIL </a>  
                 </button>
                 <button type="button" class="rounded-xl w-full">
-                    <a href="./profile-icon-cms" class="flex h-full w-full items-center justify-center py-2"> FOTOS DE PERFIL </a>  
+                    <a href="./profile-icon-cms.html" class="flex h-full w-full items-center justify-center py-2"> FOTOS DE PERFIL </a>  
                 </button>
                 <button type="button" class="rounded-xl w-full">
-                    <a href="./employee-cms" class="flex h-full w-full items-center justify-center py-2"> FUNCIONÁRIOS </a>  
+                    <a href="./employee-cms.html" class="flex h-full w-full items-center justify-center py-2"> FUNCIONÁRIOS </a>  
                 </button>
             </div>
         </div>
@@ -92,7 +95,7 @@
     <main class="px-7 relative">
         <section id="movies-section" class="flex flex-wrap gap-2 max-h-[75vh] overflow-y-scroll pb-8 pt-1">
         </section>
-        <div id="post-movie-container" class="hidden inset-0 h-screen w-screen bg-dark_gray flex flex-col p-12 gap-8">
+        <div id="post-movie-container" class="hidden inset-0 h-screen w-screen bg-dark_gray flex flex-col p-12 gap-12">
             <div class="flex items-center justify-between font-bold">
                 <div class="w-12"></div>
                 <h2 class="text-white text-3xl drop-shadow-[0px_0px_2px_#FF0000]"> Cadastrar Filme </h2>
@@ -100,7 +103,7 @@
                     <img src="../../images/svg/close.svg" alt="Fechar" class="h-12 w-12">
                 </button>
             </div>
-            <form autocomplete="off" class="grid grid-cols-2 grid-rows-5 items-center gap-12 justify-items-cente grow h-fit text-white px-44 gap-x-8 font-medium text-xl">
+            <form autocomplete="off" class="grid grid-cols-2 grid-rows-5 items-center gap-12 justify-items-center h-fit text-white px-44 gap-x-8 font-medium text-xl">
                 <div class="flex flex-col gap-4 w-full">
                     <label for="name" class="text-xl drop-shadow-[0px_0px_2px_#3064B4]"> Nome </label>
                     <input type="text" id="name" class="w-full p-2 rounded-md text-dark_gray outline-main" autocomplete="off" required>
@@ -119,11 +122,11 @@
                 </div>
                 <div class="flex flex-col gap-4 w-full">
                     <label for="poster" class="drop-shadow-[0px_0px_2px_#3064B4]">Poster</label>
-                    <input type="file" id="poster" class="file:cursor-pointer file:rounded-full file:py-2 file:mr-4 file:px-6 file:border-0 file:text-base file:font-semibold file:bg-main-soft file:text-white hover:file:bg-main text-sm" required accept="image/png, image/jpeg">
+                    <input type="file" id="poster" class="file:cursor-pointer file:rounded-full file:py-2 file:mr-4 file:px-6 file:border-0 file:text-base file:font-semibold file:bg-main-soft file:text-white hover:file:bg-main text-sm" required accept="image/*">
                 </div>
                 <div class="flex flex-col gap-4 w-full">
                     <label for="banner" class="drop-shadow-[0px_0px_2px_#3064B4]">Banner</label>
-                    <input type="file" id="banner" class="file:cursor-pointer file:rounded-full file:py-2 file:mr-4 file:px-6 file:border-0 file:text-base file:font-semibold file:bg-main-soft file:text-white hover:file:bg-main text-sm" required accept="image/png, image/jpeg">
+                    <input type="file" id="banner" class="file:cursor-pointer file:rounded-full file:py-2 file:mr-4 file:px-6 file:border-0 file:text-base file:font-semibold file:bg-main-soft file:text-white hover:file:bg-main text-sm" required accept="image/*">
                 </div>
                 <div class="flex flex-col gap-4 w-full">
                     <p class="drop-shadow-[0px_0px_2px_#3064B4]">Destaque</p>
@@ -143,7 +146,7 @@
                 <div class="flex flex-col gap-4 w-full">
                     <label for="classification" class="drop-shadow-[0px_0px_2px_#3064B4]">Classificação Indicativa</label>
                     <select id="classification" class="w-full p-2 rounded-md text-dark_gray outline-main">
-                        <option class="text-dark_gray" value="" selected> Selecionar classificação </option>
+                        <option class="text-dark_gray" value="" selected disabled> Selecionar classificação </option>
                     </select>
                 </div>
                 <button type="button" id="button-register-movie" class="bg-main rounded-md w-fit px-6 py-2 text-white font-semibold place-self-end justify-self-end">
@@ -151,7 +154,7 @@
                 </button>
             </form>  
         </div>
-        <div id="edit-movie-container" class="hidden fixed inset-0 h-screen w-screen bg-dark_gray flex flex-col p-12 gap-8">
+        <div id="edit-movie-container" class="hidden fixed inset-0 h-screen w-screen bg-dark_gray flex flex-col p-12 gap-12">
             <div class="flex items-center justify-between font-bold">
                 <div class="w-12"></div>
                 <h2 class="text-white text-3xl drop-shadow-[0px_0px_2px_#FF0000]"> Editar Filme </h2>
@@ -159,7 +162,7 @@
                     <img src="../../images/svg/close.svg" alt="Fechar" class="h-12 w-12">
                 </button>
             </div>
-            <form autocomplete="off" class="grid grid-cols-2 grid-rows-5 items-center gap-12 justify-items-cente grow h-fit text-white px-44 gap-x-8 font-medium text-xl">
+            <form autocomplete="off" class="grid grid-cols-2 grid-rows-5 items-center gap-12 justify-items-center h-fit text-white px-44 gap-x-8 font-medium text-xl">
                 <div class="flex flex-col gap-4 w-full">
                     <label for="edit-name" class="text-xl drop-shadow-[0px_0px_2px_#3064B4]"> Nome </label>
                     <input type="text" id="edit-name" class="w-full p-2 rounded-md text-dark_gray outline-main" autocomplete="off" required>
@@ -179,15 +182,15 @@
                 <div class="flex flex-col gap-4 w-full">
                     <label for="edit-poster" class="drop-shadow-[0px_0px_2px_#3064B4]">Poster</label>
                     <div class="flex items-center gap-4">
-                        <img src="../../images/lalaland.jpg" class="h-12 w-12 object-cover shrink-0 rounded-full">
-                        <input type="file" id="edit-poster" class="file:cursor-pointer file:rounded-full file:py-2 file:mr-4 file:px-6 file:border-0 file:text-base file:font-semibold file:bg-main-soft file:text-white hover:file:bg-main text-sm" required accept="image/png, image/jpeg">
+                        <img class="h-12 w-12 object-cover shrink-0 rounded-full">
+                        <input type="file" id="edit-poster" class="file:cursor-pointer file:rounded-full file:py-2 file:mr-4 file:px-6 file:border-0 file:text-base file:font-semibold file:bg-main-soft file:text-white hover:file:bg-main text-sm" required accept="image/*">
                     </div>
                 </div>
                 <div class="flex flex-col gap-4 w-full">
                     <label for="edit-banner" class="drop-shadow-[0px_0px_2px_#3064B4]">Banner</label>
                     <div class="flex items-center gap-4">
-                        <img src="../../images/lalaland.jpg" class="h-12 w-12 object-cover shrink-0 rounded-full">
-                        <input type="file" id="edit-banner" class="file:cursor-pointer file:rounded-full file:py-2 file:mr-4 file:px-6 file:border-0 file:text-base file:font-semibold file:bg-main-soft file:text-white hover:file:bg-main text-sm" required accept="image/png, image/jpeg">
+                        <img class="h-12 w-12 object-cover shrink-0 rounded-full">
+                        <input type="file" id="edit-banner" class="file:cursor-pointer file:rounded-full file:py-2 file:mr-4 file:px-6 file:border-0 file:text-base file:font-semibold file:bg-main-soft file:text-white hover:file:bg-main text-sm" required accept="image/*">
                     </div>
                 </div>
                 <div class="flex flex-col gap-4 w-full">
