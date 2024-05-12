@@ -16,7 +16,7 @@
     <title> CMS - FUNCIONÁRIOS </title>
 </head>
 <body class="min-h-screen font-poppins grid grid-area bg-cold-gray">
-    <div id="loading" class="absolute bottom-0 right-0 flex items-center justify-center w-[80vw] h-[75vh] bg-cold-gray z-50">
+    <div id="loading" class="absolute bottom-0 right-0 flex items-center justify-center w-[80vw] h-[75vh] bg-cold-gray z-40">
         <div class="loader"></div>
     </div>
     <nav class="grid grid-rows-[20vh_80vh] h-screen items-center bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray px-7 pb-8">
@@ -90,7 +90,7 @@
     </header>
     <main class="px-7 relative">
         <section id="employees-section" class="flex flex-wrap gap-4 max-h-[75vh] overflow-y-scroll pb-8 pt-1"></section>
-        <div id="post-employee-container" class="hidden inset-0 h-screen w-screen bg-dark_gray flex flex-col p-12 gap-16">
+        <div id="post-employee-container" class="hidden inset-0 h-screen w-screen bg-dark_gray flex flex-col p-12 gap-16 z-50">
             <div class="flex items-center justify-between font-bold">
                 <div class="w-12"></div>
                 <h2 class="text-white text-3xl drop-shadow-[0px_0px_2px_#FF0000]"> Cadastrar Funcionário </h2>
@@ -116,7 +116,7 @@
                 </button>
             </form>  
         </div>
-        <div id="edit-employee-container" class="hidden fixed inset-0 h-screen w-screen bg-dark_gray flex flex-col p-12 gap-16">
+        <div id="edit-employee-container" class="hidden fixed inset-0 h-screen w-screen bg-dark_gray flex flex-col p-12 gap-16 z-50">
             <div class="flex items-center justify-between font-bold">
                 <div class="w-12"></div>
                 <h2 class="text-white text-3xl drop-shadow-[0px_0px_2px_#FF0000]"> Editar Funcionário </h2>
