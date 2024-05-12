@@ -1162,10 +1162,6 @@ video {
   width: 35vw;
 }
 
-.w-\[40\%\] {
-  width: 40%;
-}
-
 .w-\[4vh\] {
   width: 4vh;
 }
@@ -1176,6 +1172,10 @@ video {
 
 .w-\[50rem\] {
   width: 50rem;
+}
+
+.w-\[55\%\] {
+  width: 55%;
 }
 
 .w-\[65\%\] {
@@ -2994,6 +2994,11 @@ video {
   line-height: 1;
 }
 
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
 .text-7xl {
   font-size: 4.5rem;
   line-height: 1;
@@ -3927,10 +3932,6 @@ video {
 
   .max-lg\:w-4\/5 {
     width: 80%;
-  }
-
-  .max-lg\:w-\[55\%\] {
-    width: 55%;
   }
 
   .max-lg\:w-\[75vw\] {
