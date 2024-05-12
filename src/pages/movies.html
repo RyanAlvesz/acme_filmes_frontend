@@ -9,13 +9,18 @@
     <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/output.css">
     <link rel="stylesheet" href="../css/remove-scrollbar.css">
+    <link rel="stylesheet" href="../css/loading.css">
     <script src="../js/search-bar-animation.js" defer></script>
     <script src="../js/header-color.js" defer></script>
     <script src="../js/movies.js" type="module" defer></script>
     <title>Filmes</title>
 </head>
 <body class="min-h-screen font-poppins bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray flex flex-col pb-8 relative gap-8 max-md:gap-4">
-    <header id="70" class="grid grid-cols-[35vw_1fr_35vw] h-[14vh] items-center sticky top-0 px-14 ease-linear duration-200 z-50 max-md:h-auto max-md:grid-cols-1 max-md:py-4 max-md:gap-4 max-sm:px-7 max-md:relative">
+    <div class="w-screen h-screen fixed z-50 bg-gradient-to-b from-black via-medium_gray to-black flex flex-col items-center justify-center gap-8 max-md:gap-6 max-sm:gap-4" id="loading">
+        <img src="../images/logo.png" alt="Acme Filmes" class="h-[15vh]">
+        <div class="loader"></div>
+    </div>
+    <header id="70" class="grid grid-cols-[35vw_1fr_35vw] h-[14vh] items-center sticky top-0 px-14 ease-linear duration-200 z-40 max-md:h-auto max-md:grid-cols-1 max-md:py-4 max-md:gap-4 max-sm:px-7 max-md:relative">
         <a href="./home.html" class="h-[10vh] max-md:h-[8vh]">
             <img src="../images/logo.png" alt="Acme Filmes" class="h-full">
         </a>

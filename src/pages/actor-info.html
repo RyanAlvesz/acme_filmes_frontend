@@ -9,12 +9,17 @@
     <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/output.css">
     <link rel="stylesheet" href="../css/remove-scrollbar.css">
+    <link rel="stylesheet" href="../css/loading.css">
     <script src="../js/actor-info.js" type="module" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js" defer></script>
     <script src="../js/back.js" defer></script>
     <title></title>
 </head>
 <body class="min-h-screen font-poppins bg-gradient-to-b from-dark_gray via-dark_gray/95 to-dark_gray grid grid-rows-[14vh_1fr] relative gap-8 max-md:grid-rows-[10vh_1fr] max-md:gap-32">
+    <div class="w-screen h-screen fixed bg-gradient-to-b from-black via-medium_gray to-black z-50 flex flex-col items-center justify-center gap-8 max-md:gap-6 max-sm:gap-4" id="loading">
+        <img src="../images/logo.png" alt="Acme Filmes" class="h-[15vh]">
+        <div class="loader"></div>
+    </div>
     <header class="flex items-center px-14 pt-8 max-md:pt-0 max-md:px-7 max-sm:px-4">
         <button id="back" class="flex gap-2 items-center justify-center">
             <img src="../images/svg/arrow-left.svg" alt="Voltar" class="w-10 h-10 max-sm:w-8 max-sm:h-8">
@@ -33,7 +38,7 @@
         </div>
         <p id="actor-biography" class="text-justify text-2xl max-md:text-base"></p>
         <div class="flex flex-col gap-4 max-md:gap-2">
-            <p class="text-2xl font-semibold max-md:text-xl">FILMES</p>
+            <p class="text-2xl hidden font-semibold max-md:text-xl">FILMES</p>
             <div id="actor-movies-container" class="flex overflow-x-auto overflow-y-hidden h-[20vh] w-[calc(50vw-7rem)] gap-6 max-md:w-[calc(100vw-3.5rem)]"></div>
         </div>
     </main>

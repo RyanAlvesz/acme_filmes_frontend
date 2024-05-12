@@ -50,18 +50,17 @@ const setMovieInfo = async (movie) => {
     movieRelease.textContent = dt.toLocaleString(DateTime.DATE_FULL)
 
     if(movie.diretores){
-        movieDirectors.classList.remove('opacity-0')
+        movieDirectors.classList.remove('hidden')
         movie.diretores.forEach(director => {
             let directorName = document.createElement('p')
             directorName.textContent = director.nome
             directorName.classList.add('max-md:text-base')
             movieDirectors.children[1].appendChild(directorName)
         })
-
     }
 
     if(movie.atores){
-        movieActors.classList.remove('opacity-0')
+        movieActors.classList.remove('hidden')
         movie.atores.forEach(actor => {
             let actorName = document.createElement('a')
             actorName.classList.add('hover:underline', 'w-fit')
@@ -76,7 +75,7 @@ const setMovieInfo = async (movie) => {
     }
 
     if(movie.generos){
-        movieGenres.classList.remove('opacity-0')
+        movieGenres.classList.remove('hidden')
         movie.generos.forEach(genre => {
             let genreName = document.createElement('p')
             genreName.classList.add('max-md:text-base')

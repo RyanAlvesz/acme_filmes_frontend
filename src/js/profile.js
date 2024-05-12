@@ -42,6 +42,16 @@ const createIconsSection = (categoryJSON) => {
     const divMain = document.createElement('div')
     divMain.classList.add('w-full', 'grid', 'grid-rows-[auto_15vh]', 'gap-2')
     
+    divMain.addEventListener('mouseover', () => {
+        buttonLeft.classList.remove('opacity-0')
+        buttonRight.classList.remove('opacity-0')
+    })
+
+    divMain.addEventListener('mouseleave', () => {
+        buttonLeft.classList.add('opacity-0')
+        buttonRight.classList.add('opacity-0')
+    })
+
     const h2 = document.createElement('h2')
     h2.classList.add('text-white', 'text-xl', 'font-semibold', 'px-14', 'max-sm:px-7', 'max-sm:text-base')
     h2.textContent = categoryJSON.categoria
@@ -50,7 +60,7 @@ const createIconsSection = (categoryJSON) => {
     divSecundary.classList.add('grid', 'grid-cols-[auto_1fr_auto]', 'gap-2', 'max-md:grid-cols-1', 'max-md:px-14', 'max-sm:px-7')
 
     const buttonLeft = document.createElement('button')
-    buttonLeft.classList.add('max-md:hidden')
+    buttonLeft.classList.add('opacity-0', 'ease-linear', 'duration-100', 'max-md:hidden')
     buttonLeft.addEventListener('click', () => {
         divIcons.scrollLeft -= 150
     })
@@ -61,7 +71,7 @@ const createIconsSection = (categoryJSON) => {
     buttonLeftImg.alt = 'Seta para esquerda'
 
     const buttonRight = document.createElement('button')
-    buttonRight.classList.add('max-md:hidden')
+    buttonRight.classList.add('opacity-0', 'ease-linear', 'duration-100', 'max-md:hidden')
     buttonRight.addEventListener('click', () => {
         divIcons.scrollLeft += 150
     })
@@ -107,8 +117,10 @@ const setIconSection = (categoriesARRAY) => {
     const containerIcons = document.getElementById('container-icons')
 
     categoriesARRAY.forEach((category) => {
-        let iconSection = createIconsSection(category)
-        containerIcons.append(iconSection)
+        if(category.quantidade_fotos > 0){
+            let iconSection = createIconsSection(category)
+            containerIcons.append(iconSection)
+        }
     })
 
 }

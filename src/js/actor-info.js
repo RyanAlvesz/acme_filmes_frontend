@@ -1,7 +1,8 @@
 'use strict'
 
 import { createMoviesCard } from "./movie-card.js";
-import { getMoviesByActor, getActorById, getNationalityById, getActorsNationalities } from "./functions.js"
+import { getMoviesByActor, getActorById } from "./functions.js"
+import { closeLoading } from './loading.js'
 
 const actorId = localStorage.getItem('actorId')
 
@@ -62,9 +63,16 @@ actorMoviesContainer.addEventListener('wheel', (e) => {
 
 window.addEventListener('load', async() => {
 
-    const moviesActorJSON = await getMoviesByActor(actorId)
     const actorJSON = await getActorById(actorId)
     setActorInfo(actorJSON.ator[0])
-    createMovies(moviesActorJSON.filmes, size)
+
+    const moviesActorJSON = await getMoviesByActor(actorId)
+    if(moviesActorJSON.status_code == 200){
+        actorMoviesContainer.previousElementSibling.classList.remove('hidden')
+        createMovies(moviesActorJSON.filmes, size)
+    }
+
+    closeLoading()
+
 })
 

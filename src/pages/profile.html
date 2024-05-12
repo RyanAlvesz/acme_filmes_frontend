@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="../css/remove-scrollbar.css">
     <link rel="stylesheet" href="../css/loading.css">
     <script src="../js/profile.js" type="module" defer></script>
-    <script src="../js/back.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
     <title>Editar Perfil</title>
 </head>
@@ -21,9 +20,11 @@
         <div class="loader"></div>
     </div>
     <header class="flex items-center justify-between w-screen px-14 max-md:px-7 max-sm:px-4 max-md:justify-start h-full">
-        <button id="back" class="flex gap-2 items-center w-[30vh] max-md:w-fit">
-            <img src="../images/svg/arrow-left.svg" alt="Voltar" class="w-10 h-10 max-sm:w-8 max-sm:h-8">
-            <span class="text-white text-2xl font-medium max-sm:text-lg"> VOLTAR </span>
+        <button id="back" class="w-[30vh] max-md:w-fit">
+            <a href="./home.html" class="flex gap-2 items-center w-full">
+                <img src="../images/svg/arrow-left.svg" alt="Voltar" class="w-10 h-10 max-sm:w-8 max-sm:h-8">
+                <span class="text-white text-2xl font-medium max-sm:text-lg"> VOLTAR </span>
+            </a>
         </button>
         <img src="../images/logo.png" alt="Logo" class="w-48 max-md:hidden">
         <div class="w-[30vh] max-md:hidden"></div>
@@ -72,7 +73,7 @@
                 <img src="../images/svg/close.svg" alt="Fechar" class="w-10 h-10">
             </button>
         </div>
-        <div id="container-icons" class="flex flex-col items-center gap-6 px-14 max-md:px-0 overflow-y-scroll"></div>
+        <div id="container-icons" class="flex flex-col items-center gap-6 px-14 pb-8 max-md:px-0 overflow-y-scroll"></div>
     </div>
 </body>
 </html>

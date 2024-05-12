@@ -33,14 +33,3 @@ body::-webkit-scrollbar {
     background: #FFFFFF;
     border-radius: 12px;
 }
-
-@media (max-width: 768px) {
-    .movie-info{
-        grid-template-areas: 
-        "g1"
-        "g2"
-        "g3"
-        "g4"
-        "g5";
-    }
-}

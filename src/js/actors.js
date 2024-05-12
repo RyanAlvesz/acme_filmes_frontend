@@ -1,6 +1,7 @@
 'use strict'
 
 import { getActors } from './functions.js'
+import { closeLoading } from './loading.js'
 
 const searchBar = document.getElementById('search')
 
@@ -17,7 +18,7 @@ const createActorCard = (actor) => {
     })
 
     const img = document.createElement('img')
-    img.classList.add('h-full', 'w-full', 'object-cover')
+    img.classList.add('h-[calc((86vh-2rem*2)/3)]', 'w-full', 'object-cover')
     img.src = actor.foto
     img.alt = actor.nome
 
@@ -61,10 +62,10 @@ searchBar.addEventListener('keyup', (e) => {
     const filteredActors = actorsARRAY.filter((actor) => {
         return (
             actor.nome.toLowerCase().includes(search)
-        );
-    });
+        )
+    })
 
-    setActorsCards(filteredActors);
+    setActorsCards(filteredActors)
 
 })
 
@@ -73,5 +74,6 @@ window.addEventListener('load', async() => {
     const actors = await getActors()
     actorsARRAY = actors.atores
     setActorsCards(actors.atores)
+    closeLoading()
 
 })

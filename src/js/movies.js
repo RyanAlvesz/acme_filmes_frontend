@@ -2,6 +2,7 @@
 
 import { createMoviesCard } from './movie-card.js'
 import { getMovies, getMoviesByName } from './functions.js'
+import { closeLoading } from './loading.js'
 
 const main = document.getElementById('main')
 const searchBar = document.getElementById('search')
@@ -29,6 +30,7 @@ const createMovies = (moviesArray, cardSize) => {
 const setAllMovies = async() => {
     const moviesJSON = await getMovies() 
     createMovies(moviesJSON.filmes, size)
+    closeLoading()
 }
 
 searchBar.addEventListener('keyup', async() => {
