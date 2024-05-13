@@ -1174,10 +1174,6 @@ video {
   width: 50rem;
 }
 
-.w-\[55\%\] {
-  width: 55%;
-}
-
 .w-\[65\%\] {
   width: 65%;
 }
@@ -1289,6 +1285,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[75\%\] {
+  width: 75%;
 }
 
 .min-w-full {
@@ -2994,11 +2994,6 @@ video {
   line-height: 1;
 }
 
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
-}
-
 .text-7xl {
   font-size: 4.5rem;
   line-height: 1;
@@ -4151,6 +4146,10 @@ video {
     width: 18vh;
   }
 
+  .max-md\:w-\[55\%\] {
+    width: 55%;
+  }
+
   .max-md\:w-\[calc\(\(100vw-3\.5rem-1\.5rem\)\/2\)\] {
     width: calc((100vw - 3.5rem - 1.5rem) / 2);
   }
@@ -4170,10 +4169,6 @@ video {
 
   .max-md\:w-full {
     width: 100%;
-  }
-
-  .max-md\:w-\[55\%\] {
-    width: 55%;
   }
 
   .max-md\:-translate-x-1\/2 {
