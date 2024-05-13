@@ -2870,6 +2870,11 @@ video {
   padding-bottom: 2rem;
 }
 
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -3168,6 +3173,11 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -3944,6 +3954,10 @@ video {
 
   .max-lg\:w-full {
     width: 100%;
+  }
+
+  .max-lg\:grow {
+    flex-grow: 1;
   }
 
   .max-lg\:-translate-x-full {

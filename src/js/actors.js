@@ -23,7 +23,7 @@ const createActorCard = (actor) => {
     img.alt = actor.nome
 
     const div = document.createElement('div')
-    div.classList.add('text-white', 'flex', 'flex-col', 'items-center', 'justify-center', 'h-full', 'gap-2')
+    div.classList.add('text-white', 'flex', 'flex-col', 'items-center', 'justify-center', 'h-full', 'gap-2', 'px-2')
 
     const h2 = document.createElement('h2')
     h2.classList.add('text-2xl', 'font-semibold', 'drop-shadow-[-1px_1px_0px_#ff0000]', 'max-md:text-xl', 'max-sm:text-lg')

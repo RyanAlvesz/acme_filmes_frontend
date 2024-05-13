@@ -25,8 +25,8 @@
                     <span class="hidden max-md:flex text-lg"> com seu email e senha </span>
                     <div class="flex flex-col gap-3 w-full items-center">
                         <input type="email" autocomplete="off" id="email-login" placeholder="Email" required class="outline-none bg-light-gray w-[65%] max-lg:w-4/5 px-3 py-2">
-                        <div class="grid grid-cols-[1fr_auto] items-center bg-light-gray w-[65%] max-lg:w-4/5 px-3 py-2">
-                            <input type="password" autocomplete="off" id="password-login" required placeholder="Senha" class="outline-none bg-transparent">
+                        <div class="grid grid-cols-[1fr_auto] items-center bg-light-gray w-[65%] max-lg:flex max-lg:w-4/5 px-3 py-2">
+                            <input type="password" autocomplete="off" id="password-login" required placeholder="Senha" class="outline-none bg-transparent max-lg:grow">
                             <button class="w-5 h-5 flex items-center justify-center focus:outline-none" type="button">
                                 <img src="./src/images/svg/clapperboard.svg" alt="Claquete" class="w-full h-full">
                             </button>
@@ -42,10 +42,10 @@
                 <form class="h-full w-1/2 max-lg:w-full flex flex-col justify-center gap-12 items-center py-14 -translate-x-full -z-10 opacity-0 ease-in-out duration-1000 max-lg:absolute max-lg:translate-x-full max-lg:bg-main-soft max-lg:text-white max-md:gap-8">
                     <h2 class="text-[3rem] font-normal"> Criar Conta </h2>
                     <div class="flex flex-col gap-3 w-full items-center">
-                        <input type="text" id="name-register" autocomplete="off" required placeholder="Nome" class="outline-none bg-light-gray w-[65%] max-lg:w-4/5 px-3 py-2">
-                        <input type="email" id="email-register" autocomplete="off" required placeholder="Email" class="outline-none bg-light-gray w-[65%] max-lg:w-4/5 px-3 py-2">
-                        <div class="grid grid-cols-[1fr_auto] items-center bg-light-gray w-[65%] max-lg:w-4/5 px-3 py-2">
-                            <input type="password" id="password-register" autocomplete="off" required placeholder="Senha" class="outline-none bg-transparent">
+                        <input type="text" id="name-register" autocomplete="off" required placeholder="Nome" class="outline-none text-black bg-light-gray w-[65%] max-lg:w-4/5 px-3 py-2">
+                        <input type="email" id="email-register" autocomplete="off" required placeholder="Email" class="outline-none text-black bg-light-gray w-[65%] max-lg:w-4/5 px-3 py-2">
+                        <div class="grid grid-cols-[1fr_auto] items-center bg-light-gray w-[65%] max-lg:flex max-lg:w-4/5 px-3 py-2">
+                            <input type="password" id="password-register" autocomplete="off" required placeholder="Senha" class="text-black outline-none bg-transparent max-lg:grow">
                             <button class="w-5 h-5 flex items-center justify-center focus:outline-none" type="button">
                                 <img src="./src/images/svg/clapperboard.svg" alt="Claquete" class="w-full h-full">
                             </button>
