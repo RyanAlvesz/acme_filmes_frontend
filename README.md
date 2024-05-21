@@ -2,13 +2,17 @@
 
 ![capa](./src/images/cover.png)
 
+<br>
+
 ## 🎥 Sobre o Projeto 
 
 Acme Filmes é um projeto desenvolvido por Ryan Alves durante o curso de Desenvolvimento de sistemas do Senai de Jandira. É um projeto full-stack, com o Back-End em Node.js, o banco de dados em MySQL e o Front-End em HTML, CSS, JAVASCRIPT e TailwindCSS. Todo o processo foi orientado pelos professores @marcelnt e @fernandoleonid.
 
+<br>
+
 ## 💻 Linguagens e Ferramentas utilizadas
 
-<div style="display:flex;flex-direction:column;gap:0.5rem;">
+<div>
     <img style="height:2rem;width:fit-content" src="https://img.shields.io/badge/html5-880000.svg?style=for-the-badge&logo=html5&logoColor=FFFFFF" alt="HTML5">
     <img style="height:2rem;width:fit-content" src="https://img.shields.io/badge/css3-142A4B.svg?style=for-the-badge&logo=css3&logoColor=FFFFFF" alt="CSS3">
     <img style="height:2rem;width:fit-content" src="https://img.shields.io/badge/TailwindCSS-880000.svg?style=for-the-badge&logo=TailwindCSS&logoColor=FFFFFF" alt="TailwindCSS">
@@ -20,6 +24,8 @@ Acme Filmes é um projeto desenvolvido por Ryan Alves durante o curso de Desenvo
     <img style="height:2rem;width:fit-content" src="https://img.shields.io/badge/Behance-880000?style=for-the-badge&logo=behance&logoColor=FFFFFF" alt="Behance">
 </div>
 
+<br>
+
 ## 🎠 Etapas do Projeto 
 
 - [x] Referências de Design
@@ -29,9 +35,13 @@ Acme Filmes é um projeto desenvolvido por Ryan Alves durante o curso de Desenvo
 - [x] Responsividade
 - [x] Utilização da API
 
+<br>
+
 ## 📌 API Utilizada 
 
 - [ACME Filmes Backend](https://github.com/RyanAlvesz/acme_filmes_backend)
+
+<br>
 
 ## 🎞 Links úteis
 
@@ -44,6 +54,7 @@ Protótipo | FRONT-END | Landing Page
 [frontend]: https://github.com/RyanAlvesz/acme_filmes_frontend
 [home]: https://ryanalvesz.github.io/acme_filmes_frontend/
 
+<br>
 
 ## 🌺 Feito por
 
