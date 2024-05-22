@@ -17,11 +17,12 @@ Acme Filmes é um projeto desenvolvido por Ryan Alves durante o curso de Desenvo
     <img style="height:2rem;width:fit-content" src="https://img.shields.io/badge/css3-142A4B.svg?style=for-the-badge&logo=css3&logoColor=FFFFFF" alt="CSS3">
     <img style="height:2rem;width:fit-content" src="https://img.shields.io/badge/TailwindCSS-880000.svg?style=for-the-badge&logo=TailwindCSS&logoColor=FFFFFF" alt="TailwindCSS">
     <img style="height:2rem;width:fit-content" src="https://img.shields.io/badge/javascript-142A4B.svg?style=for-the-badge&logo=javascript&logoColor=FFFFFF" alt="JavaScript">
-    <img style="height:2rem;width:fit-content" src="https://img.shields.io/badge/Node.JS-880000.svg?style=for-the-badge&logo=Node.JS&logoColor=FFFFFF" alt="Node.JS">
-    <img style="height:2rem;width:fit-content" src="https://img.shields.io/badge/MySQL-142A4B.svg?style=for-the-badge&logo=MySQL&logoColor=FFFFFF" alt="MySQL">
-    <img style="height:2rem;width:fit-content" src="https://img.shields.io/badge/Visual%20Studio-880000.svg?style=for-the-badge&logo=visual-studio&logoColor=FFFFFF" alt="Visual Studio">
-    <img style="height:2rem;width:fit-content" src="https://img.shields.io/badge/figma-142A4B.svg?style=for-the-badge&logo=figma&logoColor=FFFFFF" alt="FIGMA">
-    <img style="height:2rem;width:fit-content" src="https://img.shields.io/badge/Behance-880000?style=for-the-badge&logo=behance&logoColor=FFFFFF" alt="Behance">
+    <img style="height:2rem;width:fit-content" src="https://img.shields.io/badge/Firebase-880000.svg?style=for-the-badge&logo=Firebase&logoColor=FFFFFF" alt="Firebase">
+    <img style="height:2rem;width:fit-content" src="https://img.shields.io/badge/Node.JS-142A4B.svg?style=for-the-badge&logo=Node.JS&logoColor=FFFFFF" alt="Node.JS">
+    <img style="height:2rem;width:fit-content" src="https://img.shields.io/badge/MySQL-880000.svg?style=for-the-badge&logo=MySQL&logoColor=FFFFFF" alt="MySQL">
+    <img style="height:2rem;width:fit-content" src="https://img.shields.io/badge/Visual%20Studio-142A4B.svg?style=for-the-badge&logo=visual-studio&logoColor=FFFFFF" alt="Visual Studio">
+    <img style="height:2rem;width:fit-content" src="https://img.shields.io/badge/figma-880000.svg?style=for-the-badge&logo=figma&logoColor=FFFFFF" alt="FIGMA">
+    <img style="height:2rem;width:fit-content" src="https://img.shields.io/badge/Behance-142A4B?style=for-the-badge&logo=behance&logoColor=FFFFFF" alt="Behance">
 </div>
 
 <br>
