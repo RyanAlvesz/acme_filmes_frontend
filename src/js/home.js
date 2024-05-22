@@ -188,20 +188,16 @@ const favoriteMovie = async() => {
         const rsDelte = await deleteFavoriteMovie(localStorage.getItem('favoriteMovieId'))
         buttonFavoriteFeaturedMovie.children[0].src = '../images/svg/add.svg'
         buttonFavoriteFeaturedMovieMobile.children[0].src = '../images/svg/add.svg'
-    
+        
     }else{
-
-        postFavoriteProfileMovie(profileId, localStorage.getItem('featuredMovieId'))
+        
+        const rsPost = await postFavoriteProfileMovie(profileId, localStorage.getItem('featuredMovieId'))
         buttonFavoriteFeaturedMovie.children[0].src = '../images/svg/correct.svg'
         buttonFavoriteFeaturedMovieMobile.children[0].src = '../images/svg/correct.svg'
 
     }
-
-    setTimeout(() => {
-        setMovies()
-    }, 100);
-
-
+    
+    setMovies()
 }
   
 const changeBgMobile = (x, rgb) => {
