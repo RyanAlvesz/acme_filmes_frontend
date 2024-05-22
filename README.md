@@ -6,7 +6,7 @@
 
 ## 🎥 Sobre o Projeto 
 
-Acme Filmes é um projeto desenvolvido por Ryan Alves durante o curso de Desenvolvimento de sistemas do Senai de Jandira. É um projeto full-stack, com o Back-End em Node.js, o banco de dados em MySQL e o Front-End em HTML, CSS, JAVASCRIPT e TailwindCSS. Todo o processo foi orientado pelos professores @marcelnt e @fernandoleonid.
+Acme Filmes é um projeto desenvolvido por Ryan Alves durante o curso de Desenvolvimento de sistemas do Senai de Jandira. É um projeto full-stack, com o Back-End em Node.js hospedado no Render, o banco de dados em MySQL hospedado na Azure e o Front-End em HTML, CSS, JAVASCRIPT e TailwindCSS. Todo o processo foi orientado pelos professores @marcelnt e @fernandoleonid.
 
 <br>
 
